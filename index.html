@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2026 CMS Care Management Selector</title>
+  <style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f9fafc; color: #26334d; margin: 0; }
+    .container { max-width: 1150px; margin: 40px auto; box-shadow: 0 3px 16px rgba(0,0,0,0.06); background: #fff; border-radius: 15px; padding: 36px 36px 44px 36px; }
+    .header-flex { display: flex; align-items: center; border-bottom: 1px solid #e1e8ee; padding-bottom: 12px; margin-bottom: 26px;}
+    .logo-block { flex-shrink: 0; }
+    .logo-block img { height: 54px; margin-right: 22px; }
+    .header-title-block { }
+    h1 { font-size: 2.18rem; color: #214174; margin: 0 0 0.2em 0; letter-spacing: -1.6px;}
+    .desc { font-size: 1.13rem; color: #476295; margin-bottom: 20px; line-height: 1.53; max-width: 720px;}
+    .tabs { display: flex; gap: 18px; margin-bottom: 19px; margin-top: 8px;}
+    .tab { background: #eef2fd; border-radius: 22px; padding: 10px 28px; font-size: 1.07rem; color: #214174; cursor: pointer; border: none; outline: none; letter-spacing: 1px; font-weight: 500;}
+    .tab.active { background: #214174; color: #fff; font-weight: 600; box-shadow: 0 2px 10px rgba(33,65,116,0.09);}
+    .module { display: none;}
+    .module.active { display: block;}
+    .accordion { margin-bottom: 19px; border-radius: 9px; border: 1px solid #e1e8ee; background: #f7f9fc;}
+    .accordion-header { padding: 14px 22px; font-size: 1.11rem; font-weight: 600; background: #e6eef8; color: #234174; border-top:1px solid #e1e8ee;}
+    .accordion-header:first-child {border-top: none;}
+    .accordion-header.active {background:#214174;color:#fff;}
+    .accordion-content {padding: 13px 24px 21px 24px; font-size: 1.01rem; color: #26334d; background: #f7f9fc; display: block;}
+    /* Workflow Steps */
+    .steps-row { margin: 16px 0 16px 0; display:flex;align-items:flex-end;justify-content:space-between;}
+    .step-box { flex:1; background: #ddf0df; border-radius: 8px; margin: 0 7px; min-width: 166px; box-shadow: 0 1px 5px #e8f2ea; border:2px solid #60ae82; padding: 16px 8px 14px 8px; position:relative; }
+    .step-number { font-size: 1.39rem; font-weight: 600; color: #218267; background: #fff; width: 36px; height: 36px; border-radius: 32px; position: absolute; left: 12px; top: -18px; border: 2px solid #60ae82; display: flex; align-items:center; justify-content: center;}
+    .step-title { margin: 0 0 4px 0; font-weight: 600; color: #218267; font-size: 1.07rem;}
+    .step-desc { font-size: 0.97rem; color: #35564b; margin-left:44px;}
+    .steps-row .step-box:not(:last-child):after {
+      content: '';position: absolute;right: -13px;top: 45%;height: 5px;width: 27px;background: #b3dbc5;border-radius:5px;z-index:2;
+    }
+    table {border-collapse: collapse;margin: 12px 0 16px 0;width: 99%;font-size: 0.99rem;}
+    th, td {padding: 10px 8px; border-bottom: 1px solid #e1e8ee;text-align: left;}
+    th {background: #e6eef8;color: #234174;font-weight: 700;}
+    .alert-box {background: #ffeeba;color: #724300;padding: 14px 20px;border-radius: 7px;font-size: 0.99rem;margin: 14px 0 6px 0;border: 1.5px solid #fff3cd;}
+    @media (max-width: 950px) { .container {padding:12px;} .steps-row {flex-direction:column;gap:14px;} .steps-row .step-box:not(:last-child):after{display:none;} .tabs {flex-wrap:wrap;} }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header-flex">
+      <div class="logo-block">
+        <img src="https://images.squarespace-cdn.com/content/v1/5d2ed6ecb07f590001cd2061/1564121755061-DIC1L57U64W4800RS6JH/logonew.jpg?format=500w" alt="LucidAct Logo">
+      </div>
+      <div class="header-title-block">
+        <h1>2026 CMS Care Management Program Selector</h1>
+        <div class="desc">
+          Care Management programs let teams bill Medicare for structured coordination and ongoing support for patients with chronic or acute needs. These codes support remote monitoring, behavioral health management, transition support, and primary care under the CY 2026 Physician Fee Schedule.
+        </div>
+      </div>
+    </div>
+    <div class="tabs">
+      <button class="tab active" data-tab="rpm">RPM</button>
+      <button class="tab" data-tab="rtm">RTM</button>
+      <button class="tab" data-tab="ccm">CCM</button>
+      <button class="tab" data-tab="pcm">PCM</button>
+      <button class="tab" data-tab="tcm">TCM</button>
+      <button class="tab" data-tab="apcm">APCM</button>
+    </div>
+    <!-- === RPM MODULE === -->
+    <div class="module active" id="rpm">
+      <div class="accordion">
+        <div class="accordion-header active">What is RPM?</div>
+        <div class="accordion-content active">
+          Remote Physiologic Monitoring (RPM) uses connected digital devices to collect patient vitals outside of office visits. It enables management of chronic/acute conditions, with new 2026 codes supporting shorter time increments and more flexible monitoring days.
+        </div>
+        <div class="accordion-header active">Patient Eligibility</div>
+        <div class="accordion-content active">
+          - Medicare patients with chronic or acute conditions<br>
+          - Device supplied by care team, with consent<br>
+          - Required number of transmission days (2-15 for 99445, 16+ for 99454)<br>
+          - Not duplicative with other management codes.
+        </div>
+        <div class="accordion-header active">Who May Bill?</div>
+        <div class="accordion-content active">
+          RPM: Physicians, NPs, PAs, clinical staff under general supervision. Only one provider per month per patient. Device supply must be billed by furnishing entity; IDTFs excluded. Provider/QHP documentation required.
+        </div>
+        <div class="accordion-header active">Billing Structure</div>
+        <div class="accordion-content active">
+          RPM supports:<br>
+          - One-time setup<br>
+          - Monthly device supply/review<br>
+          - Add-ons for addl. minutes<br>
+          - Codes for 2–15 or 16–30 days and 10–19 min engagement.
+        </div>
+        <div class="accordion-header active">Workflow</div>
+        <div class="accordion-content active">
+          <div class="steps-row">
+            <div class="step-box">
+              <div class="step-number">1</div>
+              <div class="step-title">Patient Onboarding</div>
+              <div class="step-desc">Consent, device setup, education</div>
+            </div>
+            <div class="step-box">
+              <div class="step-number">2</div>
+              <div class="step-title">Data Collection</div>
+              <div class="step-desc">Daily device use, transmission (min. 2–16 days/mo)</div>
+            </div>
+            <div class="step-box">
+              <div class="step-number">3</div>
+              <div class="step-title">Care Management</div>
+              <div class="step-desc">Provider review (10–30+ min), ongoing documentation</div>
+            </div>
+            <div class="step-box">
+              <div class="step-number">4</div>
+              <div class="step-title">Escalation/Follow-up</div>
+              <div class="step-desc">Referral or care changes for flagged results</div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-header active">Codes & Payment</div>
+        <div class="accordion-content active">
+          <table>
+            <tr><th>CPT/HCPCS</th><th>Description</th><th>2026 Avg Payment (NF)</th><th>2026 Avg Payment (FQHC/RHC)</th></tr>
+            <tr><td>99453</td><td>Setup & education</td><td>$19.73</td><td>—</td></tr>
+            <tr><td>99454</td><td>Device supply (16–30 days)</td><td>$48.79</td><td>—</td></tr>
+            <tr><td>99445<b> (NEW)</b></td><td>Device supply (2–15 days)</td><td>$48.79</td><td>—</td></tr>
+            <tr><td>99457</td><td>Mgmt, first 20 min/mo</td><td>$51.93</td><td>—</td></tr>
+            <tr><td>99458</td><td>Mgmt, each additional 20 min</td><td>$41.42</td><td>—</td></tr>
+            <tr><td>99470<b> (NEW)</b></td><td>Mgmt (10–19 min/mo)</td><td>$26.05</td><td>—</td></tr>
+            <tr><td>99091</td><td>Standalone data review (30 min)</td><td>$56.41</td><td>—</td></tr>
+          </table>
+          <span style="font-size:0.96em;color:#74642a;">
+            <b>Note:</b> FQHC/RHC do not bill RPM codes directly; most RPM included under G0511 "general care mgmt." unless 2026 rule revises filing.
+          </span>
+        </div>
+        <div class="accordion-header active">2026 Rule Changes</div>
+        <div class="accordion-content active">
+          <div class="alert-box">
+            - New time/duration codes (99445, 99470) for partial months<br>
+            - Rate increases for 99457/99458; supply rules clarified<br>
+            - No change to “incident to” or FQHC module billing.
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- END CHUNK 1 -->
+<!-- === RTM MODULE === -->
+<div class="module" id="rtm">
+  <div class="accordion">
+    <div class="accordion-header active">What is RTM?</div>
+    <div class="accordion-content active">
+      Remote Therapeutic Monitoring (RTM) tracks non-physiologic data (e.g., medication adherence, symptom diaries, therapy device use) using digital tools for patients with musculoskeletal or respiratory conditions. New 2026 codes expand supply and management options.
+    </div>
+    <div class="accordion-header active">Patient Eligibility</div>
+    <div class="accordion-content active">
+      - Medicare patients with MSK or respiratory conditions<br>
+      - Device or app prescribed<br>
+      - Transmission minimums (2–15 days for new code, 16+ for legacy)<br>
+      - Not duplicate to other programs.
+    </div>
+    <div class="accordion-header active">Who May Bill?</div>
+    <div class="accordion-content active">
+      Physicians, QHPs, therapists. Device can be supplied by the organization or contract vendor in compliance with CMS rules.
+    </div>
+    <div class="accordion-header active">Billing Structure</div>
+    <div class="accordion-content active">
+      - Setup/education (98975)<br>
+      - Monthly device (98976/77 or new unified supply)<br>
+      - Management: initial (98980) + add-on (98981)<br>
+      - New 2026 duration supply/short engagement codes.
+    </div>
+    <div class="accordion-header active">Workflow</div>
+    <div class="accordion-content active">
+      <div class="steps-row">
+        <div class="step-box">
+          <div class="step-number">1</div>
+          <div class="step-title">Onboarding</div>
+          <div class="step-desc">Device/app setup for therapy tracking</div>
+        </div>
+        <div class="step-box">
+          <div class="step-number">2</div>
+          <div class="step-title">Tracking Period</div>
+          <div class="step-desc">Symptom/events, activity, med log (2–30 days)</div>
+        </div>
+        <div class="step-box">
+          <div class="step-number">3</div>
+          <div class="step-title">Review & Support</div>
+          <div class="step-desc">Provider review 10–20+ min, doc, escalation as indicated</div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-header active">Codes & Payment</div>
+    <div class="accordion-content active">
+      <table>
+        <tr><th>CPT/HCPCS</th><th>Description</th><th>2026 Avg Payment (NF)</th><th>2026 Avg Payment (FQHC/RHC)</th></tr>
+        <tr><td>98975</td><td>Setup, education</td><td>$19.73</td><td>—</td></tr>
+        <tr><td>98976</td><td>Device supply (16-30 days)</td><td>$47.12</td><td>—</td></tr>
+        <tr><td>98XX4 <b>(NEW)</b></td><td>Device supply (2–15 days)</td><td>$47.12</td><td>—</td></tr>
+        <tr><td>98980</td><td>Management 20+ min/mo</td><td>$47.30</td><td>—</td></tr>
+        <tr><td>98981</td><td>Each additional 20 min</td><td>$39.65</td><td>—</td></tr>
+        <tr><td>98XX7 <b>(NEW)</b></td><td>Mgmt (10–19 min/mo)</td><td>$29.00</td><td>—</td></tr>
+      </table>
+      <span style="font-size:0.96em;color:#74642a;">
+        <b>Note:</b> FQHC/RHC typical billing is via comparable general care management codes.
+      </span>
+    </div>
+    <div class="accordion-header active">2026 Rule Changes</div>
+    <div class="accordion-content active">
+      <div class="alert-box">
+        - New codes for short duration and partial month supply/management.<br>
+        - Payment rates for 98980/98981 increased (2026).
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- === CCM MODULE === -->
+<div class="module" id="ccm">
+  <div class="accordion">
+    <div class="accordion-header active">What is CCM?</div>
+    <div class="accordion-content active">
+      Chronic Care Management (CCM) supports patients with multiple chronic conditions requiring regular monitoring, medication management, and care coordination across providers. Services are structured and non-face-to-face with required documentation.
+    </div>
+    <div class="accordion-header active">Patient Eligibility</div>
+    <div class="accordion-content active">
+      - Medicare beneficiaries with at least 2 chronic conditions expected to last 12+ months<br>
+      - Significant risk of death, acute exacerbation, or functional decline<br>
+      - Comprehensive care plan documented and shared with the patient.
+    </div>
+    <div class="accordion-header active">Who May Bill?</div>
+    <div class="accordion-content active">
+      Physicians, NPs, PAs, and clinical staff under general supervision. Only one practitioner per patient per month. Staff time billed via “incident to.”
+    </div>
+    <div class="accordion-header active">Billing Structure</div>
+    <div class="accordion-content active">
+      - Monthly management (99490)<br>
+      - Complex CCM (99487, add-on 99489)<br>
+      - Add-ons for additional 20 min (99439)<br>
+      - Psychiatric Collaborative Care options also available.
+    </div>
+    <div class="accordion-header active">Workflow</div>
+    <div class="accordion-content active">
+      <div class="steps-row">
+        <div class="step-box">
+          <div class="step-number">1</div>
+          <div class="step-title">Enrollment</div>
+          <div class="step-desc">Patient identified, consent, care plan written</div>
+        </div>
+        <div class="step-box">
+          <div class="step-number">2</div>
+          <div class="step-title">Monthly Management</div>
+          <div class="step-desc">Non-face-to-face team follow-up, med refills/edits, status checks</div>
+        </div>
+        <div class="step-box">
+          <div class="step-number">3</div>
+          <div class="step-title">Care Plan Review/Escalation</div>
+          <div class="step-desc">Review progress, adjust plan, trigger in-person if needed</div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-header active">Codes & Payment</div>
+    <div class="accordion-content active">
+      <table>
+        <tr><th>CPT/HCPCS</th><th>Description</th><th>2026 Avg Payment (NF)</th><th>2026 Avg Payment (FQHC/RHC)</th></tr>
+        <tr><td>99490</td><td>CCM, 20 min staff</td><td>$63.42</td><td>—</td></tr>
+        <tr><td>99439</td><td>Addl. CCM, 20 min</td><td>$47.15</td><td>—</td></tr>
+        <tr><td>99487</td><td>Complex CCM, 60 min</td><td>$140.26</td><td>—</td></tr>
+        <tr><td>99489</td><td>Addl. complex CCM, 30 min</td><td>$70.86</td><td>—</td></tr>
+        <tr><td>99491</td><td>CCM by provider only, 30 min</td><td>$84.10</td><td>—</td></tr>
+      </table>
+      <span style="font-size:0.96em;color:#74642a;">
+        <b>Note:</b> FQHC/RHC care management typically billed under G0511.
+      </span>
+    </div>
+    <div class="accordion-header active">2026 Rule Changes</div>
+    <div class="accordion-content active">
+      <div class="alert-box">
+        - Increased payment for add-on codes.<br>
+        - No program changes for 2026, prior requirements remain.
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END CHUNK 2 -->
+<!-- === PCM MODULE === -->
+<div class="module" id="pcm">
+  <div class="accordion">
+    <div class="accordion-header active">What is PCM?</div>
+    <div class="accordion-content active">
+      Principal Care Management (PCM) is designed for Medicare patients with a single high-risk or complex chronic condition requiring monthly management. PCM codes support focused condition management and coordination.
+    </div>
+    <div class="accordion-header active">Patient Eligibility</div>
+    <div class="accordion-content active">
+      - Medicare beneficiaries with one high-risk chronic condition<br>
+      - Condition must be expected to last at least 3+ months and place the patient at risk of hospitalization or functional decline.
+    </div>
+    <div class="accordion-header active">Who May Bill?</div>
+    <div class="accordion-content active">
+      Physicians, NPs, PAs, and clinical staff (incident to). Only one PCM biller per patient per month.
+    </div>
+    <div class="accordion-header active">Billing Structure</div>
+    <div class="accordion-content active">
+      - Monthly base management by clinical staff or provider (99426)<br>
+      - Add-on code for each additional 30 min (99427)
+    </div>
+    <div class="accordion-header active">Workflow</div>
+    <div class="accordion-content active">
+      <div class="steps-row">
+        <div class="step-box">
+          <div class="step-number">1</div>
+          <div class="step-title">Assessment & Enrollment</div>
+          <div class="step-desc">Identify high-risk patient, document need, consent.</div>
+        </div>
+        <div class="step-box">
+          <div class="step-number">2</div>
+          <div class="step-title">Monthly PCM</div>
+          <div class="step-desc">Non-face-to-face interventions, med/symptom tracking, plan updates.</div>
+        </div>
+        <div class="step-box">
+          <div class="step-number">3</div>
+          <div class="step-title">Care Review</div>
+          <div class="step-desc">Escalate to CCM, RPM, or TCM as health status changes.</div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-header active">Codes & Payment</div>
+    <div class="accordion-content active">
+      <table>
+        <tr><th>CPT/HCPCS</th><th>Description</th><th>2026 Avg Payment (NF)</th><th>2026 Avg Payment (FQHC/RHC)</th></tr>
+        <tr><td>99426</td><td>PCM, 30 min staff</td><td>$67.65</td><td>—</td></tr>
+        <tr><td>99427</td><td>PCM Add-on, each addl. 30 min</td><td>$47.15</td><td>—</td></tr>
+      </table>
+      <span style="font-size:0.96em;color:#74642a;">
+        <b>Note:</b> FQHC/RHC PCM typically included in general care management code G0511.
+      </span>
+    </div>
+    <div class="accordion-header active">2026 Rule Changes</div>
+    <div class="accordion-content active">
+      <div class="alert-box">
+        - Payment increase for PCM main and add-on codes.<br>
+        - Single condition definition revised for 2026.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- === TCM MODULE === -->
+<div class="module" id="tcm">
+  <div class="accordion">
+    <div class="accordion-header active">What is TCM?</div>
+    <div class="accordion-content active">
+      Transitional Care Management (TCM) supports the transition of Medicare patients from hospital/institutional care back to community. TCM addresses medication reconciliation, follow-up visits, and coordination within 7–14 days post-discharge.
+    </div>
+    <div class="accordion-header active">Patient Eligibility</div>
+    <div class="accordion-content active">
+      - Medicare beneficiaries discharged from inpatient, observation, SNF, or partial hospitalization<br>
+      - Requires moderate or high medical decision complexity.
+    </div>
+    <div class="accordion-header active">Who May Bill?</div>
+    <div class="accordion-content active">
+      Physicians, NPs, PAs. Only one TCM episode per patient per discharge event, not concurrent with CCM/PCM the same month.
+    </div>
+    <div class="accordion-header active">Billing Structure</div>
+    <div class="accordion-content active">
+      - Single face-to-face visit within 7 (99496) or 14 (99495) days<br>
+      - Includes pre-visit outreach, med reconciliation, and ongoing review for 30 days after discharge
+    </div>
+    <div class="accordion-header active">Workflow</div>
+    <div class="accordion-content active">
+      <div class="steps-row">
+        <div class="step-box">
+          <div class="step-number">1</div>
+          <div class="step-title">Outreach/Discharge</div>
+          <div class="step-desc">Contact patient, review drug/med list.</div>
+        </div>
+        <div class="step-box">
+          <div class="step-number">2</div>
+          <div class="step-title">F2F Visit</div>
+          <div class="step-desc">Schedule, document visit within timeframe (7 or 14 days).</div>
+        </div>
+        <div class="step-box">
+          <div class="step-number">3</div>
+          <div class="step-title">Care Coordination</div>
+          <div class="step-desc">Monitor status, referrals, escalate as necessary.</div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-header active">Codes & Payment</div>
+    <div class="accordion-content active">
+      <table>
+        <tr><th>CPT/HCPCS</th><th>Description</th><th>2026 Avg Payment (NF)</th><th>2026 Avg Payment (FQHC/RHC)</th></tr>
+        <tr><td>99495</td><td>TCM w/ moderate complexity (F2F within 14 days)</td><td>$200.58</td><td>—</td></tr>
+        <tr><td>99496</td><td>TCM w/ high complexity (F2F within 7 days)</td><td>$265.36</td><td>—</td></tr>
+      </table>
+      <span style="font-size:0.96em;color:#74642a;">
+        <b>Note:</b> FQHC/RHC may use G0511, not TCM codes directly.
+      </span>
+    </div>
+    <div class="accordion-header active">2026 Rule Changes</div>
+    <div class="accordion-content active">
+      <div class="alert-box">
+        - No major changes to TCM codes for CY 2026.
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END CHUNK 3 -->
+<!-- === APCM MODULE === -->
+<div class="module" id="apcm">
+  <div class="accordion">
+    <div class="accordion-header active">What is APCM?</div>
+    <div class="accordion-content active">
+      Advanced Primary Care Management (APCM) covers coordinated, team-based longitudinal primary care for high-risk Medicare populations, supporting chronic disease, preventive services, and care transitions via enhanced codes and payment pathways under 2026 CMS final rule.
+    </div>
+    <div class="accordion-header active">Patient Eligibility</div>
+    <div class="accordion-content active">
+      - Medicare patients attributed to an advanced primary care management program<br>
+      - High risk or complex needs as defined by CMS<br>
+      - Comprehensive care plan and team-based follow-up required.
+    </div>
+    <div class="accordion-header active">Who May Bill?</div>
+    <div class="accordion-content active">
+      Primary care physicians, nurse practitioners, physician assistants, and team members meeting supervision requirement in APM/ACO framework. FQHC/RHC-specific “G” codes may be used for these services.
+    </div>
+    <div class="accordion-header active">Billing Structure</div>
+    <div class="accordion-content active">
+      - Monthly base payment (G0511 for FQHC/RHC)<br>
+      - Enhanced “G” codes for complex navigation and social determinant support (G0019, G0022, G0023, G0024, G0140, etc.)<br>
+      - Add-on codes for additional time/services per rules.
+    </div>
+    <div class="accordion-header active">Workflow</div>
+    <div class="accordion-content active">
+      <div class="steps-row">
+        <div class="step-box">
+          <div class="step-number">1</div>
+          <div class="step-title">Team Assignment</div>
+          <div class="step-desc">Patient assigned to care management team, risk stratified</div>
+        </div>
+        <div class="step-box">
+          <div class="step-number">2</div>
+          <div class="step-title">Monthly Engagement</div>
+          <div class="step-desc">Care plan development, outreach, ongoing team follow-up</div>
+        </div>
+        <div class="step-box">
+          <div class="step-number">3</div>
+          <div class="step-title">SDOH/Complex Needs</div>
+          <div class="step-desc">SDOH screening, peer navigation, interdisciplinary consults, escalation as indicated</div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-header active">Codes & Payment</div>
+    <div class="accordion-content active">
+      <table>
+        <tr><th>CPT/HCPCS</th><th>Description</th><th>2026 Avg Payment (NF)</th><th>2026 Avg Payment (FQHC/RHC)</th></tr>
+        <tr><td>G0019</td><td>Community health integration, 60 min SDOH</td><td>—</td><td>$63.16</td></tr>
+        <tr><td>G0022</td><td>Addl. Community health integration, 30 min</td><td>—</td><td>$32.08</td></tr>
+        <tr><td>G0023</td><td>PIN service, 60 min/mo</td><td>—</td><td>$63.16</td></tr>
+        <tr><td>G0024</td><td>PIN addl., 30 min/mo</td><td>—</td><td>$32.08</td></tr>
+        <tr><td>G0140</td><td>Peer support navigation, 60 min/mo</td><td>—</td><td>$73.84</td></tr>
+        <tr><td>G0511</td><td>General CM equivalent monthly comprehensive</td><td>—</td><td>$76.68</td></tr>
+      </table>
+      <span style="font-size:0.96em;color:#74642a;">
+        <b>Note:</b> Most APCM/FQHC codes are billed using G-codes as shown above, with rates set by rule for 2026.
+      </span>
+    </div>
+    <div class="accordion-header active">2026 Rule Changes</div>
+    <div class="accordion-content active">
+      <div class="alert-box">
+        - New social determinant and navigation “G” codes available for FQHC/RHC<br>
+        - Higher payments for peer navigation and SDOH support codes<br>
+        - Major APCM program expansion finalized for CY 2026.
+      </div>
+    </div>
+  </div>
+</div>
+<!-- === END MODULES === -->
+<script>
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      document.querySelectorAll('.module').forEach(m => m.classList.remove('active'));
+      const m = document.getElementById(tab.getAttribute('data-tab'));
+      if (m) m.classList.add('active');
+    });
+  });
+</script>
+</div>
+</body>
+</html>
+<!-- END CHUNK 4 -->
