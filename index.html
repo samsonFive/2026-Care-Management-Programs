@@ -52,6 +52,59 @@
       .steps-row .step-box:not(:last-child):after{display:none;}
       .tabs {flex-wrap:wrap;}
     }
+    /* Responsive Table Styling */
+@media (max-width: 950px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  thead tr {
+    display: none;
+  }
+  tr {
+    margin-bottom: 18px;
+    background: #f7f9fc;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(33,65,116,.07);
+    border: 1px solid #e6eef8;
+    padding: 10px 0;
+  }
+  td {
+    position: relative;
+    padding-left: 48% !important;
+    min-height: 36px;
+    border: none;
+    border-bottom: 1px solid #e1e8ee;
+    font-size: 1.01rem;
+    margin-bottom: 6px;
+    background: none;
+  }
+  td:before {
+    position: absolute;
+    left: 12px;
+    top: 10px;
+    width: 45%;
+    white-space: pre-wrap;
+    font-weight: 700;
+    color: #214174;
+    content: attr(data-label) ": ";
+  }
+}
+
+/* Ensure accordions, containers, and .steps-row adapt on small screens (already present, but confirm): */
+@media (max-width: 950px) {
+  .container { padding:12px; }
+  .steps-row { flex-direction:column; gap:14px; }
+  .steps-row .step-box:not(:last-child):after{ display:none; }
+  .tabs { flex-wrap:wrap; }
+}
+
   </style>
 </head>
 <body>
@@ -664,18 +717,18 @@
     <th>Potential Revenue per Patient</th>
   </tr>
   <tr>
-    <td>Full AWV for low-risk,<br>Dr signs off</td>
-    <td>Simple, cost-efficient, minimal provider workload</td>
-    <td>Missed care gaps, superficial, may feel transactional</td>
-    <td>High<br>(for basic compliance and throughput-focused clinics)</td>
-    <td>
+    <td data-label="Workflow Model">Full AWV for low-risk,<br>Dr signs off</td>
+    <td data-label="Pros">Simple, cost-efficient, minimal provider workload</td>
+    <td data-label="Cons">Missed care gaps, superficial, may feel transactional</td>
+    <td data-label="Feasibility">High<br>(for basic compliance and throughput-focused clinics)</td>
+    <td data-label="Workflow Steps">
       Identify eligible low-risk<br>
       Pre-visit HRA<br>
       Intake (staff)<br>
       Provider signs off<br>
       Document, bill
     </td>
-    <td>
+    <td data-label="Revenue Collection Steps & CPT Codes (2026 Avg)">
       G0438 (Initial): $175<br>
       G0439 (Subsequent): $125<br>
       <br>
@@ -684,14 +737,14 @@
       Provider review<br>
       Submit G0438 or G0439
     </td>
-    <td>$125–$175/year (per eligible patient)</td>
+    <td data-label="Potential Revenue per Patient">$125–$175/year (per eligible patient)</td>
   </tr>
   <tr>
-    <td>Med/high risk:<br>Pre-collect HRA/SDOH,<br>in-office engagement</td>
-    <td>Efficient, targets resources, quality impact</td>
-    <td>Needs staff training, triage/stratification complexity</td>
-    <td>High<br>(ideal for ACOs/value-based, team care)</td>
-    <td>
+    <td data-label="Workflow Model">Med/high risk:<br>Pre-collect HRA/SDOH,<br>in-office engagement</td>
+    <td data-label="Pros">Efficient, targets resources, quality impact</td>
+    <td data-label="Cons">Needs staff training, triage/stratification complexity</td>
+    <td data-label="Feasibility">High<br>(ideal for ACOs/value-based, team care)</td>
+    <td data-label="Workflow Steps">
       Stratify risk<br>
       Pre-collect HRA/SDOH<br>
       Triage by staff<br>
@@ -699,7 +752,7 @@
       Identify care gaps<br>
       Document, bill, enroll
     </td>
-    <td>
+    <td data-label="Revenue Collection Steps & CPT Codes (2026 Avg)">
       G0438/G0439: $125–$175<br>
       G0136 (SDOH): $19 (up to 2x/year)<br>
       99490 CCM (if eligible): $64/mo<br>
@@ -710,7 +763,7 @@
       Bill AWV (G043x), SDOH (G0136)<br>
       If eligible, enroll CCM/RPM, bill 99490/57 monthly
     </td>
-    <td>
+    <td data-label="Potential Revenue per Patient">
       AWV $125–$175<br>
       + SDOH up to $38<br>
       + CCM: $768/yr (if enrolled)<br>
@@ -719,11 +772,11 @@
     </td>
   </tr>
   <tr>
-    <td>Precollect &amp; schedule<br>all in-office AWV</td>
-    <td>Automated intake, scalable, reliable</td>
-    <td>Less personalized, needs reliable outreach/IT</td>
-    <td>Very high<br>(fits most modern practices)</td>
-    <td>
+    <td data-label="Workflow Model">Precollect &amp; schedule<br>all in-office AWV</td>
+    <td data-label="Pros">Automated intake, scalable, reliable</td>
+    <td data-label="Cons">Less personalized, needs reliable outreach/IT</td>
+    <td data-label="Feasibility">Very high<br>(fits most modern practices)</td>
+    <td data-label="Workflow Steps">
       Identify all eligibles<br>
       Outreach, HRA/SDOH forms<br>
       Staff review<br>
@@ -731,7 +784,7 @@
       Provider finalizes<br>
       Document, bill
     </td>
-    <td>
+    <td data-label="Revenue Collection Steps & CPT Codes (2026 Avg)">
       G0438/G0439: $125–$175<br>
       (Optional) G0136: $19<br>
       <br>
@@ -741,18 +794,18 @@
       Provider review/sign<br>
       Submit G043x (+G0136)
     </td>
-    <td>
+    <td data-label="Potential Revenue per Patient">
       AWV $125–$175<br>
       + SDOH $19<br>
       <strong>$144–$194/year</strong>
     </td>
   </tr>
   <tr>
-    <td>End-to-end AWV Mgmt<br>for all patients</td>
-    <td>Max revenue, closes all gaps, pop health impact</td>
-    <td>High overhead, IT/process intensive</td>
-    <td>High (best for large/group, enterprise, ACO)</td>
-    <td>
+    <td data-label="Workflow Model">End-to-end AWV Mgmt<br>for all patients</td>
+    <td data-label="Pros">Max revenue, closes all gaps, pop health impact</td>
+    <td data-label="Cons">High overhead, IT/process intensive</td>
+    <td data-label="Feasibility">High (best for large/group, enterprise, ACO)</td>
+    <td data-label="Workflow Steps">
       Outreach for all<br>
       Digital HRA &amp; SDOH<br>
       Prep, schedule<br>
@@ -760,7 +813,7 @@
       Document, bill, enroll additional programs<br>
       Track/close gaps
     </td>
-    <td>
+    <td data-label="Revenue Collection Steps & CPT Codes (2026 Avg)">
       G0438/G0439: $125–$175<br>
       G0136: $19 (up to 2x)<br>
       99490 CCM: $64/mo<br>
@@ -772,7 +825,7 @@
       Enroll CCM/RPM if eligible<br>
       Ongoing CM billing
     </td>
-    <td>
+    <td data-label="Potential Revenue per Patient">
       AWV $125–$175<br>
       SDOH to $38<br>
       CCM $768/yr<br>
