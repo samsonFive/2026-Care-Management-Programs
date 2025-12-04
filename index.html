@@ -130,6 +130,7 @@
       <button class="tab" data-tab="apcm">APCM</button>
       <button class="tab" data-tab="awv">AWV</button>
       <button class="tab" data-tab="sdoh">SDOH</button>
+      <button class="tab" data-tab="gdmt">GDMT</button>
     </div>
 
     <!-- === RPM MODULE === -->
@@ -911,6 +912,134 @@
         </div>
       </div>
     </div>
+
+    <!-- === GDMT MODULE === -->
+<div class="module" id="gdmt">
+  <div class="accordion">
+    <div class="accordion-header active">What is GDMT?</div>
+    <div class="accordion-content active">
+      Guideline-directed medical therapy (GDMT) for heart failure with reduced ejection fraction (HFrEF) is a structured, evidence-based medication regimen built on four foundational drug classes that reduce mortality, HF hospitalizations, and improve quality of life. It combines renin–angiotensin system inhibition (ACEI/ARB/ARNI), evidence-based beta-blockers, mineralocorticoid receptor antagonists (MRA), and SGLT2 inhibitors, titrated to guideline doses whenever possible.
+    </div>
+
+    <div class="accordion-header active">Patient Eligibility</div>
+    <div class="accordion-content active">
+      - Symptomatic HFrEF (LVEF ≤ 40%) without contraindications to core drug classes.<br>
+      - Often extended to high-risk HF patients with recent decompensation, incomplete GDMT, or poor adherence.<br>
+      - HFmrEF/HFpEF patients may benefit from selected components (especially SGLT2 inhibitors) based on guideline and local protocol.<br>
+      - Ideal candidates for a GDMT Enablement Program are those with recurrent hospitalizations, complex regimens, or difficulty maintaining adherence.
+    </div>
+
+    <div class="accordion-header active">Who May Manage?</div>
+    <div class="accordion-content active">
+      GDMT initiation and titration are typically led by cardiologists, HF specialists, or primary care clinicians, often supported by clinical pharmacists and advanced practice providers. Remote/digital optimization programs use nurse care managers and HF titration teams who review RPM data and adherence signals, then escalate dose changes and medication adjustments to prescribing clinicians within protocol-driven pathways.
+    </div>
+
+    <div class="accordion-header active">Clinical Components</div>
+    <div class="accordion-content active">
+      - Confirm HF phenotype and EF; review current medications and contraindications.<br>
+      - Initiate or optimize each GDMT “pillar”: ACEI/ARB/ARNI, beta-blocker, MRA, SGLT2 inhibitor, plus diuretic strategy and other indicated therapies (e.g., hydralazine/isosorbide in select patients).<br>
+      - Monitor vitals (BP, HR), weight, renal function, electrolytes, and symptoms for tolerance and decompensation.<br>
+      - Use titration schedules and protocolized pathways to reach target or maximally tolerated doses over several weeks to months.
+    </div>
+
+    <div class="accordion-header active">Devices & RPM Integration</div>
+    <div class="accordion-content active">
+      LucidAct’s GDMT Enablement Program leverages a connected device kit for HF patients, typically including:<br><br>
+      - Blood pressure monitor (for safe up-titration of vasodilators and beta-blockers).<br>
+      - Weight scale (for volume status and early HF decompensation signals).<br>
+      - Pulse oximeter (for oxygenation and symptom assessment).<br>
+      - Smart pillbox (for real-time adherence monitoring and reminders).<br><br>
+      Daily device data feeds RPM dashboards and predictive alerts so care teams can identify emerging issues (weight/BP shifts, missed doses, worsening symptoms) and intervene early.
+    </div>
+
+    <div class="accordion-header active">Key Benefits</div>
+    <div class="accordion-content active">
+      <b>Clinical Outcomes</b><br>
+      - Higher rates of complete GDMT implementation and titration to guideline doses.<br>
+      - Fewer HF-related hospitalizations and ED visits; improved survival and functional status.<br>
+      - Earlier detection of decompensation through weight/BP/symptom trends.<br><br>
+      <b>Operational Efficiency</b><br>
+      - Daily data streams and actionable alerts focus staff on patients with real risk signals.<br>
+      - Integrated documentation and templated titration visits reduce manual charting.<br>
+      - Epic/Redox integration enables two-way data exchange and minimizes double entry.<br><br>
+      <b>Financial Impact</b><br>
+      - Reduced total cost of care and readmission penalties for value-based contracts.<br>
+      - Incremental fee-for-service revenue via RPM, CCM, and associated care management codes.<br>
+      - Improved performance on HF quality metrics tied to medication use and outcomes.
+    </div>
+
+    <div class="accordion-header active">Why Patient Engagement Matters</div>
+    <div class="accordion-content active">
+      GDMT success depends on consistent medication taking, lifestyle changes, and rapid reporting of symptoms. LucidAct strengthens engagement by combining:<br><br>
+      - Daily monitoring prompts and symptom check-ins.<br>
+      - Smart pillbox reminders and adherence tracking.<br>
+      - Rapid nurse follow-up on alerts and missed doses.<br>
+      - Two-way messaging and focused patient education on HF and GDMT benefits.<br><br>
+      Engagement → Adherence → Fewer hospitalizations → Better outcomes.
+    </div>
+
+    <div class="accordion-header active">Example GDMT Workflow</div>
+    <div class="accordion-content active">
+      - Identify eligible HFrEF patients using EHR/claims (EF, diagnosis codes, recent HF admissions, incomplete GDMT).<br>
+      - Enroll into the GDMT Enablement Program and ship connected device kit (BP, scale, pulse ox, smart pillbox).<br>
+      - Complete baseline intake: medication reconciliation, GDMT checklist, SDOH and adherence barriers assessment.<br>
+      - Initiate or adjust GDMT according to protocol (tele-visit or in-person), supported by RPM data for safety.<br>
+      - Use scheduled titration visits plus remote reviews to up-titrate toward guideline doses over several weeks.<br>
+      - Ongoing: monitor vitals, symptoms, adherence signals; generate alerts and outreach tasks for concerning trends.<br>
+      - Produce regular analytics on GDMT adoption, titration status, and HF utilization (hospitalizations, ED visits).
+    </div>
+
+    <div class="accordion-header active">LucidAct Workflow</div>
+    <div class="accordion-content workflow-content active">
+      <p><strong>Platform Integration & Roadmap</strong></p>
+      <p>Within LucidAct, GDMT can be configured as a disease-specific HF program layered on top of RPM and CCM modules.</p>
+
+      <!-- Reference pattern from RPM workflow comments:
+           1) Add links to Notion/Figma/specs
+           2) Embed diagrams or screenshots
+           3) (Optional) Embed interactive boards
+           4) Use this area as a running checklist/roadmap
+      -->
+
+      <!-- Example link placeholders (replace with real URLs) -->
+      <!--
+      <p>
+        <a href="https://notion.so/your-gdmt-spec" target="_blank">
+          → GDMT Product Spec (Notion)
+        </a>
+      </p>
+      <p>
+        <a href="https://figma.com/file/your-gdmt-design" target="_blank">
+          → GDMT Titration UX Flows (Figma)
+        </a>
+      </p>
+      -->
+
+      <!-- Example diagram embed (replace src with your hosted image URL) -->
+      <!--
+      <img src="https://your-cdn.com/gdmt-workflow-v1.png" alt="GDMT Workflow Diagram">
+      -->
+
+      <!-- Optional: embed Figma / whiteboard -->
+      <!--
+      <iframe
+        src="https://www.figma.com/embed?embed_host=share&url=YOUR_FIGMA_EMBED_URL"
+        width="100%"
+        height="450"
+        frameborder="0">
+      </iframe>
+      -->
+
+      <ul>
+        <li>Define HF/GDMT patient cohort logic and EHR integration points.</li>
+        <li>Design titration visit templates and GDMT checklist screens for clinicians.</li>
+        <li>Align alert rules and escalation pathways (BP/weight/symptom thresholds) with HF teams.</li>
+        <li>Configure billing workflows to pair GDMT optimization with RPM/CCM where appropriate.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
 
     <script>
       document.querySelectorAll('.tab').forEach(tab => {
