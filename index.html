@@ -1978,7 +1978,7 @@
   <img id="lightbox-img" src="" alt="">
 </div>
 
- <script>
+<script>
   // Keep chat history in the browser
   let chatHistory = [];
 
@@ -2050,13 +2050,13 @@
         addMessage(
           'bot',
           "Hi, I'm your LucidAct Care Management Assistant.\n" +
-          "Johnny trained me on the CMS documentation for CY2026 -Ask me about care management programs, codes, workflows, or how to keep designs compliant."
+          "Ask me about care management programs, codes, workflows, or how to keep designs compliant."
         );
       }
     });
 
     // Render messages with simple formatting for bot
-        function addMessage(role, text, options = {}) {
+    function addMessage(role, text, options = {}) {
       const div = document.createElement('div');
       div.className = 'chat-msg ' + role;
       if (options.id) div.dataset.id = options.id;
@@ -2098,13 +2098,7 @@
       return div;
     }
 
-
-      div.appendChild(span);
-      msgs.appendChild(div);
-      msgs.scrollTop = msgs.scrollHeight;
-    }
-
-    // Handle send with conversation history
+    // Handle send with conversation history + typing indicator
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const text = input.value.trim();
@@ -2115,7 +2109,7 @@
 
       chatHistory.push({ role: 'user', content: text });
 
-      // Add typing indicator
+      // Typing indicator
       const typingDiv = addMessage('bot', '', { raw: true });
       typingDiv.classList.add('typing');
 
@@ -2139,7 +2133,6 @@
         const data = await res.json();
         const reply = data.reply || 'Sorry, I could not generate a response.';
 
-        // Replace typing indicator with real message
         typingDiv.remove();
         addMessage('bot', reply);
         chatHistory.push({ role: 'assistant', content: reply });
@@ -2152,7 +2145,6 @@
   });
 </script>
 
-
 <!-- Chatbot UI -->
 <div id="chatbot-toggle">Chat</div>
 <div id="chatbot-panel">
@@ -2162,20 +2154,14 @@
   <div id="chatbot-messages"></div>
   <form id="chatbot-form">
     <textarea id="chatbot-input"
-          rows="2"
-          placeholder="Hi Grace, Johnny trained me on all of the latest CMS documentation, as well as other reputable sources so you can ask me anything about programs, codes, workflows..."></textarea>
+              rows="2"
+              placeholder="Hi Grace, Johnny trained me on all of the latest CMS documentation, as well as other reputable sources so you can ask me anything about programs, codes, workflows..."></textarea>
     <button type="submit">Send</button>
   </form>
 </div>
 
 </body>
 </html>
-
-
-
-
-
-
 
 
 
