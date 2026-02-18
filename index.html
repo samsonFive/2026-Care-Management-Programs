@@ -245,6 +245,10 @@
   border: none;
   padding: 8px 10px;
   font-size: 0.95rem;
+  resize: none;        /* prevent manual drag if you want */
+  line-height: 1.3;
+  max-height: 120px;   /* prevents it from taking over panel */
+  overflow-y: auto;
 }
 #chatbot-input:focus { outline: none; }
 #chatbot-form button {
@@ -1957,7 +1961,10 @@
   <img id="lightbox-img" src="" alt="">
 </div>
 
-  <script>
+ <script>
+  // Keep chat history in the browser
+  let chatHistory = [];
+
   // Run all wiring after DOM is ready
   window.addEventListener('DOMContentLoaded', () => {
     // Tabs
@@ -2017,28 +2024,27 @@
 
     panel.style.display = 'none';
 
-        toggle.addEventListener('click', () => {
+    // Open/close panel + welcome message
+    toggle.addEventListener('click', () => {
       const isOpen = panel.style.display === 'flex';
       panel.style.display = isOpen ? 'none' : 'flex';
 
-      // If opening and no messages yet, show welcome
       if (!isOpen && !msgs.hasChildNodes()) {
         addMessage(
           'bot',
-          "Hi, I'm your LucidAct Care Management Assistant. " +
+          "Hi, I'm your LucidAct Care Management Assistant.\n" +
           "Ask me about care management programs, codes, workflows, or how to keep designs compliant."
         );
       }
     });
 
-
-        function addMessage(role, text) {
+    // Render messages with simple formatting for bot
+    function addMessage(role, text) {
       const div = document.createElement('div');
       div.className = 'chat-msg ' + role;
       const span = document.createElement('span');
 
       if (role === 'bot') {
-        // Simple formatting: convert newlines to <br> and "- " lines to bullets
         const lines = text.split('\n').map(l => l.trim());
         const ul = document.createElement('ul');
         let hasBullets = false;
@@ -2053,7 +2059,6 @@
         });
 
         if (hasBullets) {
-          // Paragraph for intro text before first bullet
           const firstNonBullet = lines.find(l => l && !l.startsWith('- '));
           if (firstNonBullet) {
             const p = document.createElement('p');
@@ -2062,7 +2067,6 @@
           }
           span.appendChild(ul);
         } else {
-          // Just respect line breaks
           span.innerHTML = lines.join('<br>');
         }
       } else {
@@ -2074,7 +2078,7 @@
       msgs.scrollTop = msgs.scrollHeight;
     }
 
-
+    // Handle send with conversation history
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const text = input.value.trim();
@@ -2083,11 +2087,16 @@
       addMessage('user', text);
       input.value = '';
 
+      chatHistory.push({ role: 'user', content: text });
+
       try {
         const res = await fetch('http://localhost:3000/api/chat', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ message: text })
+          body: JSON.stringify({
+            message: text,
+            history: chatHistory
+          })
         });
 
         if (!res.ok) {
@@ -2097,7 +2106,10 @@
         }
 
         const data = await res.json();
-        addMessage('bot', data.reply || 'Sorry, I could not generate a response.');
+        const reply = data.reply || 'Sorry, I could not generate a response.';
+
+        addMessage('bot', reply);
+        chatHistory.push({ role: 'assistant', content: reply });
       } catch (err) {
         console.error('Fetch error:', err);
         addMessage('bot', 'Error contacting assistant.');
@@ -2105,6 +2117,7 @@
     });
   });
 </script>
+
 
 <!-- Chatbot UI -->
 <div id="chatbot-toggle">Chat</div>
@@ -2114,14 +2127,16 @@
   </div>
   <div id="chatbot-messages"></div>
   <form id="chatbot-form">
-    <input id="chatbot-input" type="text"
-           placeholder="Hi Grace, Johnny trained me on all of the latest CMS documentation, as well as other reputable sources so you can ask me anything about programs, codes, workflows..." autocomplete="off">
+    <textarea id="chatbot-input"
+          rows="2"
+          placeholder="Hi Grace, Johnny trained me on all of the latest CMS documentation, as well as other reputable sources so you can ask me anything about programs, codes, workflows..."></textarea>
     <button type="submit">Send</button>
   </form>
 </div>
 
 </body>
 </html>
+
 
 
 
