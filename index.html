@@ -4,107 +4,168 @@
   <meta charset="UTF-8">
   <title>2026 CMS Care Management Selector</title>
   <style>
-    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f9fafc; color: #26334d; margin: 0; }
-    .container { max-width: 1150px; margin: 40px auto; box-shadow: 0 3px 16px rgba(0,0,0,0.06); background: #fff; border-radius: 15px; padding: 36px 36px 44px 36px; }
-    .header-flex { display: flex; align-items: center; border-bottom: 1px solid #e1e8ee; padding-bottom: 12px; margin-bottom: 26px;}
-    .logo-block { flex-shrink: 0; }
-    .logo-block img { height: 54px; margin-right: 22px; }
-    .header-title-block { }
-    h1 { font-size: 2.18rem; color: #214174; margin: 0 0 0.2em 0; letter-spacing: -1.6px;}
-    .desc { font-size: 1.13rem; color: #476295; margin-bottom: 20px; line-height: 1.53; max-width: 720px;}
-    .tabs { display: flex; gap: 18px; margin-bottom: 19px; margin-top: 8px; flex-wrap: wrap;}
-    .tab { background: #eef2fd; border-radius: 22px; padding: 10px 28px; font-size: 1.07rem; color: #214174; cursor: pointer; border: none; outline: none; letter-spacing: 1px; font-weight: 500;}
-    .tab.active { background: #214174; color: #fff; font-weight: 600; box-shadow: 0 2px 10px rgba(33,65,116,0.09);}
-    .module { display: none; }
-    .module.active { display: block; }
-    .accordion { margin-bottom: 19px; border-radius: 9px; border: 1px solid #e1e8ee; background: #f7f9fc;}
-    .accordion-header { padding: 14px 22px; font-size: 1.11rem; font-weight: 600; background: #e6eef8; color: #234174; border-top:1px solid #e1e8ee;}
-    .accordion-header:first-child {border-top: none;}
-    .accordion-header.active {background:#214174;color:#fff;}
-    .accordion-content {padding: 13px 24px 21px 24px; font-size: 1.01rem; color: #26334d; background: #f7f9fc; display: block;}
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f9fafc; color: #26334d; margin: 0; }
+  .container { max-width: 1150px; margin: 40px auto; box-shadow: 0 3px 16px rgba(0,0,0,0.06); background: #fff; border-radius: 15px; padding: 36px 36px 44px 36px; }
+  .header-flex { display: flex; align-items: center; border-bottom: 1px solid #e1e8ee; padding-bottom: 12px; margin-bottom: 26px;}
+  .logo-block { flex-shrink: 0; }
+  .logo-block img { height: 54px; margin-right: 22px; }
+  .header-title-block { }
+  h1 { font-size: 2.18rem; color: #214174; margin: 0 0 0.2em 0; letter-spacing: -1.6px;}
+  .desc { font-size: 1.13rem; color: #476295; margin-bottom: 20px; line-height: 1.53; max-width: 720px;}
 
-    /* LucidAct Workflow styling */
-    .accordion-header.lucidact-workflow { background: #d4e8f0; color: #0d4a6b; border-top: 2px solid #0d4a6b; font-weight: 700; }
-    .accordion-header.lucidact-workflow.active { background: #0d4a6b; color: #fff; }
-    .workflow-content { padding: 20px 24px; background: #f0f7fa; border-left: 4px solid #0d4a6b; }
-    .workflow-content img { max-width: 100%; height: auto; border-radius: 8px; margin: 12px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-    .workflow-content a { color: #0d4a6b; font-weight: 600; text-decoration: underline; }
-    .workflow-content a:hover { color: #214174; }
+  .tabs { display: flex; gap: 18px; margin-bottom: 19px; margin-top: 8px; flex-wrap: wrap;}
+  .tab { background: #eef2fd; border-radius: 22px; padding: 10px 28px; font-size: 1.07rem; color: #214174; cursor: pointer; border: none; outline: none; letter-spacing: 1px; font-weight: 500;}
+  .tab.active { background: #214174; color: #fff; font-weight: 600; box-shadow: 0 2px 10px rgba(33,65,116,0.09);}
 
-    /* Workflow Steps */
-    .steps-row { margin: 16px 0 16px 0; display:flex;align-items:flex-end;justify-content:space-between;}
-    .step-box { flex:1; background: #ddf0df; border-radius: 8px; margin: 0 7px; min-width: 166px; box-shadow: 0 1px 5px #e8f2ea; border:2px solid #60ae82; padding: 16px 8px 14px 8px; position:relative; }
-    .step-number { font-size: 1.39rem; font-weight: 600; color: #218267; background: #fff; width: 36px; height: 36px; border-radius: 32px; position: absolute; left: 12px; top: -18px; border: 2px solid #60ae82; display: flex; align-items:center; justify-content: center;}
-    .step-title { margin: 0 0 4px 0; font-weight: 600; color: #218267; font-size: 1.07rem;}
-    .step-desc { font-size: 0.97rem; color: #35564b; margin-left:44px;}
-    .steps-row .step-box:not(:last-child):after {
-      content: '';position: absolute;right: -13px;top: 45%;height: 5px;width: 27px;background: #b3dbc5;border-radius:5px;z-index:2;
-    }
+  .module { display: none; }
+  .module.active { display: block; }
 
-    table {border-collapse: collapse;margin: 12px 0 16px 0;width: 99%;font-size: 0.99rem;}
-    th, td {padding: 10px 8px; border-bottom: 1px solid #e1e8ee;text-align: left;vertical-align: top;}
-    th {background: #e6eef8;color: #234174;font-weight: 700;}
-    .alert-box {background: #ffeeba;color: #724300;padding: 14px 20px;border-radius: 7px;font-size: 0.99rem;margin: 14px 0 6px 0;border: 1.5px solid #fff3cd;}
+  .accordion { margin-bottom: 19px; border-radius: 9px; border: 1px solid #e1e8ee; background: #f7f9fc;}
+  .accordion-header { padding: 14px 22px; font-size: 1.11rem; font-weight: 600; background: #e6eef8; color: #234174; border-top:1px solid #e1e8ee;}
+  .accordion-header:first-child {border-top: none;}
+  .accordion-header.active {background:#214174;color:#fff;}
+  .accordion-content {padding: 13px 24px 21px 24px; font-size: 1.01rem; color: #26334d; background: #f7f9fc; display: block;}
 
-    @media (max-width: 950px) {
-      .container {padding:12px;}
-      .steps-row {flex-direction:column;gap:14px;}
-      .steps-row .step-box:not(:last-child):after{display:none;}
-      .tabs {flex-wrap:wrap;}
-    }
-    /* Responsive Table Styling */
-@media (max-width: 950px) {
-  table,
-  thead,
-  tbody,
-  th,
-  td,
-  tr {
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  thead tr {
-    display: none;
-  }
-  tr {
-    margin-bottom: 18px;
-    background: #f7f9fc;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(33,65,116,.07);
-    border: 1px solid #e6eef8;
-    padding: 10px 0;
-  }
-  td {
-    position: relative;
-    padding-left: 48% !important;
-    min-height: 36px;
-    border: none;
-    border-bottom: 1px solid #e1e8ee;
-    font-size: 1.01rem;
-    margin-bottom: 6px;
-    background: none;
-  }
-  td:before {
-    position: absolute;
-    left: 12px;
-    top: 10px;
-    width: 45%;
-    white-space: pre-wrap;
+  /* LucidAct Workflow styling */
+  .accordion-header.lucidact-workflow {
+    background: #d4e8f0;
+    color: #0d4a6b;
+    border-top: 2px solid #0d4a6b;
     font-weight: 700;
-    color: #214174;
-    content: attr(data-label) ": ";
   }
+  .accordion-header.lucidact-workflow.active { background: #0d4a6b; color: #fff; }
+  .workflow-content { padding: 20px 24px; background: #f0f7fa; border-left: 4px solid #0d4a6b; }
+
+  /* Centered, responsive images */
+  .accordion-content img,
+  .workflow-content img {
+    display: block;
+    max-width: 100%;    /* never wider than the content column */
+    height: auto;       /* keep aspect ratio */
+    margin: 16px auto;  /* center horizontally, add vertical spacing */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  .workflow-content a { color: #0d4a6b; font-weight: 600; text-decoration: underline; }
+  .workflow-content a:hover { color: #214174; }
+
+  /* Workflow Steps */
+  .steps-row { margin: 16px 0 16px 0; display:flex;align-items:flex-end;justify-content:space-between;}
+  .step-box { flex:1; background: #ddf0df; border-radius: 8px; margin: 0 7px; min-width: 166px; box-shadow: 0 1px 5px #e8f2ea; border:2px solid #60ae82; padding: 16px 8px 14px 8px; position:relative; }
+  .step-number { font-size: 1.39rem; font-weight: 600; color: #218267; background: #fff; width: 36px; height: 36px; border-radius: 32px; position: absolute; left: 12px; top: -18px; border: 2px solid #60ae82; display: flex; align-items:center; justify-content: center;}
+  .step-title { margin: 0 0 4px 0; font-weight: 600; color: #218267; font-size: 1.07rem;}
+  .step-desc { font-size: 0.97rem; color: #35564b; margin-left:44px;}
+  .steps-row .step-box:not(:last-child):after {
+    content: '';
+    position: absolute;
+    right: -13px;
+    top: 45%;
+    height: 5px;
+    width: 27px;
+    background: #b3dbc5;
+    border-radius:5px;
+    z-index:2;
+  }
+
+  table {border-collapse: collapse;margin: 12px 0 16px 0;width: 99%;font-size: 0.99rem;}
+  th, td {padding: 10px 8px; border-bottom: 1px solid #e1e8ee;text-align: left;vertical-align: top;}
+  th {background: #e6eef8;color: #234174;font-weight: 700;}
+
+  .alert-box {background: #ffeeba;color: #724300;padding: 14px 20px;border-radius: 7px;font-size: 0.99rem;margin: 14px 0 6px 0;border: 1.5px solid #fff3cd;}
+
+  @media (max-width: 950px) {
+    .container {padding:12px;}
+    .steps-row {flex-direction:column;gap:14px;}
+    .steps-row .step-box:not(:last-child):after{display:none;}
+    .tabs {flex-wrap:wrap;}
+  }
+
+  /* Responsive Table Styling */
+  @media (max-width: 950px) {
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    thead tr {
+      display: none;
+    }
+    tr {
+      margin-bottom: 18px;
+      background: #f7f9fc;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(33,65,116,.07);
+      border: 1px solid #e6eef8;
+      padding: 10px 0;
+    }
+    td {
+      position: relative;
+      padding-left: 48% !important;
+      min-height: 36px;
+      border: none;
+      border-bottom: 1px solid #e1e8ee;
+      font-size: 1.01rem;
+      margin-bottom: 6px;
+      background: none;
+    }
+    td:before {
+      position: absolute;
+      left: 12px;
+      top: 10px;
+      width: 45%;
+      white-space: pre-wrap;
+      font-weight: 700;
+      color: #214174;
+      content: attr(data-label) ": ";
+    }
+  }
+
+  /* Ensure accordions, containers, and .steps-row adapt on small screens */
+  @media (max-width: 950px) {
+    .container { padding:12px; }
+    .steps-row { flex-direction:column; gap:14px; }
+    .steps-row .step-box:not(:last-child):after{ display:none; }
+    .tabs { flex-wrap:wrap; }
+  }
+    /* Lightbox overlay for zoomed images */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.lightbox-overlay img {
+  max-width: 95vw;
+  max-height: 95vh;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+.lightbox-overlay.active {
+  display: flex;
+}
+.lightbox-overlay-close {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  color: #fff;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+.zoomable {
+  cursor: zoom-in;
 }
 
-/* Ensure accordions, containers, and .steps-row adapt on small screens */
-@media (max-width: 950px) {
-  .container { padding:12px; }
-  .steps-row { flex-direction:column; gap:14px; }
-  .steps-row .step-box:not(:last-child):after{ display:none; }
-  .tabs { flex-wrap:wrap; }
-}
-  </style>
+</style>
+
 </head>
 <body>
   <div class="container">
@@ -1676,7 +1737,8 @@
             what they pay, who can bill, and which validated tools and assessments are required.
           </p>
           <img src="Generated Image February 17, 2026 - 10_18AM.jpeg"
-               alt="2026 integrated behavioral health payment and service models" />
+               alt="2026 integrated behavioral health payment and service models" 
+            class="zoomable"/>
         </div>
 
         <div class="accordion-header active" id="ops-stacking">Program Stacking &amp; Overlap Rules</div>
@@ -1688,7 +1750,8 @@
             exclusions are enforced.
           </p>
           <img src="Generated Image February 17, 2026 - 5_24PM.jpeg"
-               alt="Matrix of which care management programs can be billed together" />
+               alt="Matrix of which care management programs can be billed together" 
+            class="zoomable"/>
         </div>
 
         <div class="accordion-header active" id="ops-revenue">Revenue Stacking Examples</div>
@@ -1698,7 +1761,8 @@
             scenarios: complex primary care patient, multi-morbid patient, and single high-risk condition patient.
           </p>
           <img src="Generated Image February 17, 2026 - 5_29PM.jpeg"
-               alt="Revenue stacking waterfalls for three patient scenarios" />
+               alt="Revenue stacking waterfalls for three patient scenarios"
+            class="zoomable"/>
         </div>
 
         <div class="accordion-header active" id="ops-decision">Program Selection Decision Guide</div>
@@ -1710,7 +1774,8 @@
             on clinical need and team capacity.
           </p>
           <img src="Generated Image February 17, 2026 - 5_30PM.jpeg"
-               alt="Decision tree for selecting care management programs" />
+               alt="Decision tree for selecting care management programs" 
+            class="zoomable"/>
         </div>
 
         <div class="accordion-header active" id="ops-bhi-levels">Choosing Between BHI and CoCM</div>
@@ -1722,7 +1787,8 @@
             behavioral health conditions.
           </p>
           <img src="Generated Image February 17, 2026 - 5_33PM.jpeg"
-               alt="Side-by-side comparison of BHI and CoCM" />
+               alt="Side-by-side comparison of BHI and CoCM" 
+            class="zoomable"/>
         </div>
 
         <div class="accordion-header active" id="ops-continuation">Continuation Standards: BHI &amp; CoCM</div>
@@ -1734,7 +1800,8 @@
             remain necessary.
           </p>
           <img src="Generated Image February 17, 2026 - 5_37PM.jpeg"
-               alt="Traffic light continuation standards for BHI and CoCM" />
+               alt="Traffic light continuation standards for BHI and CoCM" 
+            class="zoomable"/>
         </div>
 
         <div class="accordion-header active" id="ops-archetypes">Patient Archetypes &amp; Optimal Program Mix</div>
@@ -1745,7 +1812,8 @@
             needs (CCM regular + RPM + BHI), and severe BH needs (complex CCM + RPM + CoCM).
           </p>
           <img src="Generated Image February 17, 2026 - 5_40PM.jpeg"
-               alt="Patient archetype grid with optimal program combinations and revenue breakdowns" />
+               alt="Patient archetype grid with optimal program combinations and revenue breakdowns"
+            class="zoomable"/>
         </div>
 
         <div class="accordion-header active" id="ops-team">Team Requirements by Program</div>
@@ -1758,7 +1826,8 @@
             BH care manager, psychiatric consultant).
           </p>
           <img src="Generated Image February 17, 2026 - 5_32PM.jpeg"
-               alt="Team requirements for each care management program" />
+               alt="Team requirements for each care management program"
+            class="zoomable"/>
         </div>
 
         <div class="accordion-header active" id="ops-ccm">CCM Service Levels: Regular vs Complex</div>
@@ -1770,7 +1839,8 @@
             needs.
           </p>
           <img src="Generated Image February 17, 2026 - 5_35PM.jpeg"
-               alt="Regular versus Complex CCM comparison" />
+               alt="Regular versus Complex CCM comparison" 
+                class="zoomable"/>
         </div>
 
         <div class="accordion-header lucidact-workflow active" id="ops-summary">LucidAct Workflow &amp; Playbook Summary</div>
@@ -1790,6 +1860,10 @@
 
 
   </div>
+<div id="lightbox" class="lightbox-overlay">
+  <span class="lightbox-overlay-close">&times;</span>
+  <img id="lightbox-img" src="" alt="">
+</div>
 
   <script>
     const tabs = document.querySelectorAll('.tab');
@@ -1805,9 +1879,36 @@
         if (target) target.classList.add('active');
       });
     });
+      // Lightbox for zoomable images
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxClose = document.querySelector('.lightbox-overlay-close');
+
+  document.addEventListener('click', (e) => {
+    const img = e.target.closest('img.zoomable');
+    if (img) {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt || '';
+      lightbox.classList.add('active');
+    }
+  });
+
+  lightboxClose.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+    lightboxImg.src = '';
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      lightbox.classList.remove('active');
+      lightboxImg.src = '';
+    }
+  });
+
   </script>
 </body>
 </html>
+
 
 
 
