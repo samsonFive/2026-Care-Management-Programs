@@ -52,10 +52,12 @@
 
   /* Workflow Steps */
   .steps-row { margin: 16px 0 16px 0; display:flex;align-items:flex-end;justify-content:space-between;}
-  .step-box { flex:1; background: #ddf0df; border-radius: 8px; margin: 0 7px; min-width: 166px; box-shadow: 0 1px 5px #e8f2ea; border:2px solid #60ae82; padding: 16px 8px 14px 8px; position:relative; }
+  .step-box { flex:1; background: #ddf0df; border-radius: 8px; margin: 0 7px; min-width: 166px; box-shadow: 0 1px 5px #e8f2ea; border:2px solid #60ae82; padding: 28px 12px 14px 12px; position:relative; }
   .step-number { font-size: 1.39rem; font-weight: 600; color: #218267; background: #fff; width: 36px; height: 36px; border-radius: 32px; position: absolute; left: 12px; top: -18px; border: 2px solid #60ae82; display: flex; align-items:center; justify-content: center;}
-  .step-title { margin: 0 0 4px 0; font-weight: 600; color: #218267; font-size: 1.07rem;}
-  .step-desc { font-size: 0.97rem; color: #35564b; margin-left:44px;}
+  .step-title { margin: 0 0 4px 0; font-weight: 600; color: #218267; font-size: 1.07rem; text-align: center;}
+  .step-desc { font-size: 0.97rem; color: #35564b; margin-left: 0; margin-top: 6px; }
+  .step-desc ul { margin: 0; padding-left: 16px; list-style: disc; }
+  .step-desc ul li { margin-bottom: 3px; line-height: 1.4; }
   .steps-row .step-box:not(:last-child):after {
     content: '';
     position: absolute;
@@ -289,7 +291,7 @@
       <div class="header-title-block">
         <h1>2026 CMS Care Management Program Selector</h1>
         <div class="desc">
-          Care Management programs let teams bill Medicare for structured coordination and ongoing support for patients with chronic or acute needs. These codes support remote monitoring, behavioral health management, transition support, and primary care under the CY 2026 Physician Fee Schedule.
+          Medicare pays for structured care management beyond the visit. This tool maps each program, who qualifies, who bills, what it pays, and how LucidAct operationalizes it—under the CY 2026 Physician Fee Schedule.
         </div>
       </div>
     </div>
@@ -315,26 +317,21 @@
     <div class="accordion-header active">CY 2026 Care Management Overview</div>
     <div class="accordion-content active">
       <p>
-        Beginning January 1, 2026, Medicare finalized a broad set of updates to care‑management and remote‑care services under the Physician Fee Schedule (PFS).
-        Time‑based care‑management codes—including RPM, RTM, CCM, behavioral health integration (BHI/CoCM), and related G‑codes—are protected as <em>designated care‑management</em> services and are exempt from the new “efficiency adjustment” that reduces work RVUs for many non‑time‑based E/M services.
-        This helps preserve longitudinal care‑management revenue even as some E/M payments face downward pressure.
+        Effective January 1, 2026, CMS protected all time-based care management codes—RPM, RTM, CCM, BHI/CoCM, and related G-codes—as <em>designated care-management services</em>, exempting them from the new “efficiency adjustment” that cuts work RVUs on many E/M codes. Care management revenue holds while some visit-based payments decline.
         See the
         <a href="https://www.cms.gov/newsroom/fact-sheets/calendar-year-cy-2026-medicare-physician-fee-schedule-final-rule-cms-1832-f" target="_blank" rel="noopener noreferrer">CMS CY 2026 PFS Fact Sheet</a>
         and the
         <a href="https://www.ama-assn.org/practice-management/medicare-medicaid/what-expect-2026-medicare-physician-fee-schedule" target="_blank" rel="noopener noreferrer">AMA 2026 PFS overview</a>.
       </p>
       <p>
-        CMS also clarified that many of these services, when furnished in FQHCs and RHCs, are treated as care‑management or care‑coordination services and are typically reported under the general care‑management code G0511 rather than individual CPT codes.
-        This aligns FQHC/RHC payment policy with the broader care‑management framework and allows clinics to bundle CCM, BHI, RPM/RTM‑like work, and certain new social‑needs services into a single monthly payment.
+        FQHCs and RHCs: most care management services—CCM, BHI, RPM/RTM-equivalent work, and new social-needs codes—roll up to G0511 as a single monthly payment rather than individual CPT codes.
         For details, see the
         <a href="https://codingintel.com/rhc-and-fqhc-update/" target="_blank" rel="noopener noreferrer">CodingIntel RHC/FQHC update</a>
         and the
         <a href="https://www.cms.gov/medicare/payment/fee-schedules/physician" target="_blank" rel="noopener noreferrer">CMS Physician Fee Schedule page</a>.
       </p>
       <p>
-        For remote care and behavioral‑health integration, 2026 introduces shorter‑duration RPM and RTM codes for partial‑month engagement, modestly higher rates for core management codes, and clearer guidance on stacking with CCM, PCM, APCM, and SDOH/navigation G‑codes.
-        Together, these changes signal CMS’s shift toward a more integrated, tech‑enabled care‑management ecosystem where longitudinal medical, behavioral, and social‑needs work is explicitly recognized and reimbursed.
-        Helpful summaries:
+        Three headline changes for 2026: new partial-month codes for RPM and RTM (covering 2–15 day engagement), modestly higher rates on core management codes, and expanded SDOH/navigation G-codes that stack cleanly with CCM, PCM, APCM, and BHI. See:
         <a href="https://www.medsien.com/articles/cms-2026-physician-fee-schedule-whats-changing-in-remote-care-management" target="_blank" rel="noopener noreferrer">Medsien – 2026 Remote Care Changes</a>,
         <a href="https://blog.prevounce.com/faqs-from-the-2026-medicare-physician-fee-schedule-final-rule" target="_blank" rel="noopener noreferrer">Prevounce – 2026 PFS FAQs</a>,
         <a href="https://www.chartspan.com/blog/medicare-physician-fee-schedule-final-rule-2026-significant-changes-are-here/" target="_blank" rel="noopener noreferrer">ChartSpan – 2026 PFS Care‑Management Highlights</a>.
@@ -344,7 +341,7 @@
     <div class="accordion-header active">CY 2026 Care Management Code Table</div>
     <div class="accordion-content active">
       <p>
-        Designated care‑management services assigned general supervision under the CY 2026 Physician Fee Schedule, used throughout this selector:
+        All designated care-management codes assigned general supervision under the CY 2026 PFS. Referenced throughout this tool:
       </p>
 
       <table>
@@ -404,10 +401,7 @@
   <div class="accordion">
     <div class="accordion-header active">What is RPM?</div>
     <div class="accordion-content active">
-      Remote Physiologic Monitoring (RPM) uses connected digital devices to collect patient vitals outside of office visits and supports ongoing management of chronic or acute conditions.
-      It is billed using a family of time‑based codes for setup, device supply, and clinical management time under the Medicare Physician Fee Schedule (PFS). 
-      Key 2026 changes introduce shorter time increments and partial‑month options for both device supply and management, making RPM easier to use when engagement is variable.
-      See the CMS and expert summaries for details:
+      RPM uses connected devices to collect patient vitals outside the office—blood pressure, weight, glucose, pulse oximetry—and bill monthly for device supply and clinical management time. In 2026, new partial-month codes make RPM billable even when engagement is lower than the legacy 16-day threshold. See:
       <a href="https://www.cms.gov/newsroom/fact-sheets/calendar-year-cy-2026-medicare-physician-fee-schedule-final-rule-cms-1832-f" target="_blank" rel="noopener noreferrer">CMS 2026 PFS Fact Sheet</a>,
       <a href="https://rpmlogix.com/cms-publishes-2026-final-rule-on-november-1-2025/" target="_blank" rel="noopener noreferrer">RPMlogix 2026 Final Rule overview</a>,
       <a href="https://blog.prevounce.com/faqs-from-the-2026-medicare-physician-fee-schedule-final-rule" target="_blank" rel="noopener noreferrer">Prevounce 2026 RPM FAQs</a>.
@@ -415,13 +409,12 @@
 
     <div class="accordion-header active">Patient Eligibility</div>
     <div class="accordion-content active">
-      - Medicare patients with at least one acute or chronic condition where physiologic data (e.g., blood pressure, weight, pulse oximetry, glucose) will inform treatment decisions.<br>
-      - A patient‑specific order for RPM and a documented care plan from the billing practitioner.<br>
-      - Use of a medical‑grade device that automatically collects and transmits data, supplied by the practice or a qualified vendor.<br>
-      - Required number of calendar days with device transmissions in a 30‑day period:
-        16 or more days for traditional device supply code 99454, and 2–15 days for the new partial‑month device code 99445 starting in 2026.<br>
-      - RPM time and activities must be distinct from other billed care management services (e.g., CCM, PCM, TCM) in the same month; time cannot be double‑counted.
-      Helpful discussions of these requirements:
+      - Medicare patient with at least one acute or chronic condition where vitals data will guide treatment.<br>
+      - Practitioner order and documented care plan on file.<br>
+      - Medical-grade device that auto-collects and transmits data (practice- or vendor-supplied).<br>
+      - Minimum transmission days: 16+ days → bill 99454; 2–15 days → bill new 99445 (2026).<br>
+      - RPM time must be distinct from CCM, PCM, or TCM time in the same month—no double-counting.<br>
+      See:
       <a href="https://www.ehiehr.com/post/remote-patient-monitoring-rpm-updates-2026" target="_blank" rel="noopener noreferrer">EHI 2026 RPM Updates</a>,
       <a href="https://rpmlogix.com/cms-publishes-2026-final-rule-on-november-1-2025/" target="_blank" rel="noopener noreferrer">RPMlogix 2026 Final Rule</a>,
       <a href="https://blog.prevounce.com/faqs-from-the-2026-medicare-physician-fee-schedule-final-rule" target="_blank" rel="noopener noreferrer">Prevounce 2026 FAQs</a>.
@@ -429,25 +422,21 @@
 
     <div class="accordion-header active">Who May Bill?</div>
     <div class="accordion-content active">
-      RPM services can be billed by physicians and qualified health care professionals (such as NPs and PAs), with many day‑to‑day activities furnished by clinical staff under general supervision when incident‑to rules are met.
-      Only one practitioner may bill RPM device and management codes for a given patient in a calendar month.
-      Device supply must be billed by the entity that owns the device; independent diagnostic testing facilities (IDTFs) generally cannot bill RPM codes.
-      See:
+      Physicians, NPs, and PAs. Clinical staff may perform most activities under general supervision. One practitioner per patient per month; the device-owning entity bills supply codes. IDTFs may not bill RPM. See:
       <a href="https://www.ehiehr.com/post/remote-patient-monitoring-rpm-updates-2026" target="_blank" rel="noopener noreferrer">EHI RPM updates</a>,
       <a href="https://rpmlogix.com/cms-publishes-2026-final-rule-on-november-1-2025/" target="_blank" rel="noopener noreferrer">RPMlogix guide</a>.
     </div>
 
     <div class="accordion-header active">Billing Structure</div>
     <div class="accordion-content active">
-      RPM supports a layered monthly billing structure:
+      RPM stacks across four layers each month:
       <ul>
-        <li><strong>One‑time setup and education (99453)</strong> – initial enrollment, device setup, and patient education.</li>
-        <li><strong>Monthly device supply and data transmission</strong> – 99454 for 16–30 days of use in a 30‑day period, and starting in 2026, 99445 for 2–15 days of use to cover partial months or lower‑adherence periods.</li>
-        <li><strong>Clinical management time</strong> – 99457 for the first 20 minutes of interactive communication and care management per calendar month; 99458 for each additional 20 minutes; and new 99470 for 10–19 minutes of management when the full 20‑minute threshold is not met.</li>
-        <li><strong>Standalone data‑review option (99091)</strong> – 30 minutes of practitioner time reviewing physiologic data when not counted toward other RPM or care management codes.</li>
+        <li><strong>Setup (99453)</strong> – One-time enrollment, device setup, and patient education.</li>
+        <li><strong>Device supply</strong> – 99454 (16–30 days); 99445 NEW (2–15 days for partial-month engagement).</li>
+        <li><strong>Management time</strong> – 99457 (first 20 min/mo); 99458 (each additional 20 min); 99470 NEW (10–19 min when full threshold not met).</li>
+        <li><strong>Standalone data review (99091)</strong> – 30 min of practitioner-only data review when not counted toward other codes.</li>
       </ul>
-      Management minutes for 99457, 99458, and 99470 include reviewing data, adjusting the care plan, communicating with the patient or caregivers, and coordinating with other clinicians, as long as time is documented and not counted toward other services.
-      For detailed code‑by‑code breakdowns, see:
+      Billable management time covers data review, care-plan adjustments, patient/caregiver communication, and specialist coordination—documented and not double-counted. See:
       <a href="https://rpmlogix.com/cms-publishes-2026-final-rule-on-november-1-2025/" target="_blank" rel="noopener noreferrer">RPMlogix 2026 Final Rule summary</a>,
       <a href="https://blog.prevounce.com/faqs-from-the-2026-medicare-physician-fee-schedule-final-rule" target="_blank" rel="noopener noreferrer">Prevounce RPM FAQs</a>.
     </div>
@@ -459,32 +448,28 @@
           <div class="step-number">1</div>
           <div class="step-title">Patient Onboarding</div>
           <div class="step-desc">
-            Identify eligible patients from chronic disease panels or recent admissions; obtain consent; order RPM;
-            perform one‑time device setup and patient education on use, targets, and when the care team will intervene.
+            <ul><li>Identify eligible patients from chronic disease panels or recent admissions</li><li>Obtain patient consent</li><li>Order RPM and complete one-time device setup</li><li>Educate patient on device use, targets, and when the care team will intervene</li></ul>
           </div>
         </div>
         <div class="step-box">
           <div class="step-number">2</div>
           <div class="step-title">Data Collection</div>
           <div class="step-desc">
-            Patient uses the device at home; data are transmitted on at least 2–16+ days in the 30‑day period,
-            depending on whether 99445 or 99454 will be billed.
+            <ul><li>Patient uses device at home and transmits data</li><li>Target 2–15 days → bill 99445</li><li>Target 16+ days → bill 99454</li></ul>
           </div>
         </div>
         <div class="step-box">
           <div class="step-number">3</div>
           <div class="step-title">Care Management</div>
           <div class="step-desc">
-            Clinical staff and providers review incoming data, document 10, 20, or 40+ minutes of RPM management time,
-            and adjust medications, thresholds, or visit cadence as needed.
+            <ul><li>Clinical staff review incoming device data</li><li>Document 10, 20, or 40+ min of RPM management time</li><li>Adjust medications, alert thresholds, or visit cadence as needed</li></ul>
           </div>
         </div>
         <div class="step-box">
           <div class="step-number">4</div>
           <div class="step-title">Escalation &amp; Follow‑up</div>
           <div class="step-desc">
-            Trigger outreach, telehealth, or in‑person visits for concerning trends; coordinate with CCM or APCM
-            teams and specialists for longitudinal follow‑up.
+            <ul><li>Trigger outreach, telehealth, or in-person visits for concerning trends</li><li>Coordinate with specialists as needed</li><li>Hand off to CCM or APCM for longitudinal follow-up</li></ul>
           </div>
         </div>
       </div>
@@ -508,8 +493,7 @@
         <tr><td>99091</td><td>Standalone data review (30 min)</td><td>$56.41</td><td>—</td></tr>
       </table>
       <span style="font-size:0.96em;color:#74642a;">
-        <b>Note:</b> In FQHCs and RHCs, RPM‑like services are generally reported under general care management code G0511
-        rather than the individual RPM codes, per CMS guidance in the PFS and RHC/FQHC updates:
+        <b>FQHCs/RHCs:</b> RPM-equivalent services bill under G0511, not individual RPM codes.
         <a href="https://codingintel.com/rhc-and-fqhc-update/" target="_blank" rel="noopener noreferrer">CodingIntel RHC/FQHC update</a>,
         <a href="https://www.cms.gov/medicare/payment/fee-schedules/physician" target="_blank" rel="noopener noreferrer">CMS PFS page</a>.
       </span>
@@ -518,26 +502,21 @@
     <div class="accordion-header active">2026 Rule Changes</div>
     <div class="accordion-content active">
       <div class="alert-box">
-        - New codes 99445 (device 2–15 days) and 99470 (management 10–19 minutes) allow compliant billing for partial‑month engagement, filling gaps where legacy RPM codes could not be used.<br>
-        - Payment rates for 99457 and 99458 increase modestly in 2026, reflecting stronger valuation of remote management time under the final rule (see
-        <a href="https://rpmlogix.com/cms-publishes-2026-final-rule-on-november-1-2025/" target="_blank" rel="noopener noreferrer">RPMlogix</a> and
-        <a href="https://www.chartspan.com/blog/medicare-physician-fee-schedule-final-rule-2026-significant-changes-are-here/" target="_blank" rel="noopener noreferrer">ChartSpan 2026 PFS analysis</a>).<br>
-        - CMS classifies RPM as a designated care management service that is exempt from the 2026 “efficiency adjustment” applied to many non‑time‑based services, helping protect RPM revenue even as some E/M payments decline (see
-        <a href="https://www.cms.gov/newsroom/fact-sheets/calendar-year-cy-2026-medicare-physician-fee-schedule-final-rule-cms-1832-f" target="_blank" rel="noopener noreferrer">CMS fact sheet</a> and
-        <a href="https://www.ama-assn.org/practice-management/medicare-medicaid/what-expect-2026-medicare-physician-fee-schedule" target="_blank" rel="noopener noreferrer">AMA 2026 PFS summary</a>).<br>
-        - CMS did not change incident‑to rules or FQHC/RHC reporting conventions for RPM; most facility‑based RPM remains captured via G0511 rather than individual codes.
+        - <strong>New codes 99445 and 99470</strong> fill the partial-month gap—compliant billing now possible for 2–15 days of device use and 10–19 minutes of management time.<br>
+        - <strong>99457 and 99458 rates increase modestly</strong>, reflecting stronger valuation of remote management time (<a href="https://rpmlogix.com/cms-publishes-2026-final-rule-on-november-1-2025/" target="_blank" rel="noopener noreferrer">RPMlogix</a>, <a href="https://www.chartspan.com/blog/medicare-physician-fee-schedule-final-rule-2026-significant-changes-are-here/" target="_blank" rel="noopener noreferrer">ChartSpan</a>).<br>
+        - <strong>RPM is exempt from the 2026 efficiency adjustment</strong>—revenue protected even as some E/M payments decline (<a href="https://www.cms.gov/newsroom/fact-sheets/calendar-year-cy-2026-medicare-physician-fee-schedule-final-rule-cms-1832-f" target="_blank" rel="noopener noreferrer">CMS fact sheet</a>, <a href="https://www.ama-assn.org/practice-management/medicare-medicaid/what-expect-2026-medicare-physician-fee-schedule" target="_blank" rel="noopener noreferrer">AMA</a>).<br>
+        - Incident-to rules and FQHC/RHC conventions unchanged; facility-based RPM stays under G0511.
       </div>
     </div>
 
     <div class="accordion-header lucidact-workflow active">LucidAct Workflow</div>
     <div class="accordion-content workflow-content active">
       <p><strong>Platform Integration &amp; Roadmap</strong></p>
-      <p>Centralized notes, diagrams, and build plan for RPM in the LucidAct Health platform.</p>
       <ul>
-        <li>Align RPM enrollment and consent flows with CCM/APCM intake and eligibility logic, including auto‑flags from problem lists and risk scores.</li>
-        <li>Configure reusable device profiles, alert thresholds, and condition‑specific protocols (e.g., hypertension, CHF, COPD) and link them to RPM order sets.</li>
-        <li>Automate day‑count and time‑tracking rules for 99445 vs 99454 and 99457/99458 vs 99470 so billable months and correct codes are surfaced, not manually calculated.</li>
-        <li>Expose RPM worklists and alert queues inside care‑manager and provider dashboards, with revenue‑cycle reporting on active RPM panels and realized RPM revenue.</li>
+        <li>Align RPM enrollment and consent with CCM/APCM intake—auto-flag candidates from problem lists and risk scores.</li>
+        <li>Configure condition-specific device profiles, alert thresholds, and protocols (hypertension, CHF, COPD) linked to RPM order sets.</li>
+        <li>Automate day-count and time-tracking so 99445 vs 99454 and 99457/99458 vs 99470 are surfaced correctly—no manual calculation.</li>
+        <li>Surface RPM worklists and alert queues in care manager and provider dashboards with revenue-cycle reporting on active panels.</li>
       </ul>
     </div>
   </div>
@@ -549,10 +528,7 @@
   <div class="accordion">
     <div class="accordion-header active">What is RTM?</div>
     <div class="accordion-content active">
-      Remote Therapeutic Monitoring (RTM) tracks non‑physiologic data such as medication adherence, therapy device use, pain, and functional status using digital tools for patients with musculoskeletal, respiratory, or other qualifying conditions.
-      RTM codes are similar to RPM but focus on therapeutic response and self‑reported outcomes rather than vitals.
-      CMS’ 2026 PFS final rule refines RTM by adding partial‑month supply and management options and clarifying how RTM can be combined with other care management services.
-      Helpful overviews:
+      RTM tracks non-physiologic data—medication adherence, therapy device use, pain, functional status—for patients with musculoskeletal, respiratory, or other qualifying conditions. Focused on therapeutic response and self-reported outcomes, not vitals. In 2026, CMS added partial-month supply and management codes and clarified stacking with other programs. See:
       <a href="https://telehealthresourcecenter.org/resources/videos/digital-health-update-remote-physiological-management-rpm-remote-therapeutic-monitoring-rtm-cy-2026-psf-final-rule/" target="_blank" rel="noopener noreferrer">Telehealth Resource Center CY 2026 RPM/RTM update</a>,
       <a href="https://www.medsien.com/articles/cms-2026-physician-fee-schedule-whats-changing-in-remote-care-management" target="_blank" rel="noopener noreferrer">Medsien 2026 remote care changes</a>,
       <a href="https://blog.prevounce.com/faqs-from-the-2026-medicare-physician-fee-schedule-final-rule" target="_blank" rel="noopener noreferrer">Prevounce 2026 PFS FAQs</a>.
@@ -560,12 +536,10 @@
 
     <div class="accordion-header active">Patient Eligibility</div>
     <div class="accordion-content active">
-      - Medicare patients with conditions (commonly musculoskeletal or respiratory) where therapeutic adherence, symptoms, or function can be monitored remotely with a device or app.<br>
-      - An RTM device or software application is ordered by a physician, qualified health care professional, or eligible therapist and used to capture self‑reported or other non‑physiologic data relevant to treatment.<br>
-      - Sufficient days of data transmission or logged use within a 30‑day period:
-        traditionally 16 or more days for device/software supply codes, with new 2–15 day options in 2026 for partial‑month engagement.<br>
-      - RTM time and activities must be distinct from RPM and other care management services; CMS generally expects a given condition to be monitored with either RPM or RTM, not both at once.
-      See:
+      - Medicare patient with a qualifying condition (commonly MSK or respiratory) where therapeutic adherence or function can be monitored remotely.<br>
+      - Device or app ordered by a physician, QHP, or eligible therapist capturing self-reported non-physiologic data.<br>
+      - Minimum logged use: 16+ days → bill 98976; 2–15 days → bill new 98985 (2026).<br>
+      - RTM time must be distinct from RPM and other care management—use RTM or RPM for a given condition, not both. See:
       <a href="https://telehealthresourcecenter.org/resources/videos/digital-health-update-remote-physiological-management-rpm-remote-therapeutic-monitoring-rtm-cy-2026-psf-final-rule/" target="_blank" rel="noopener noreferrer">Telehealth Resource Center</a>,
       <a href="https://www.medsien.com/articles/cms-2026-physician-fee-schedule-whats-changing-in-remote-care-management" target="_blank" rel="noopener noreferrer">Medsien</a>,
       <a href="https://blog.prevounce.com/faqs-from-the-2026-medicare-physician-fee-schedule-final-rule" target="_blank" rel="noopener noreferrer">Prevounce FAQs</a>.
@@ -573,25 +547,21 @@
 
     <div class="accordion-header active">Who May Bill?</div>
     <div class="accordion-content active">
-      RTM codes may be billed by physicians, other qualified health care professionals (QHPs), and certain therapists (such as physical and occupational therapists) who order and oversee the service.
-      Clinical staff or therapy personnel may carry out many RTM activities under appropriate supervision, but the billing provider is responsible for reviewing data and making treatment decisions.
-      For details, see:
+      Physicians, QHPs, and eligible therapists (PT, OT) who order and oversee the service. Clinical and therapy staff may perform activities under appropriate supervision; the billing provider owns data review and treatment decisions. See:
       <a href="https://telehealthresourcecenter.org/resources/videos/digital-health-update-remote-physiological-management-rpm-remote-therapeutic-monitoring-rtm-cy-2026-psf-final-rule/" target="_blank" rel="noopener noreferrer">Telehealth Resource Center CY 2026 RTM</a>,
       <a href="https://www.medsien.com/articles/cms-2026-physician-fee-schedule-whats-changing-in-remote-care-management" target="_blank" rel="noopener noreferrer">Medsien RTM overview</a>.
     </div>
 
     <div class="accordion-header active">Billing Structure</div>
     <div class="accordion-content active">
-      RTM billing is structured similarly to RPM but focused on therapeutic outcomes:
+      RTM stacks across four layers, mirroring RPM but focused on therapeutic outcomes:
       <ul>
-        <li><strong>Initial setup and education (98975)</strong> – onboarding to the RTM device/app, patient education, and initial configuration.</li>
-        <li><strong>Monthly device/software supply</strong> – 98976 for 16–30 days of monitored use per 30‑day period, and new 98985 (2026) for 2–15 days of use to support partial‑month engagement.</li>
-        <li><strong>Management time</strong> – 98980 for the first 20 or more minutes of RTM management and interactive communication per calendar month; 98981 for each additional 20 minutes.</li>
-        <li><strong>New short‑duration management code (98979)</strong> – 10–19 minutes of RTM management when the full 20‑minute threshold is not reached in 2026.</li>
+        <li><strong>Setup (98975)</strong> – One-time device/app onboarding and patient education.</li>
+        <li><strong>Device/software supply</strong> – 98976 (16–30 days); 98985 NEW (2–15 days).</li>
+        <li><strong>Management time</strong> – 98980 (first 20+ min/mo); 98981 (each additional 20 min).</li>
+        <li><strong>Short-duration management (98979) NEW</strong> – 10–19 minutes when the full 20-minute threshold is not reached.</li>
       </ul>
-      Time counted toward RTM management must involve reviewing RTM data, assessing adherence or response, communicating with the patient or caregivers, and adjusting treatment based on findings.
-      Time cannot be double‑counted with other billed services.
-      Code‑level explanations appear in:
+      Billable management time covers data review, adherence assessment, patient/caregiver communication, and treatment adjustments—documented and not double-counted. See:
       <a href="https://telehealthresourcecenter.org/resources/videos/digital-health-update-remote-physiological-management-rpm-remote-therapeutic-monitoring-rtm-cy-2026-psf-final-rule/" target="_blank" rel="noopener noreferrer">Telehealth Resource Center RTM webinar</a>,
       <a href="https://blog.prevounce.com/faqs-from-the-2026-medicare-physician-fee-schedule-final-rule" target="_blank" rel="noopener noreferrer">Prevounce FAQs</a>.
     </div>
@@ -603,21 +573,21 @@
           <div class="step-number">1</div>
           <div class="step-title">Onboarding</div>
           <div class="step-desc">
-            Identify eligible patients (e.g., post‑surgical MSK, chronic low back pain, COPD/asthma), obtain consent, prescribe the RTM app/device, and train the patient on logging symptoms, activity, and adherence.
+            <ul><li>Identify eligible patients: post-surgical MSK, chronic low back pain, COPD/asthma</li><li>Obtain consent and prescribe the RTM app or device</li><li>Train patient on logging symptoms, activity, and adherence</li></ul>
           </div>
         </div>
         <div class="step-box">
           <div class="step-number">2</div>
           <div class="step-title">Tracking Period</div>
           <div class="step-desc">
-            Patient records daily or scheduled therapy activity, symptoms, and medication use over 2–30 days per month, creating a dataset for trend analysis and adherence monitoring.
+            <ul><li>Patient logs therapy activity, symptoms, and medication use</li><li>Target 2–15 days → bill 98985</li><li>Target 16+ days → bill 98976</li></ul>
           </div>
         </div>
         <div class="step-box">
           <div class="step-number">3</div>
           <div class="step-title">Review &amp; Support</div>
           <div class="step-desc">
-            Clinician or therapist reviews RTM data for 10, 20, or 40+ minutes per month, documents interventions and coaching, adjusts the plan or home exercise program, and escalates when needed (e.g., flares, non‑response).
+            <ul><li>Review data for 10, 20, or 40+ min per month</li><li>Document interventions and coaching notes</li><li>Adjust the care plan or home exercise program</li><li>Escalate for flares or non-response</li></ul>
           </div>
         </div>
       </div>
@@ -640,8 +610,7 @@
         <tr><td>98979 <b>(NEW)</b></td><td>RTM management, 10–19 min/mo</td><td>$29.00</td><td>—</td></tr>
       </table>
       <span style="font-size:0.96em;color:#74642a;">
-        <b>Note:</b> In FQHCs and RHCs, RTM‑like services are generally mapped to general care management codes such as G0511 rather than billed with individual RTM codes, consistent with CMS RHC/FQHC policy and PFS guidance.
-        See
+        <b>FQHCs/RHCs:</b> RTM-equivalent services bill under G0511, not individual RTM codes. See
         <a href="https://codingintel.com/rhc-and-fqhc-update/" target="_blank" rel="noopener noreferrer">CodingIntel RHC/FQHC update</a>
         and
         <a href="https://www.cms.gov/medicare/payment/fee-schedules/physician" target="_blank" rel="noopener noreferrer">CMS Physician Fee Schedule page</a>.
@@ -651,9 +620,9 @@
     <div class="accordion-header active">2026 Rule Changes</div>
     <div class="accordion-content active">
       <div class="alert-box">
-        - New partial‑month supply (98985) and management (98979) codes enable compliant billing when patients use RTM tools fewer days or for less time than legacy thresholds allowed.<br>
-        - Payment rates for 98980 and 98981 increase modestly in 2026, signaling CMS’ continued support for remote therapeutic management in musculoskeletal and respiratory care.<br>
-        - CMS reiterates that RTM is a designated care management‑type service and that RTM and RPM should generally not both be used for the same condition in the same period, to avoid overlapping payment.
+        - <strong>New codes 98985 and 98979</strong> fill the partial-month gap—compliant billing for 2–15 days of supply and 10–19 minutes of management time.<br>
+        - <strong>98980 and 98981 rates increase modestly</strong>—CMS reinforces RTM for MSK and respiratory care.<br>
+        - RTM and RPM <strong>should not both be used for the same condition</strong> in the same period.
         For more detail, see
         <a href="https://telehealthresourcecenter.org/resources/videos/digital-health-update-remote-physiological-management-rpm-remote-therapeutic-monitoring-rtm-cy-2026-psf-final-rule/" target="_blank" rel="noopener noreferrer">Telehealth Resource Center CY 2026 RTM overview</a>
         and
@@ -664,12 +633,11 @@
     <div class="accordion-header lucidact-workflow active">LucidAct Workflow</div>
     <div class="accordion-content workflow-content active">
       <p><strong>Platform Integration &amp; Roadmap</strong></p>
-      <p>RTM‑specific notes, design links, and build tasks.</p>
       <ul>
-        <li>Define RTM programs for MSK, pulmonary, and other high‑yield pathways with clear inclusion criteria and standard protocols.</li>
-        <li>Integrate RTM apps/devices into the same monitoring console as RPM but clearly labeled by modality, condition, and ordering provider.</li>
-        <li>Automate day‑count and time‑tracking to surface the correct combination of 98976 vs 98985 and 98980/98981 vs 98979 for each 30‑day period.</li>
-        <li>Align escalation rules with therapy and specialist workflows, including auto‑referrals into CCM, APCM, or in‑person rehab when RTM flags poor adherence or lack of progress.</li>
+        <li>Define RTM programs for MSK, pulmonary, and other high-yield pathways with clear inclusion criteria and standard protocols.</li>
+        <li>Integrate RTM apps/devices into the same monitoring console as RPM—clearly labeled by modality, condition, and ordering provider.</li>
+        <li>Automate day-count and time-tracking so 98976 vs 98985 and 98980/98981 vs 98979 are surfaced correctly for each 30-day period.</li>
+        <li>Auto-refer into CCM, APCM, or in-person rehab when RTM flags poor adherence or lack of progress.</li>
       </ul>
     </div>
   </div>
@@ -681,10 +649,7 @@
   <div class="accordion">
     <div class="accordion-header active">What is CCM?</div>
     <div class="accordion-content active">
-      Chronic Care Management (CCM) supports Medicare patients with multiple chronic conditions that require regular monitoring, medication management, and coordination across providers.
-      CCM is a non–face‑to‑face, time‑based service billed monthly when a care team furnishes structured management activities and maintains a comprehensive care plan.
-      CMS created CCM to pay for the “between visit” work that primary care and specialty teams perform for complex patients.
-      Strong overviews:
+      CCM pays for the between-visit work on patients with 2+ chronic conditions—medication management, care coordination, and structured monthly outreach. Billed monthly based on documented clinical staff time. See:
       <a href="https://www.cms.gov/files/document/chron-care-mgmt-serv-faq-2024.pdf" target="_blank" rel="noopener noreferrer">CMS CCM FAQ</a>,
       <a href="https://www.chartspan.com/blog/what-is-chronic-care-management/" target="_blank" rel="noopener noreferrer">ChartSpan – What is CCM?</a>,
       <a href="https://www.ama-assn.org/practice-management/digital/what-chronic-care-management-ccm" target="_blank" rel="noopener noreferrer">AMA CCM explainer</a>.
@@ -692,10 +657,9 @@
 
     <div class="accordion-header active">Patient Eligibility</div>
     <div class="accordion-content active">
-      - Medicare beneficiaries with <strong>two or more chronic conditions</strong> expected to last at least 12 months (or until death).<br>
-      - Conditions must place the patient at significant risk of death, acute exacerbation/decompensation, or functional decline.<br>
-      - A comprehensive, person‑centered care plan must be established, implemented, and revised as needed; it should be documented in a certified health record and shared with the patient and/or caregiver.<br>
-      - Patient must provide informed consent (verbal or written, documented in the record), with an understanding that only one practitioner can bill CCM per month.
+      - Medicare patient with <strong>2+ chronic conditions</strong> expected to last 12+ months (or until death), placing the patient at significant risk of death, acute exacerbation, or functional decline.<br>
+      - Comprehensive, person-centered care plan documented in a certified health record and shared with the patient/caregiver.<br>
+      - Documented patient consent (verbal or written); only one practitioner bills CCM per month.
       See:
       <a href="https://www.cms.gov/files/document/chron-care-mgmt-serv-faq-2024.pdf" target="_blank" rel="noopener noreferrer">CMS CCM FAQ</a>,
       <a href="https://www.chartspan.com/blog/what-is-chronic-care-management/" target="_blank" rel="noopener noreferrer">ChartSpan CCM guide</a>.
@@ -703,9 +667,7 @@
 
     <div class="accordion-header active">Who May Bill?</div>
     <div class="accordion-content active">
-      CCM may be billed by physicians, nurse practitioners, physician assistants, clinical nurse specialists, and certain other qualified health care professionals who provide ongoing care management for the patient.
-      Most CCM work can be furnished by clinical staff under general supervision, with the billing practitioner directing care and remaining accountable for the care plan.
-      Only one practitioner can bill CCM for a given patient in a calendar month, although CCM may often be billed in conjunction with RPM, BHI, or other services when time and requirements are distinct.
+      Physicians, NPs, PAs, CNS, and other QHPs. Clinical staff perform most work under general supervision; the billing practitioner directs and owns the care plan. One practitioner per patient per month. CCM may stack with RPM, BHI, and other services when time and requirements are distinct.
       Details:
       <a href="https://www.cms.gov/files/document/chron-care-mgmt-serv-faq-2024.pdf" target="_blank" rel="noopener noreferrer">CMS CCM FAQ</a>,
       <a href="https://www.ama-assn.org/practice-management/digital/what-chronic-care-management-ccm" target="_blank" rel="noopener noreferrer">AMA CCM</a>.
@@ -713,15 +675,15 @@
 
     <div class="accordion-header active">Billing Structure</div>
     <div class="accordion-content active">
-      CCM uses a tiered, time‑based structure:[1]
+      CCM is tiered by monthly clinical staff time:
       <ul>
-        <li><strong>99490 – Standard CCM</strong>: at least 20 minutes of clinical staff time directed by a physician or other QHP, per calendar month.</li>
-        <li><strong>99439 – Add‑on CCM</strong>: each additional 20 minutes of clinical staff time (used with 99490 in the same month).</li>
-        <li><strong>99487 – Complex CCM</strong>: at least 60 minutes of clinical staff time with moderate/high medical decision‑making and care plan revision.</li>
-        <li><strong>99489 – Add‑on complex CCM</strong>: each additional 30 minutes of clinical staff time in a complex CCM month.</li>
-        <li><strong>99491 – CCM by practitioner</strong>: at least 30 minutes of CCM personally provided by a physician or QHP (no clinical staff time counted).</li>
+        <li><strong>99490</strong> – Standard CCM: 20+ min clinical staff/mo.</li>
+        <li><strong>99439</strong> – Add-on: each additional 20 min (used with 99490).</li>
+        <li><strong>99487</strong> – Complex CCM: 60+ min clinical staff with moderate/high MDM and care plan revision.</li>
+        <li><strong>99489</strong> – Complex add-on: each additional 30 min.</li>
+        <li><strong>99491</strong> – CCM by practitioner: 30+ min personally performed by physician or QHP (no clinical staff time counted).</li>
       </ul>
-      Time can include phone calls, portal messages, medication review and reconciliation, coordination with other clinicians and community services, and care‑plan updates, provided it is documented and not counted toward other time‑based services.
+      Billable time includes phone calls, portal messages, medication reconciliation, coordination, and care-plan updates—documented and not double-counted.
       Good code‑level summaries:
       <a href="https://www.chartspan.com/blog/medicare-physician-fee-schedule-final-rule-2026-significant-changes-are-here/" target="_blank" rel="noopener noreferrer">ChartSpan 2026 PFS CCM analysis</a>,
       <a href="https://www.cms.gov/medicare/payment/fee-schedules/physician" target="_blank" rel="noopener noreferrer">CMS Physician Fee Schedule look‑up</a>.
@@ -734,21 +696,21 @@
           <div class="step-number">1</div>
           <div class="step-title">Enrollment</div>
           <div class="step-desc">
-            Identify eligible patients from panels or risk lists, discuss CCM benefits and cost‑sharing, obtain consent, and build an initial comprehensive care plan with problem list, goals, and self‑management tasks.
+            <ul><li>Identify eligible patients from panels or risk lists</li><li>Obtain patient consent</li><li>Build initial care plan: problem list, goals, and self-management tasks</li></ul>
           </div>
         </div>
         <div class="step-box">
           <div class="step-number">2</div>
           <div class="step-title">Monthly Management</div>
           <div class="step-desc">
-            Clinical staff conduct structured outreach, medication checks, symptom assessments, and care‑gap closure activities, documenting cumulative minutes toward 99490/99439 or 99487/99489.
+            <ul><li>Conduct structured outreach, medication checks, and symptom assessments</li><li>Close care gaps</li><li>Document cumulative minutes toward 99490/99439 or 99487/99489</li></ul>
           </div>
         </div>
         <div class="step-box">
           <div class="step-number">3</div>
           <div class="step-title">Care Plan Review &amp; Escalation</div>
           <div class="step-desc">
-            The billing practitioner reviews CCM notes, updates the care plan, and triggers RPM, RTM, TCM, APCM, or in‑person visits when red flags appear.
+            <ul><li>Billing practitioner reviews CCM notes and updates the care plan</li><li>Escalate to RPM, RTM, TCM, APCM, or in-person care when red flags appear</li></ul>
           </div>
         </div>
       </div>
@@ -770,7 +732,7 @@
         <tr><td>99491</td><td>CCM by physician/QHP, 30 min</td><td>$84.10</td><td>—</td></tr>
       </table>
       <span style="font-size:0.96em;color:#74642a;">
-        <b>Note:</b> In FQHCs and RHCs, CCM and other designated care management services are typically reported under general care management code G0511 rather than individual CCM codes.
+        <b>FQHCs/RHCs:</b> CCM bills under G0511, not individual CCM codes.
         See the RHC/FQHC guidance at
         <a href="https://codingintel.com/rhc-and-fqhc-update/" target="_blank" rel="noopener noreferrer">CodingIntel RHC/FQHC update</a>
         and the
@@ -781,25 +743,20 @@
     <div class="accordion-header active">2026 Rule Changes</div>
     <div class="accordion-content active">
       <div class="alert-box">
-        - CY 2026 PFS maintains the CCM code set but modestly increases relative value for add‑on codes such as 99439 and 99489, improving payment for higher‑intensity months (see
-        <a href="https://www.chartspan.com/blog/medicare-physician-fee-schedule-final-rule-2026-significant-changes-are-here/" target="_blank" rel="noopener noreferrer">ChartSpan 2026 PFS summary</a>).<br>
-        - CCM remains classified as a designated care management service that is exempt from the 2026 “efficiency adjustment” applied to many non‑time‑based services, helping protect CCM revenue even as some E/M payments are reduced (see
-        <a href="https://www.cms.gov/newsroom/fact-sheets/calendar-year-cy-2026-medicare-physician-fee-schedule-final-rule-cms-1832-f" target="_blank" rel="noopener noreferrer">CMS 2026 PFS Fact Sheet</a>
-        and
-        <a href="https://www.ama-assn.org/practice-management/medicare-medicaid/what-expect-2026-medicare-physician-fee-schedule" target="_blank" rel="noopener noreferrer">AMA 2026 PFS overview</a>).<br>
-        - CMS continues to emphasize integration of CCM with behavioral health and social‑needs services, encouraging pairing with BHI/CoCM and APCM where appropriate.
+        - <strong>Add-on codes 99439 and 99489 see modest rate increases</strong> in 2026, improving payment for higher-intensity months (<a href="https://www.chartspan.com/blog/medicare-physician-fee-schedule-final-rule-2026-significant-changes-are-here/" target="_blank" rel="noopener noreferrer">ChartSpan</a>).<br>
+        - <strong>CCM is exempt from the 2026 efficiency adjustment</strong>—revenue protected (<a href="https://www.cms.gov/newsroom/fact-sheets/calendar-year-cy-2026-medicare-physician-fee-schedule-final-rule-cms-1832-f" target="_blank" rel="noopener noreferrer">CMS fact sheet</a>, <a href="https://www.ama-assn.org/practice-management/medicare-medicaid/what-expect-2026-medicare-physician-fee-schedule" target="_blank" rel="noopener noreferrer">AMA</a>).<br>
+        - CMS continues to encourage CCM stacking with BHI/CoCM and APCM for complex patients.
       </div>
     </div>
 
     <div class="accordion-header lucidact-workflow active">LucidAct Workflow</div>
     <div class="accordion-content workflow-content active">
       <p><strong>Platform Integration &amp; Roadmap</strong></p>
-      <p>Use CCM as the core longitudinal program for multi‑morbid patients, with RPM, BHI/CoCM, and APCM layered where indicated.</p>
       <ul>
-        <li>Automate CCM eligibility based on chronic condition count, risk scores, and recent utilization; surface candidate lists to care managers.</li>
-        <li>Standardize CCM care‑plan templates by condition cluster (e.g., cardiometabolic, pulmonary, frailty) and link tasks to workflows and time tracking.</li>
-        <li>Build minute‑level time tracking tied to encounters, tasks, and calls so code selection (99490 vs 99487 plus add‑ons) is automated.</li>
-        <li>Integrate CCM worklists and documentation with billing queues, including G0511 mapping for FQHCs/RHCs where applicable.</li>
+        <li>Automate CCM eligibility from chronic condition count, risk scores, and utilization—surface candidate lists to care managers.</li>
+        <li>Standardize care-plan templates by condition cluster (cardiometabolic, pulmonary, frailty) linked to tasks and time tracking.</li>
+        <li>Automate code selection (99490 vs 99487 + add-ons) from minute-level time tracking tied to encounters, tasks, and calls.</li>
+        <li>Map CCM worklists to billing queues, including G0511 for FQHCs/RHCs.</li>
       </ul>
     </div>
   </div>
@@ -811,20 +768,16 @@
   <div class="accordion">
     <div class="accordion-header active">What is PCM?</div>
     <div class="accordion-content active">
-      Principal Care Management (PCM) is designed for Medicare patients who have a single serious or high‑risk chronic condition that requires focused, ongoing management by a specialist or primary care clinician.
-      PCM pays for non–face‑to‑face care management activities—similar to CCM—but centered on one driving condition (for example, advanced heart failure, severe asthma, or complex diabetes).[1]
-      PCM is often used when a particular specialist or primary care clinician is primarily responsible for managing that condition over a period of at least three months.[1]
-      Helpful descriptions:
+      PCM is CCM for a single serious condition. Where CCM covers patients with multiple chronic conditions, PCM applies when one driving diagnosis—advanced heart failure, severe asthma, complex diabetes—requires focused, ongoing management by a single responsible clinician for at least three months. See:
       <a href="https://www.ama-assn.org/practice-management/cpt/principal-care-management-single-high-risk-condition" target="_blank" rel="noopener noreferrer">AMA Principal Care Management overview</a>,
       <a href="https://www.chartspan.com/blog/principal-care-management-pcm-billing-and-reimbursement/" target="_blank" rel="noopener noreferrer">ChartSpan PCM guide</a>.
     </div>
 
     <div class="accordion-header active">Patient Eligibility</div>
     <div class="accordion-content active">
-      - Medicare beneficiaries with <strong>one serious chronic condition</strong> (or one main condition being managed by that clinician) expected to last at least three months.[1]<br>
-      - The condition places the patient at significant risk of hospitalization, acute exacerbation, decompensation, or functional decline.[1]<br>
-      - The managing clinician must develop and update a disease‑specific care plan, coordinate medications and services, and provide ongoing management.[1]<br>
-      - Patient consent is required, and only one clinician may bill PCM for a given patient and month; PCM generally is not billed when that same clinician is also billing CCM for that patient in that month.[1]
+      - Medicare patient with <strong>one serious chronic condition</strong> expected to last 3+ months, placing the patient at significant risk of hospitalization, acute exacerbation, or functional decline.<br>
+      - Clinician develops and maintains a disease-specific care plan and provides ongoing management.<br>
+      - Patient consent required. One clinician per patient per month; PCM and CCM generally do not bill together for the same clinician and patient in the same month.
       See:
       <a href="https://www.cms.gov/files/document/chron-care-mgmt-serv-faq-2024.pdf" target="_blank" rel="noopener noreferrer">CMS CCM/PCM FAQ</a>,
       <a href="https://www.ama-assn.org/practice-management/cpt/principal-care-management-single-high-risk-condition" target="_blank" rel="noopener noreferrer">AMA PCM</a>.
@@ -832,9 +785,7 @@
 
     <div class="accordion-header active">Who May Bill?</div>
     <div class="accordion-content active">
-      PCM may be billed by physicians, nurse practitioners, physician assistants, and other qualified health care professionals who are managing the patient’s qualifying condition.[1]
-      Clinical staff can furnish many PCM activities under general supervision, with their time counted toward PCM minutes when incident‑to requirements are met.
-      Only one practitioner may bill PCM for a patient per month, and in most cases that practitioner should be the clinician “primarily responsible” for managing the principal condition.
+      Physicians, NPs, PAs, and other QHPs managing the patient’s qualifying condition. Clinical staff perform most activities under general supervision with time counted toward PCM minutes. One practitioner per patient per month—the clinician primarily responsible for the principal condition.
       Sources:
       <a href="https://www.ama-assn.org/practice-management/cpt/principal-care-management-single-high-risk-condition" target="_blank" rel="noopener noreferrer">AMA PCM guidance</a>,
       <a href="https://www.chartspan.com/blog/principal-care-management-pcm-billing-and-reimbursement/" target="_blank" rel="noopener noreferrer">ChartSpan PCM billing</a>.
@@ -842,13 +793,12 @@
 
     <div class="accordion-header active">Billing Structure</div>
     <div class="accordion-content active">
-      PCM uses time‑based codes that mirror CCM but apply to a single condition.[1]
-      Under the 2026 PFS, the primary physician/QHP‑billed PCM codes are:
+      Two codes, tiered by monthly clinical staff time:
       <ul>
-        <li><strong>99426 – PCM, 30 minutes of clinical staff time</strong> directed by a physician or other QHP, per calendar month.</li>
-        <li><strong>99427 – PCM add‑on, each additional 30 minutes</strong> of clinical staff time in the same month.</li>
+        <li><strong>99426</strong> – PCM: 30+ min clinical staff/mo directed by a physician or QHP.</li>
+        <li><strong>99427</strong> – Add-on: each additional 30 min.</li>
       </ul>
-      Time includes medication management, coordination with other clinicians, patient/caregiver communication, and care‑plan adjustments related to the principal condition, provided that it is documented and not counted toward CCM or other time‑based services for that patient in the same month.
+      Billable time covers medication management, provider coordination, patient/caregiver communication, and care-plan updates—documented and not double-counted against CCM or other time-based codes.
       Good breakdowns:
       <a href="https://www.chartspan.com/blog/principal-care-management-pcm-billing-and-reimbursement/" target="_blank" rel="noopener noreferrer">ChartSpan PCM guide</a>,
       <a href="https://www.cms.gov/medicare/payment/fee-schedules/physician" target="_blank" rel="noopener noreferrer">CMS PFS look‑up</a>.
@@ -861,21 +811,21 @@
           <div class="step-number">1</div>
           <div class="step-title">Assessment &amp; Enrollment</div>
           <div class="step-desc">
-            Identify patients with a single serious high‑risk condition (e.g., advanced CHF, brittle diabetes, severe COPD) where your clinic is the primary manager; obtain consent; and build a focused care plan that documents goals, medications, and monitoring needs.
+            <ul><li>Identify patients with one serious high-risk condition where your team is the primary manager</li><li>Obtain patient consent</li><li>Build a focused care plan: goals, medications, and monitoring needs</li></ul>
           </div>
         </div>
         <div class="step-box">
           <div class="step-number">2</div>
           <div class="step-title">Monthly PCM Management</div>
           <div class="step-desc">
-            Clinical staff conduct structured outreach, symptom and adherence checks, med reconciliation, and coordination with other clinicians, documenting at least 30 minutes per month for 99426 and additional 30‑minute increments for 99427 as needed.
+            <ul><li>Conduct structured outreach, symptom and adherence checks</li><li>Perform medication reconciliation</li><li>Document at least 30 min/mo for 99426</li><li>Add 99427 increments as needed</li></ul>
           </div>
         </div>
         <div class="step-box">
           <div class="step-number">3</div>
           <div class="step-title">Care Review &amp; Transition</div>
           <div class="step-desc">
-            The billing clinician reviews PCM notes, adjusts treatment, and determines whether the patient should remain in PCM, transition into CCM when multiple conditions dominate, or layer RPM/RTM for closer monitoring.
+            <ul><li>Billing clinician reviews PCM notes and adjusts treatment</li><li>Stay in PCM, or transition to CCM when multiple conditions emerge</li><li>Add RPM/RTM for closer monitoring if indicated</li></ul>
           </div>
         </div>
       </div>
@@ -894,7 +844,7 @@
         <tr><td>99427</td><td>Each additional 30 min PCM</td><td>$47.15</td><td>—</td></tr>
       </table>
       <span style="font-size:0.96em;color:#74642a;">
-        <b>Note:</b> In FQHCs and RHCs, PCM and other designated care management services are typically captured under general care management G‑codes (such as G0511) rather than individual PCM CPT codes, per CMS RHC/FQHC policy.
+        <b>FQHCs/RHCs:</b> PCM bills under G0511, not individual PCM codes.
         See
         <a href="https://codingintel.com/rhc-and-fqhc-update/" target="_blank" rel="noopener noreferrer">CodingIntel RHC/FQHC update</a>
         and the
@@ -905,21 +855,20 @@
     <div class="accordion-header active">2026 Rule Changes</div>
     <div class="accordion-content active">
       <div class="alert-box">
-        - The CY 2026 PFS maintains the PCM code family but modestly increases payment for 99426 and 99427 in line with care‑management revaluation, improving reimbursement for higher‑touch specialist‑driven management.[2]<br>
-        - CMS clarifies that PCM remains a designated care management service and is exempt from the 2026 efficiency adjustment applied to many non‑time‑based services, helping preserve PCM revenue even as some E/M payments decrease.[2][3]<br>
-        - Guidance continues to emphasize that PCM is intended for a single high‑risk condition and that practices should transition patients into CCM when multiple chronic conditions require coordinated management over time.[1]
+        - <strong>99426 and 99427 rates increase modestly</strong>—improved reimbursement for specialist-driven management.<br>
+        - <strong>PCM is exempt from the 2026 efficiency adjustment</strong>—revenue protected.<br>
+        - CMS reaffirms: PCM = one condition. When multiple conditions drive complexity, transition to CCM.
       </div>
     </div>
 
     <div class="accordion-header lucidact-workflow active">LucidAct Workflow</div>
     <div class="accordion-content workflow-content active">
       <p><strong>Platform Integration &amp; Roadmap</strong></p>
-      <p>Use PCM for focused, condition‑specific management where a single diagnosis drives most of the complexity and where a specialist or PCP is clearly the primary manager.</p>
       <ul>
-        <li>Build PCM eligibility rules keyed to single high‑risk conditions (e.g., advanced CHF, severe COPD) and responsible provider attribution.</li>
-        <li>Provide condition‑specific PCM templates with problem‑focused goals, symptom thresholds, and med‑management tasks distinct from multi‑condition CCM plans.</li>
-        <li>Implement time tracking that separates PCM minutes from CCM, BHI, and RPM/RTM minutes to avoid double‑counting and to surface the right code combination (99426 vs 99426+99427).</li>
-        <li>Design transitions where PCM patients are automatically evaluated for CCM, RPM/RTM, or APCM enrollment when additional conditions or utilization patterns emerge.</li>
+        <li>Build eligibility rules keyed to single high-risk conditions (advanced CHF, severe COPD) and responsible provider attribution.</li>
+        <li>Condition-specific PCM templates with problem-focused goals, symptom thresholds, and med-management tasks—separate from multi-condition CCM plans.</li>
+        <li>Time tracking that separates PCM minutes from CCM, BHI, and RPM/RTM to prevent double-counting and surface the right code (99426 vs 99426+99427).</li>
+        <li>Auto-evaluate PCM patients for CCM, RPM/RTM, or APCM enrollment when additional conditions or utilization patterns emerge.</li>
       </ul>
     </div>
   </div>
@@ -931,48 +880,35 @@
   <div class="accordion">
     <div class="accordion-header active">What is TCM?</div>
     <div class="accordion-content active">
-      Transitional Care Management (TCM) services support Medicare patients as they transition from hospital or other facility settings back to the community.
-      TCM covers the 30 days post‑discharge and includes medication reconciliation, timely face‑to‑face follow‑up, and coordination with other providers to reduce readmissions.
-      TCM is billed with CPT codes 99495 and 99496, which differ based on the timing of the follow‑up visit and the complexity of medical decision‑making.
-      See:
+      TCM covers the 30 days post-discharge. It bundles medication reconciliation, a timed face-to-face visit, and provider coordination into a single payment—two codes that differ by visit timing and decision-making complexity. See:
       <a href="https://www.cms.gov/outreach-and-education/medicare-learning-network-mln/mlnproducts/downloads/transitional-care-management-services-fact-sheet-icn908628.pdf" target="_blank" rel="noopener noreferrer">CMS TCM Fact Sheet</a>,
       <a href="https://www.aafp.org/pubs/fpm/issues/2013/0500/p12.html" target="_blank" rel="noopener noreferrer">AAFP – Transitional Care Management</a>.
     </div>
 
     <div class="accordion-header active">Patient Eligibility</div>
     <div class="accordion-content active">
-      - Medicare beneficiaries discharged from certain eligible settings: inpatient acute‑care hospital, inpatient psychiatric hospital, long‑term care hospital, skilled nursing facility, inpatient rehabilitation facility, or hospital outpatient observation / partial hospitalization.[1]<br>
-      - Patient must be returning to their community setting (home, domiciliary, rest home, or assisted living), not to another inpatient facility.[1]<br>
-      - The billing practitioner assumes responsibility for TCM during the 30‑day post‑discharge period and provides or supervises required non–face‑to‑face services and a face‑to‑face visit within 7 or 14 days.[1]<br>
-      - TCM cannot overlap with certain other services; generally, only one practitioner can bill TCM per beneficiary per 30‑day post‑discharge period.[1]
+      - Discharged from an eligible inpatient or observation setting (acute hospital, psychiatric hospital, LTCH, SNF, IRF, or outpatient observation/partial hospitalization).<br>
+      - Returning to community setting—home, domiciliary, rest home, or assisted living; not to another inpatient facility.<br>
+      - Billing practitioner assumes responsibility for the 30-day TCM episode, including required non-face-to-face services and a face-to-face visit within 7 or 14 days.<br>
+      - One practitioner bills TCM per discharge episode; no overlap with conflicting services.
       See:
       <a href="https://www.cms.gov/outreach-and-education/medicare-learning-network-mln/mlnproducts/downloads/transitional-care-management-services-fact-sheet-icn908628.pdf" target="_blank" rel="noopener noreferrer">CMS TCM Fact Sheet</a>.
     </div>
 
     <div class="accordion-header active">Who May Bill?</div>
     <div class="accordion-content active">
-      TCM can be billed by physicians, nurse practitioners, physician assistants, clinical nurse specialists, and certain other qualified health care professionals who have appropriate Medicare billing privileges.[1]
-      Clinical staff under the direction of the billing practitioner may furnish many of the non–face‑to‑face services (such as phone calls, coordination, and scheduling) under general supervision.
-      Only one practitioner may bill TCM for a given discharge episode, and TCM generally should not be billed in the same month as CCM/PCM for the same practitioner and patient unless local policy clearly allows and time is distinct.
+      Physicians, NPs, PAs, CNS, and other QHPs with Medicare billing privileges. Clinical staff perform non-face-to-face work under general supervision. One practitioner per discharge episode. TCM generally does not co-bill with CCM/PCM in the same month for the same practitioner and patient unless time and documentation are clearly distinct.
       See:
       <a href="https://www.cms.gov/outreach-and-education/medicare-learning-network-mln/mlnproducts/downloads/transitional-care-management-services-fact-sheet-icn908628.pdf" target="_blank" rel="noopener noreferrer">CMS TCM Fact Sheet</a>.
     </div>
 
     <div class="accordion-header active">Billing Structure</div>
     <div class="accordion-content active">
-      TCM uses two CPT codes that differ by timing and decision‑making complexity:[1]
       <ul>
-        <li><strong>99495 – TCM with moderate complexity</strong>:
-          - Communication (direct contact, telephone, or electronic) with the patient/caregiver within 2 business days of discharge.
-          - Medical decision‑making of at least moderate complexity during the service period.
-          - Face‑to‑face visit within 14 calendar days of discharge.</li>
-        <li><strong>99496 – TCM with high complexity</strong>:
-          - Same communication requirement within 2 business days of discharge.
-          - Medical decision‑making of high complexity.
-          - Face‑to‑face visit within 7 calendar days of discharge.</li>
+        <li><strong>99495 – Moderate complexity TCM</strong>: Patient/caregiver contact within 2 business days of discharge; moderate MDM; face-to-face visit within 14 days.</li>
+        <li><strong>99496 – High complexity TCM</strong>: Same 2-business-day contact; high MDM; face-to-face visit within 7 days.</li>
       </ul>
-      The 30‑day TCM period begins on the date of discharge and extends through day 29.
-      All required non–face‑to‑face and face‑to‑face services must be documented to support the billed code.
+      The 30-day TCM period runs from discharge through day 29. All elements must be documented to support the billed code.
       For detailed examples, see:
       <a href="https://www.cms.gov/outreach-and-education/medicare-learning-network-mln/mlnproducts/downloads/transitional-care-management-services-fact-sheet-icn908628.pdf" target="_blank" rel="noopener noreferrer">CMS MLN TCM guide</a>.
     </div>
@@ -984,21 +920,21 @@
           <div class="step-number">1</div>
           <div class="step-title">Outreach &amp; Discharge Review</div>
           <div class="step-desc">
-            Receive discharge notification, review the discharge summary and medication list, and contact the patient or caregiver within 2 business days to assess needs and schedule the follow‑up visit.
+            <ul><li>Receive discharge notification</li><li>Review discharge summary and medication list</li><li>Contact patient or caregiver within 2 business days</li><li>Assess needs and schedule the follow-up visit</li></ul>
           </div>
         </div>
         <div class="step-box">
           <div class="step-number">2</div>
           <div class="step-title">Face‑to‑Face Visit</div>
           <div class="step-desc">
-            Complete the TCM visit within 7 days (99496) or 14 days (99495), perform medication reconciliation, assess symptoms and functional status, and update the care plan accordingly.
+            <ul><li>Complete the visit within 7 days (99496) or 14 days (99495)</li><li>Perform medication reconciliation</li><li>Assess symptoms and functional status</li><li>Update the care plan</li></ul>
           </div>
         </div>
         <div class="step-box">
           <div class="step-number">3</div>
           <div class="step-title">Ongoing Coordination (30 days)</div>
           <div class="step-desc">
-            Provide ongoing phone/portal follow‑up, coordinate tests and referrals, monitor adherence and red flags, and hand off into CCM, PCM, RPM, or APCM as appropriate before day 30.
+            <ul><li>Provide phone/portal follow-up throughout the 30-day window</li><li>Coordinate tests and referrals</li><li>Monitor for red flags</li><li>Enroll into CCM, PCM, RPM, or APCM before day 30</li></ul>
           </div>
         </div>
       </div>
@@ -1017,8 +953,7 @@
         <tr><td>99496</td><td>TCM with high complexity (F2F within 7 days)</td><td>$265.36</td><td>—</td></tr>
       </table>
       <span style="font-size:0.96em;color:#74642a;">
-        <b>Note:</b> In FQHCs and RHCs, TCM‑type services may be captured under general care management G‑codes (such as G0511) or under specific TCM policy depending on CMS and MAC guidance.
-        Always confirm current FQHC/RHC billing instructions:
+        <b>FQHCs/RHCs:</b> TCM-type services may bill under G0511 or specific TCM policy per CMS/MAC guidance. Confirm current instructions:
         <a href="https://codingintel.com/rhc-and-fqhc-update/" target="_blank" rel="noopener noreferrer">CodingIntel RHC/FQHC update</a>,
         <a href="https://www.cms.gov/medicare/payment/fee-schedules/physician" target="_blank" rel="noopener noreferrer">CMS PFS page</a>.
       </span>
@@ -1027,21 +962,20 @@
     <div class="accordion-header active">2026 Rule Changes</div>
     <div class="accordion-content active">
       <div class="alert-box">
-        - The CY 2026 PFS does not substantially change the TCM code family; 99495 and 99496 remain the primary transitional care codes, with updated RVUs and conversion factor applied.[2]<br>
-        - TCM is treated as a designated care management–type service and is excluded from the 2026 “efficiency adjustment” that reduces work RVUs for many non‑time‑based E/M services, helping maintain TCM payment levels.[2][3]<br>
-        - CMS continues to encourage using TCM as a bridge into ongoing care management programs (such as CCM, PCM, RPM, and APCM) for high‑risk patients after the 30‑day post‑discharge window.
+        - <strong>TCM codes unchanged</strong>; 99495 and 99496 remain the primary codes with updated RVUs and conversion factor.<br>
+        - <strong>TCM is exempt from the 2026 efficiency adjustment</strong>—payment levels maintained.<br>
+        - CMS continues to position TCM as the bridge into CCM, PCM, RPM, and APCM after the 30-day window.
       </div>
     </div>
 
     <div class="accordion-header lucidact-workflow active">LucidAct Workflow</div>
     <div class="accordion-content workflow-content active">
       <p><strong>Platform Integration &amp; Roadmap</strong></p>
-      <p>Use TCM to capture and operationalize post‑discharge workflows and then funnel patients into longitudinal care programs.</p>
       <ul>
-        <li>Integrate ADT/discharge feeds so eligible discharges automatically create TCM tasks and start the 30‑day TCM episode clock.</li>
-        <li>Automate alerts and worklists for 2‑business‑day outreach and 7‑/14‑day face‑to‑face visit windows with clear ownership.</li>
-        <li>Track TCM‑specific documentation elements (setting, contact date, visit date, complexity) and prevent double billing with CCM/PCM in the same period.</li>
-        <li>Embed triggers to enroll appropriate patients into CCM, RPM, RTM, or APCM as they exit the TCM period, keeping continuity of care and revenue.</li>
+        <li>Integrate ADT/discharge feeds so eligible discharges automatically create TCM tasks and start the 30-day episode clock.</li>
+        <li>Automate alerts for 2-business-day outreach and 7-/14-day visit windows with clear team ownership.</li>
+        <li>Track required documentation elements (setting, contact date, visit date, complexity) and block double-billing with CCM/PCM in the same period.</li>
+        <li>Auto-trigger CCM, RPM, RTM, or APCM enrollment as patients exit the TCM window.</li>
       </ul>
     </div>
   </div>
@@ -1052,20 +986,17 @@
   <div class="accordion">
     <div class="accordion-header active">What is APCM?</div>
     <div class="accordion-content active">
-      Advanced Primary Care Management (APCM) represents CMS’ move toward team‑based, longitudinal primary care models that bundle chronic care, preventive services, behavioral health, and social‑needs support into a more comprehensive payment.[1][2]
-      In the 2026 PFS, this concept is operationalized through enhanced care‑management G‑codes (such as G0511 for FQHCs/RHCs and new/expanded G‑codes for community health integration, principal illness navigation, and peer support) that sit on top of core primary care services.[1][2][3]
-      APCM‑style models aim to pay practices for continuous management of high‑risk populations rather than just individual visits, aligning with ACO and advanced primary care initiatives.
-      See:
+      APCM bundles chronic care, preventive services, behavioral health, and social-needs support into a comprehensive per-patient monthly payment—paying for population management, not just visits. In 2026, operationalized through expanded G-codes for community health integration, principal illness navigation, and peer support layered on top of primary care. Aligned with ACO and advanced primary care models. See:
       <a href="https://hallrender.com/2025/11/21/key-highlights-from-the-2026-medicare-physician-fee-schedule-final-rule/" target="_blank" rel="noopener noreferrer">Hall Render 2026 PFS highlights</a>,
       <a href="https://www.chartspan.com/blog/medicare-physician-fee-schedule-final-rule-2026-significant-changes-are-here/" target="_blank" rel="noopener noreferrer">ChartSpan 2026 PFS summary</a>.
     </div>
 
     <div class="accordion-header active">Patient Eligibility</div>
     <div class="accordion-content active">
-      - Medicare patients attributed to a participating primary care practice or FQHC/RHC that is using the new or existing care‑management G‑codes as part of an advanced primary care or ACO‑aligned model.[1][2]<br>
-      - Typically higher‑risk or complex patients who benefit from multidisciplinary care teams, community health workers, and navigation support (e.g., multiple chronic conditions plus social‑needs barriers).[2][3]<br>
-      - A comprehensive care plan and team‑based follow‑up structure must be in place, with roles for clinicians, community health workers, navigators, and peer support specialists as defined by the relevant G‑codes (G0019, G0022, G0023, G0024, G0140, etc.).[2]<br>
-      - The practice must meet documentation and supervision requirements associated with each code and applicable advanced payment model (e.g., ACO REACH, MSSP ACO, or other APCM programs).[1][3]
+      - Medicare patient attributed to a participating primary care practice or FQHC/RHC using advanced primary care or ACO-aligned G-codes.<br>
+      - Higher-risk or complex patients benefiting from multidisciplinary teams, community health workers, and navigation support.<br>
+      - Comprehensive care plan with defined team roles (clinicians, CHWs, navigators, peer support) per applicable G-codes.<br>
+      - Practice meets documentation and supervision requirements for each code and applicable payment model (ACO REACH, MSSP, etc.).
       Sources:
       <a href="https://hallrender.com/2025/11/21/key-highlights-from-the-2026-medicare-physician-fee-schedule-final-rule/" target="_blank" rel="noopener noreferrer">Hall Render 2026 overview</a>,
       <a href="https://www.chartspan.com/blog/medicare-physician-fee-schedule-final-rule-2026-significant-changes-are-here/" target="_blank" rel="noopener noreferrer">ChartSpan</a>.
@@ -1073,10 +1004,7 @@
 
     <div class="accordion-header active">Who May Bill?</div>
     <div class="accordion-content active">
-      APCM‑related codes can be billed by primary care physicians, nurse practitioners, physician assistants, and FQHC/RHC practitioners who meet the requirements for each specific G‑code.[2][3]
-      For community health integration and principal illness navigation codes (G0019, G0022, G0023, G0024), billing practitioners oversee services furnished by community health workers and navigators under general supervision.[2]
-      Peer support services (e.g., G0140 and related codes) allow practices to integrate trained peers into the care team, with billing practitioners responsible for oversight and integration of their work into the care plan.[2]
-      Many APCM‑style payments in FQHC/RHC settings are ultimately billed under G0511 as a “general care management” umbrella, with APCM and ACO frameworks determining attribution and performance incentives.[3][4]
+      Primary care physicians, NPs, PAs, and FQHC/RHC practitioners who meet each G-code's requirements. CHW/navigator services (G0019, G0022, G0023, G0024) billed by the supervising practitioner under general supervision. Peer support codes (G0140) integrate trained peers under practitioner oversight. In FQHCs/RHCs, payments roll up to G0511 with ACO attribution and performance incentives layered on top.
       See:
       <a href="https://codingintel.com/rhc-and-fqhc-update/" target="_blank" rel="noopener noreferrer">CodingIntel RHC/FQHC update</a>,
       <a href="https://www.cms.gov/medicare/payment/fee-schedules/physician" target="_blank" rel="noopener noreferrer">CMS Physician Fee Schedule</a>.
@@ -1084,16 +1012,16 @@
 
     <div class="accordion-header active">Billing Structure</div>
     <div class="accordion-content active">
-      APCM uses a combination of longitudinal care‑management payments and targeted G‑codes for social‑needs and navigation work:[1][2][3]
+      APCM combines a monthly care management payment with targeted G-codes for social-needs and navigation work:
       <ul>
-        <li><strong>G0511 – General care management (FQHC/RHC)</strong>: monthly comprehensive care management payment that can encompass CCM, BHI, and other care‑management services for FQHC/RHC settings.</li>
-        <li><strong>G0019 – Community health integration, 60 minutes</strong>: services by community health workers addressing social determinants of health, care coordination, and resource linkage.</li>
-        <li><strong>G0022 – Community health integration, additional 30 minutes</strong>: add‑on to G0019 when more time is needed.</li>
-        <li><strong>G0023 – Principal illness navigation, 60 minutes</strong>: navigation and support for patients with serious conditions by a principal illness navigator.</li>
-        <li><strong>G0024 – Principal illness navigation, additional 30 minutes</strong>: add‑on to G0023 for additional time.</li>
-        <li><strong>G0140 – Peer support navigation, 60 minutes</strong>: peer specialist services focused on engagement, self‑management support, and care navigation (with add‑on codes for extra time in some models).</li>
+        <li><strong>G0511</strong> – General care management (FQHC/RHC): monthly payment encompassing CCM, BHI, and other care management services.</li>
+        <li><strong>G0019</strong> – Community health integration: 60 min/mo CHW services for SDOH, coordination, and resource linkage.</li>
+        <li><strong>G0022</strong> – Community health integration add-on: each additional 30 min.</li>
+        <li><strong>G0023</strong> – Principal illness navigation: 60 min/mo for patients with serious conditions.</li>
+        <li><strong>G0024</strong> – Principal illness navigation add-on: each additional 30 min.</li>
+        <li><strong>G0140</strong> – Peer support navigation: 60 min/mo peer specialist services for engagement and self-management.</li>
       </ul>
-      These codes are stacked on top of usual primary care E/M and care‑management services and, in APCM/ACO contexts, may be further blended with prospective or performance‑based payments.
+      These stack on top of standard E/M and care management services and blend with prospective or performance-based payments in APCM/ACO arrangements.
       Good breakdowns of the new and expanded G‑codes:
       <a href="https://hallrender.com/2025/11/21/key-highlights-from-the-2026-medicare-physician-fee-schedule-final-rule/" target="_blank" rel="noopener noreferrer">Hall Render 2026 PFS highlights</a>,
       <a href="https://www.chartspan.com/blog/medicare-physician-fee-schedule-final-rule-2026-significant-changes-are-here/" target="_blank" rel="noopener noreferrer">ChartSpan</a>.
@@ -1106,21 +1034,21 @@
           <div class="step-number">1</div>
           <div class="step-title">Team Assignment &amp; Risk Stratification</div>
           <div class="step-desc">
-            Attribute patients to primary care panels, stratify by clinical and social‑risk scores, and assign a multidisciplinary APCM team that includes clinicians, care managers, community health workers, and peer support where appropriate.
+            <ul><li>Attribute patients to primary care panels</li><li>Stratify by clinical and social risk scores</li><li>Assign multidisciplinary team: clinicians, care managers, CHWs, and peer support</li></ul>
           </div>
         </div>
         <div class="step-box">
           <div class="step-number">2</div>
           <div class="step-title">Monthly Engagement &amp; Navigation</div>
           <div class="step-desc">
-            Deliver continuous outreach, medication management, goal‑setting, referrals, and social‑needs interventions; document time for G0511, G0019/G0022, G0023/G0024, and peer support G‑codes tied to specific tasks.
+            <ul><li>Deliver ongoing outreach, medication management, and goal-setting</li><li>Execute referrals and SDOH interventions</li><li>Document time by role and G-code (G0511, G0019/G0022, G0023/G0024, peer support)</li></ul>
           </div>
         </div>
         <div class="step-box">
           <div class="step-number">3</div>
           <div class="step-title">SDOH &amp; Behavioral Integration</div>
           <div class="step-desc">
-            Integrate SDOH screening and interventions, embed BHI/CoCM where indicated, and use navigators and peers to overcome barriers to adherence, access, and follow‑up.
+            <ul><li>Integrate SDOH screening results into the care plan</li><li>Embed BHI/CoCM where clinically indicated</li><li>Deploy navigators and peers to address barriers to adherence and access</li></ul>
           </div>
         </div>
       </div>
@@ -1143,8 +1071,7 @@
         <tr><td>G0511</td><td>General care management, per‑beneficiary per‑month</td><td>—</td><td>$76.68</td></tr>
       </table>
       <span style="font-size:0.96em;color:#74642a;">
-        <b>Note:</b> Exact national average payment rates may vary slightly by year and locality; values here reflect approximate CY 2026 non‑facility equivalents where available.
-        FQHC/RHC rates for these G‑codes are set in the PFS and FQHC/RHC guidance.
+        <b>Note:</b> Approximate CY 2026 rates; vary by locality. FQHC/RHC rates set in PFS and FQHC/RHC guidance.
         See
         <a href="https://codingintel.com/rhc-and-fqhc-update/" target="_blank" rel="noopener noreferrer">CodingIntel RHC/FQHC update</a>,
         <a href="https://www.cms.gov/medicare/payment/fee-schedules/physician" target="_blank" rel="noopener noreferrer">CMS PFS look‑up</a>.
@@ -1154,21 +1081,20 @@
     <div class="accordion-header active">2026 Rule Changes</div>
     <div class="accordion-content active">
       <div class="alert-box">
-        - The CY 2026 PFS final rule expands and clarifies community health integration, principal illness navigation, and peer‑support G‑codes, giving primary care and FQHC/RHC practices new tools to bill for SDOH and navigation work.[1][2]<br>
-        - CMS emphasizes that designated care management and APCM‑style G‑codes are exempt from the 2026 efficiency adjustment that reduces work RVUs for many non‑time‑based E/M services, protecting longitudinal primary‑care revenue.[1][3]<br>
-        - APCM concepts are tightly linked to broader Medicare value‑based care efforts (including ACOs and innovation models), encouraging practices to use these G‑codes to operationalize team‑based care and address health‑related social needs.[1][2]
+        - <strong>CHI, PIN, and peer-support G-codes expanded and clarified</strong>—new tools for FQHC/RHC and primary care practices to bill SDOH and navigation work.<br>
+        - <strong>APCM G-codes exempt from the 2026 efficiency adjustment</strong>—longitudinal primary care revenue protected.<br>
+        - CMS links APCM tightly to ACOs and innovation models, incentivizing team-based care and social-needs work at scale.
       </div>
     </div>
 
     <div class="accordion-header lucidact-workflow active">LucidAct Workflow</div>
     <div class="accordion-content workflow-content active">
       <p><strong>Platform Integration &amp; Roadmap</strong></p>
-      <p>Use APCM as the umbrella primary‑care program that coordinates CCM, RPM/RTM, BHI/CoCM, TCM, and SDOH/navigation services for high‑risk panels.</p>
       <ul>
-        <li>Model APCM panels and risk tiers in LucidAct, with automatic attribution from payers and internal empanelment logic.</li>
-        <li>Configure role‑based worklists for clinicians, care managers, community health workers, navigators, and peers, with each task mapped to specific G‑codes and time capture.</li>
-        <li>Encode stacking rules so that APCM/ACO‑aligned G‑codes are billed correctly alongside CCM, RPM, RTM, BHI, and TCM without double‑counting.</li>
-        <li>Expose APCM performance dashboards that tie utilization of G‑codes, SDOH interventions, and behavioral‑health integration to outcomes and revenue across the primary‑care population.</li>
+        <li>Model APCM panels and risk tiers with automatic payer attribution and internal empanelment logic.</li>
+        <li>Configure role-based worklists for clinicians, care managers, CHWs, navigators, and peers—each task mapped to specific G-codes and time capture.</li>
+        <li>Encode stacking rules so APCM/ACO G-codes bill correctly alongside CCM, RPM, RTM, BHI, and TCM without double-counting.</li>
+        <li>APCM performance dashboards tying G-code utilization, SDOH interventions, and BH integration to outcomes and revenue.</li>
       </ul>
     </div>
   </div>
@@ -1180,42 +1106,37 @@
   <div class="accordion">
     <div class="accordion-header active">What is AWV?</div>
     <div class="accordion-content active">
-      The Medicare Annual Wellness Visit (AWV) is a yearly preventive service that includes a structured health risk assessment, review of medical and family history, risk‑factor screening, and development or update of a personalized prevention plan.[1]
-      AWVs are billed with HCPCS codes G0438 (initial AWV) and G0439 (subsequent AWV) and are covered at 100% under Part B when requirements are met.[1][2]
-      Under recent rules, AWVs can also serve as a touchpoint for standardized social drivers of health (SDOH) screening using HCPCS G0136 when clinically appropriate.[3]
-      See:
+      The AWV is an annual preventive visit covered 100% under Part B—structured health risk assessment, history review, risk-factor screening, and a personalized prevention plan. It is also the primary touchpoint for standardized SDOH screening (G0136). See:
       <a href="https://www.cms.gov/outreach-and-education/medicare-learning-network-mln/mlnproducts/downloads/awv_chart_icn905706.pdf" target="_blank" rel="noopener noreferrer">CMS AWV Quick Reference</a>,
       <a href="https://www.cms.gov/medicare/prevention/prevntiongeninformation/medicare-coverage-preventive-services" target="_blank" rel="noopener noreferrer">CMS Preventive Services</a>.
     </div>
 
     <div class="accordion-header active">Patient Eligibility</div>
     <div class="accordion-content active">
-      - Medicare Part B beneficiaries who have been enrolled for at least 12 months.[1]<br>
-      - Not within 12 months of an Initial Preventive Physical Examination (IPPE, G0402) or another AWV (G0438/G0439).[1]<br>
-      - The initial AWV (G0438) can be billed once per lifetime; subsequent AWVs (G0439) are allowed once every 12 months.[1]<br>
-      - A standardized SDOH risk assessment (G0136) may be performed in conjunction with the AWV or other qualifying E/M or behavioral health services, generally not more than once every 6 months.[3]
+      - Medicare Part B beneficiaries enrolled for 12+ months, not within 12 months of an IPPE (G0402) or prior AWV.<br>
+      - G0438 (initial) billed once per lifetime; G0439 (subsequent) annually.<br>
+      - SDOH screening (G0136) may be added when clinically appropriate, generally no more than once every 6 months.
       Details:
       <a href="https://www.cms.gov/outreach-and-education/medicare-learning-network-mln/mlnproducts/downloads/awv_chart_icn905706.pdf" target="_blank" rel="noopener noreferrer">CMS AWV chart</a>.
     </div>
 
     <div class="accordion-header active">Who May Bill?</div>
     <div class="accordion-content active">
-      AWVs may be billed by physicians, nurse practitioners, physician assistants, clinical nurse specialists, and certain other practitioners allowed by CMS.[1]
-      Clinical staff can complete many components of the health risk assessment and screening under appropriate supervision, but the billing practitioner is responsible for reviewing findings, performing required components, and finalizing the personalized prevention plan.[1][2]
-      When an SDOH risk assessment (G0136) is performed in conjunction with an AWV, it is typically billed by the same practitioner if requirements are met, with cost sharing generally waived when modifier‑33 is appended.[3]
+      Physicians, NPs, PAs, CNS, and other CMS-permitted practitioners. Clinical staff may complete many HRA components under supervision; the billing practitioner reviews findings and finalizes the prevention plan.
+      G0136 co-billed by the same practitioner when requirements are met; cost sharing generally waived with modifier-33.
       See:
       <a href="https://www.cms.gov/files/document/se24006.pdf" target="_blank" rel="noopener noreferrer">CMS SDOH Risk Assessment guidance (SE24006)</a>.
     </div>
 
     <div class="accordion-header active">Billing Structure</div>
     <div class="accordion-content active">
-      The core AWV billing elements are:[1][3]
+      Three billable elements:
       <ul>
-        <li><strong>G0438 – Initial AWV</strong>: once per lifetime, includes a comprehensive health risk assessment, review of medical and family history, list of current providers and medications, measurements, detection of cognitive impairment, and development of a written personalized prevention plan.</li>
-        <li><strong>G0439 – Subsequent AWV</strong>: annual visit that updates the health risk assessment and personalized prevention plan and reviews risk factors, functional status, and medications.</li>
-        <li><strong>G0136 – SDOH Risk Assessment</strong>: standardized risk‑assessment instrument (5–15 minutes) identifying social‑risk factors; can be billed with AWV, other E/M, or behavioral health visits no more than once every 6 months.[3]</li>
+        <li><strong>G0438 – Initial AWV</strong>: once per lifetime. Comprehensive HRA, history review, provider and medication list, cognitive screening, and written prevention plan.</li>
+        <li><strong>G0439 – Subsequent AWV</strong>: annually. Updates HRA and prevention plan; reviews risk factors, functional status, and medications.</li>
+        <li><strong>G0136 – SDOH Risk Assessment</strong>: 5–15 min standardized screening for social-risk factors. Billable with AWV, E/M, or BH visits, no more than every 6 months. Cost sharing waived with modifier-33.</li>
       </ul>
-      AWVs are typically furnished without cost‑sharing to the patient, and when G0136 is provided as a preventive service with modifier‑33, cost sharing is generally waived as well.[3]
+      AWVs carry no patient cost sharing under Part B.
       Guidance:
       <a href="https://www.cms.gov/outreach-and-education/medicare-learning-network-mln/mlnproducts/downloads/awv_chart_icn905706.pdf" target="_blank" rel="noopener noreferrer">CMS AWV Quick Reference</a>,
       <a href="https://www.cms.gov/files/document/se24006.pdf" target="_blank" rel="noopener noreferrer">CMS SDOH G0136 memo</a>.
@@ -1228,28 +1149,28 @@
           <div class="step-number">1</div>
           <div class="step-title">Pre‑Visit HRA</div>
           <div class="step-desc">
-            Prior to the visit, collect the health risk assessment (HRA), including medical and family history, medication list, self‑reported functional status, and basic SDOH questions, via portal, phone, or paper forms.
+            <ul><li>Collect HRA in advance via portal, phone, or paper</li><li>Gather medical and family history, medication list, and functional status</li><li>Include basic SDOH questions</li></ul>
           </div>
         </div>
         <div class="step-box">
           <div class="step-number">2</div>
           <div class="step-title">AWV Encounter</div>
           <div class="step-desc">
-            During the AWV, confirm and complete the HRA, perform screenings (cognitive, depression, fall risk, etc.), review medications, reconcile providers, and—when indicated—administer a standardized SDOH risk assessment (G0136).
+            <ul><li>Confirm and complete the HRA</li><li>Perform cognitive, depression, and fall risk screenings</li><li>Review medications and reconcile provider list</li><li>Administer G0136 SDOH screening when indicated</li></ul>
           </div>
         </div>
         <div class="step-box">
           <div class="step-number">3</div>
           <div class="step-title">Prevention Plan</div>
           <div class="step-desc">
-            Generate or update the personalized prevention plan, including recommended screenings, immunizations, lifestyle interventions, and referrals, and share it with the patient and caregivers.
+            <ul><li>Generate or update the personalized prevention plan</li><li>Include recommended screenings, immunizations, and lifestyle interventions</li><li>Document referrals and share plan with patient and caregivers</li></ul>
           </div>
         </div>
         <div class="step-box">
           <div class="step-number">4</div>
           <div class="step-title">Care Mgmt Handoff</div>
           <div class="step-desc">
-            Route high‑risk patients or those with unmet needs into CCM, PCM, RPM/RTM, APCM, BHI/CoCM, or social‑services workflows for ongoing follow‑up.
+            <ul><li>Route high-risk patients into CCM, PCM, RPM/RTM, or APCM</li><li>Route unmet social needs into BHI/CoCM or social services workflows</li></ul>
           </div>
         </div>
       </div>
@@ -1284,29 +1205,27 @@
         </tr>
       </table>
       <span style="font-size:0.96em;color:#74642a;">
-        <b>Note:</b> Exact 2026 national average payments are determined in the PFS and will vary by locality; AWVs themselves are typically covered at 100% under Part B.
-        When G0136 is furnished as preventive and billed with modifier‑33, patient cost‑sharing is generally waived per CMS guidance.[3]
+        <b>Note:</b> Rates vary by locality. AWVs are covered at 100% under Part B. G0136 cost sharing waived when billed with modifier-33 as preventive.
       </span>
     </div>
 
     <div class="accordion-header active">2026 Rule Notes</div>
     <div class="accordion-content active">
       <div class="alert-box">
-        - The CY 2026 PFS keeps the core AWV structure (G0438/G0439) unchanged, maintaining the 12‑month frequency limit and required elements.[1][2]<br>
-        - CMS continues to encourage integration of standardized SDOH risk assessment (G0136) with AWVs and other visits, providing separate payment while supporting identification of health‑related social needs.[3]<br>
-        - AWVs remain a key entry point for care‑management programs, and 2026 care‑management changes (e.g., CCM, RPM/RTM, BHI/CoCM, APCM) can be layered downstream from AWV‑identified risks.
+        - <strong>AWV structure unchanged</strong>—G0438/G0439 retain the same frequency limits and required elements.<br>
+        - <strong>G0136 SDOH screening continues to pay separately</strong> when added to AWV or other qualifying visits.<br>
+        - AWV remains the primary on-ramp to CCM, RPM/RTM, BHI/CoCM, and APCM for newly identified high-risk patients.
       </div>
     </div>
 
     <div class="accordion-header lucidact-workflow active">LucidAct Workflow</div>
     <div class="accordion-content workflow-content active">
       <p><strong>Platform Integration &amp; Roadmap</strong></p>
-      <p>Use AWVs as the standardized intake and risk‑stratification visit that feeds patients into longitudinal care‑management and SDOH workflows.</p>
       <ul>
-        <li>Embed AWV HRA templates in LucidAct, with structured fields mapped to risk scores, care gaps, and candidate flags for CCM, PCM, RPM/RTM, BHI/CoCM, APCM, and SDOH navigation.</li>
-        <li>Integrate a standardized SDOH instrument for G0136 into the AWV workflow, with positive screens automatically creating care‑manager or community‑health‑worker tasks.</li>
-        <li>Generate a shareable personalized prevention plan from AWV data and push it into patient‑facing portals and care‑team dashboards.</li>
-        <li>Build AWV‑to‑care‑management “handoff” views that show which AWV findings triggered which program referrals, allowing teams to track conversion rates and close the loop.</li>
+        <li>Embed AWV HRA templates with structured fields mapped to risk scores, care gaps, and program candidacy flags (CCM, PCM, RPM/RTM, BHI/CoCM, APCM, SDOH navigation).</li>
+        <li>Integrate G0136 SDOH screening into the AWV workflow; positive screens auto-generate CHW or care manager tasks.</li>
+        <li>Generate and push a shareable prevention plan from AWV data to patient portals and care-team dashboards.</li>
+        <li>AWV-to-care-management handoff views: which findings triggered which referrals, with conversion tracking.</li>
       </ul>
     </div>
 
@@ -1319,11 +1238,9 @@
 
     <div class="accordion-header active">What are BHI &amp; CoCM?</div>
     <div class="accordion-content active">
-      General Behavioral Health Integration (BHI, CPT 99484) is a monthly care‑management service for patients with one or more mental, behavioral, or psychiatric conditions, providing at least 20 minutes of behaviorally focused care by clinical staff under the direction of a billing practitioner.
-      It includes systematic assessment, care‑plan development, monitoring, and coordination of behavioral health treatment in primary care or similar settings.
-      Psychiatric Collaborative Care Model (CoCM, CPT 99492–99494 and HCPCS G2214) is a higher‑intensity team‑based model in which a behavioral health care manager and psychiatric consultant work with the treating practitioner using a registry and structured case reviews.
-      Both BHI and CoCM are designated Behavioral Health Integration services under Medicare.[1][2]
-      Key references:
+      Two tiers of behavioral health integration under Medicare:<br><br>
+      <strong>BHI (99484)</strong>: monthly service for patients with 1+ mental/behavioral/psychiatric conditions. Clinical staff provide at least 20 min of behaviorally focused care management under the billing practitioner—assessment, care-plan development, monitoring, and coordination.<br><br>
+      <strong>CoCM (99492–99494, G2214)</strong>: higher-intensity team model requiring a behavioral health care manager and psychiatric consultant working alongside the treating practitioner, with a patient registry and structured case reviews. See:
       <a href="https://www.cms.gov/files/document/mln909432-behavioral-health-integration-services.pdf" target="_blank" rel="noopener noreferrer">CMS MLN909432 – Behavioral Health Integration Services</a>,
       <a href="https://www.thoroughcare.net/blog/medicare-behavioral-health-integration" target="_blank" rel="noopener noreferrer">ThoroughCare 99484 overview</a>,
       <a href="https://www.psychiatry.org/psychiatrists/practice/professional-interests/collaborative-care/get-paid" target="_blank" rel="noopener noreferrer">APA – Getting Paid in the Collaborative Care Model</a>.
@@ -1331,10 +1248,10 @@
 
     <div class="accordion-header active">Patient Eligibility</div>
     <div class="accordion-content active">
-      - Medicare patients with at least one identified mental, behavioral, or psychiatric condition (including substance use disorders) that can be managed in primary care or collaboratively with behavioral health specialists.[1][3]<br>
-      - The condition may be pre‑existing or newly diagnosed by the billing practitioner, based on clinical evaluation and, ideally, validated rating scales (e.g., PHQ‑9, GAD‑7).[1][3]<br>
-      - The patient requires ongoing assessment, active care‑plan management, and coordination beyond intermittent visits; self‑limited or very mild symptoms typically do not justify BHI/CoCM.[1][3]<br>
-      - BHI is generally appropriate for mild–moderate or stable behavioral health needs managed largely within primary care, while CoCM is more appropriate for moderate–severe, complex, or treatment‑resistant conditions where psychiatric consultation is needed.[1][2]
+      - Medicare patient with 1+ mental, behavioral, or psychiatric condition (including SUD) manageable in primary care or collaboratively with BH specialists.<br>
+      - Condition may be pre-existing or newly diagnosed; use validated scales (PHQ-9, GAD-7) to support documentation.<br>
+      - Patient requires ongoing management and coordination beyond intermittent visits—mild self-limited symptoms do not qualify.<br>
+      - BHI: appropriate for mild-moderate or stable BH needs managed in primary care. CoCM: appropriate for moderate-severe, complex, or treatment-resistant conditions requiring psychiatric consultation.
       Detailed criteria:
       <a href="https://www.cms.gov/files/document/mln909432-behavioral-health-integration-services.pdf" target="_blank" rel="noopener noreferrer">CMS BHI MLN</a>,
       <a href="https://blog.proemhealth.com/what-the-cpt-code-99484-reimbursement-means-for-your-bottom-line" target="_blank" rel="noopener noreferrer">Proem 99484 overview</a>.
@@ -1342,11 +1259,10 @@
 
     <div class="accordion-header active">Who May Bill?</div>
     <div class="accordion-content active">
-      BHI and CoCM can be billed by physicians, nurse practitioners, physician assistants, clinical nurse specialists, and certain other qualified health care professionals who provide ongoing primary or specialty care for the patient.[1]
-      For BHI (99484), clinical staff under general supervision can furnish most care‑management activities, with the billing practitioner overseeing the plan; a behavioral health care manager is optional but often helpful.[1][4]
-      For CoCM (99492–99494/G2214), the billing practitioner must direct a care team that includes:
-      a behavioral health care manager (e.g., clinical social worker, nurse, or psychologist) and a psychiatric consultant who provides regular case‑review and treatment recommendations, usually via a registry‑based caseload.[1][2]
-      Only one practitioner may bill BHI or CoCM codes for a given patient per month, though these codes may often be billed in conjunction with CCM or other care‑management services when time and requirements are distinct.[1][4]
+      Physicians, NPs, PAs, CNS, and other QHPs providing ongoing primary or specialty care.<br>
+      <strong>BHI:</strong> Clinical staff perform most activities under general supervision. A BH care manager is optional but recommended.<br>
+      <strong>CoCM:</strong> Requires a defined care triad—treating practitioner, BH care manager (social worker, nurse, or psychologist), and psychiatric consultant providing regular case review via a registry-based caseload.<br>
+      One practitioner per patient per month for BHI or CoCM. Both may stack with CCM or other services when time and requirements are distinct.
       See:
       <a href="https://www.cms.gov/medicare/medicare-fee-for-service-payment/physicianfeesched/downloads/behavioral-health-integration-faqs.pdf" target="_blank" rel="noopener noreferrer">CMS BHI FAQ</a>,
       <a href="https://www.aafp.org/family-physician/practice-and-career/getting-paid/coding/behavioral-health-integration-coding.html" target="_blank" rel="noopener noreferrer">AAFP BHI coding resource</a>.
@@ -1354,21 +1270,16 @@
 
     <div class="accordion-header active">Billing Structure</div>
     <div class="accordion-content active">
-      <strong>BHI (CPT 99484)</strong><br>
-      - Monthly care‑management service with at least 20 minutes of clinical staff time focused on behavioral health, directed by the billing practitioner.[1][3][4]<br>
-      - Includes:
-      systematic assessment using validated rating scales, care‑plan development and revision, proactive follow‑up, coordination with mental‑health and medical providers, and patient/caregiver support.[1][5]<br><br>
+      <strong>BHI (99484)</strong><br>
+      20+ min/mo of clinical staff time focused on behavioral health: validated scale assessment, care-plan development and revision, proactive follow-up, and provider/caregiver coordination.<br><br>
 
-      <strong>CoCM (CPT 99492–99494, HCPCS G2214)</strong><br>
-      - <strong>99492</strong> – Initial psychiatric collaborative care management in the first month, first 70 minutes of behavioral health care‑manager time in consultation with a psychiatric consultant, under the direction of the treating practitioner.[1][2]<br>
-      - <strong>99493</strong> – Subsequent months, first 60 minutes of care‑manager time with psychiatric consultant and treating practitioner involvement.[1][2]<br>
-      - <strong>99494</strong> – Add‑on code for each additional 30 minutes of care‑manager activities in any month (billed with 99492 or 99493).[1][2]<br>
-      - <strong>G2214</strong> – 30‑minute CoCM code for initial or subsequent months when a shorter amount of time is furnished, with the same team and registry requirements.[5][6]<br><br>
+      <strong>CoCM codes:</strong><br>
+      - <strong>99492</strong> – Initial month: first 70 min of BH care manager time with psychiatric consultant.<br>
+      - <strong>99493</strong> – Subsequent months: first 60 min.<br>
+      - <strong>99494</strong> – Add-on: each additional 30 min (billed with 99492 or 99493).<br>
+      - <strong>G2214</strong> – 30-min CoCM option for lower-intensity months; same team and registry requirements.<br><br>
 
-      All CoCM codes require:
-      (1) A patient registry or tracking system for the CoCM caseload,
-      (2) Regular (typically weekly) systematic case review between the behavioral health care manager and psychiatric consultant, and
-      (3) Documentation of care‑plan adjustments and communication back to the treating practitioner.[1][2]
+      All CoCM codes require: (1) a patient registry, (2) regular case review between the BH care manager and psychiatric consultant, and (3) documented care-plan adjustments communicated to the treating practitioner.
       Helpful coding and payment guides:
       <a href="https://qi.ipro.org/wp-content/uploads/BHI_April28_CodingBillingServices2021_Final.pdf" target="_blank" rel="noopener noreferrer">IPRO BHI/CoCM Coding Guide</a>,
       <a href="https://codingintel.com/rhc-and-fqhc-update/" target="_blank" rel="noopener noreferrer">CodingIntel CoCM in RHC/FQHC</a>.
@@ -1381,28 +1292,28 @@
           <div class="step-number">1</div>
           <div class="step-title">Identify &amp; Enroll</div>
           <div class="step-desc">
-            Use screening tools (e.g., PHQ‑9, GAD‑7, AUDIT‑C) and referral cues to identify patients with behavioral health needs; confirm diagnosis; explain BHI or CoCM; and obtain consent, documenting enrollment and initial rating scales.[1][5]
+            <ul><li>Screen with PHQ-9, GAD-7, AUDIT-C, and referral cues</li><li>Confirm diagnosis and explain BHI or CoCM to the patient</li><li>Obtain consent and document initial rating scales</li></ul>
           </div>
         </div>
         <div class="step-box">
           <div class="step-number">2</div>
           <div class="step-title">Assessment &amp; Care Plan</div>
           <div class="step-desc">
-            Perform structured behavioral health assessment, including symptom severity, functional impact, and comorbidities; develop a care plan that integrates psychiatric and medical goals, and enter the patient into a registry (required for CoCM).[1][2][5]
+            <ul><li>Conduct structured BH assessment: symptom severity, functional impact, comorbidities</li><li>Develop an integrated psychiatric and medical care plan</li><li>Enter patient into the registry (required for CoCM)</li></ul>
           </div>
         </div>
         <div class="step-box">
           <div class="step-number">3</div>
           <div class="step-title">Ongoing Management</div>
           <div class="step-desc">
-            Provide follow‑up contacts (phone, video, portal), track rating scales, monitor medication adherence and side effects, coordinate with external therapists, and document time toward 99484 (≥20 minutes) or CoCM thresholds (99492/99493/99494 or G2214).[1][3][4]
+            <ul><li>Provide follow-up via phone, video, or portal</li><li>Track validated rating scales over time</li><li>Monitor medication adherence and side effects</li><li>Coordinate with external therapists</li><li>Document time toward 99484 (20+ min) or applicable CoCM code</li></ul>
           </div>
         </div>
         <div class="step-box">
           <div class="step-number">4</div>
           <div class="step-title">Case Review &amp; Escalation</div>
           <div class="step-desc">
-            For CoCM, hold regular registry‑based case review sessions between the behavioral health care manager and psychiatric consultant, update treatment recommendations, and escalate or step‑down care (e.g., to specialty psychiatry or BHI‑only) based on response.[1][2]
+            <ul><li>Hold regular registry-based case reviews between BH care manager and psychiatric consultant</li><li>Update treatment recommendations based on patient response</li><li>Escalate to specialty psychiatry or step down to BHI-only as clinically appropriate</li></ul>
           </div>
         </div>
       </div>
@@ -1420,72 +1331,68 @@
           <td>99484</td>
           <td>General BHI, ≥20 minutes clinical staff per month</td>
           <td>
-            Lower‑intensity behavioral health integration; can be billed without a psychiatric consultant and may be layered with CCM and APCM when time and requirements are distinct.[1][3][4]
+            Lower-intensity BH integration. No psychiatric consultant required. Stackable with CCM and APCM when time and requirements are distinct.
           </td>
         </tr>
         <tr>
           <td>99492</td>
           <td>Initial CoCM, first 70 minutes in first month</td>
           <td>
-            Requires BH care manager, psychiatric consultant, treating practitioner, registry, and systematic case review; typically used in the first month of CoCM enrollment.[1][2]
+            Requires full CoCM triad, registry, and systematic case review. First month of enrollment.
           </td>
         </tr>
         <tr>
           <td>99493</td>
           <td>Subsequent CoCM month, first 60 minutes</td>
           <td>
-            Same team and registry requirements as 99492; used in months after the initial CoCM month.[1][2]
+            Same team and registry requirements as 99492. Subsequent months.
           </td>
         </tr>
         <tr>
           <td>99494</td>
           <td>CoCM add‑on, each additional 30 minutes</td>
           <td>
-            Billed alongside 99492 or 99493 when care‑manager time exceeds base thresholds; may be billed multiple times per month subject to payer policy.[1][2]
+            Add-on to 99492 or 99493 when care-manager time exceeds base thresholds. May bill multiple times/month per payer policy.
           </td>
         </tr>
         <tr>
           <td>G2214</td>
           <td>CoCM, first 30 minutes (initial/subsequent)</td>
           <td>
-            Shorter‑duration CoCM option with the same team and registry requirements as 99492/99493; often useful for lower‑intensity months.[5][6]
+            Shorter-duration CoCM option; same team and registry requirements. Useful for lower-intensity months.
           </td>
         </tr>
         <tr>
           <td>G0323</td>
           <td>General BHI HCPCS analogue / FQHC/RHC/APCM BH add‑on</td>
           <td>
-            HCPCS code for BHI‑type services in certain settings, including FQHCs/RHCs and as an add‑on in advanced primary‑care models.[2][6]
+            BHI-type services in FQHCs/RHCs and as an add-on in advanced primary care models.
           </td>
         </tr>
       </table>
       <span style="font-size:0.96em;color:#74642a;">
-        <b>Note:</b> Exact CY 2026 national payment rates for these services are set in the Medicare Physician Fee Schedule and may vary by locality and setting.
-        For current values, use the
-        <a href="https://www.cms.gov/medicare/payment/fee-schedules/physician" target="_blank" rel="noopener noreferrer">CMS Physician Fee Schedule look‑up tool</a>
-        or payer fee schedules.
+        <b>Note:</b> CY 2026 rates vary by locality and setting. Confirm via the <a href="https://www.cms.gov/medicare/payment/fee-schedules/physician" target="_blank" rel="noopener noreferrer">CMS PFS look-up tool</a> or payer fee schedules.
       </span>
     </div>
 
     <div class="accordion-header active">2026 Rule Notes</div>
     <div class="accordion-content active">
       <div class="alert-box">
-        - CMS reiterates behavioral health integration as a priority, maintaining and modestly updating payment for BHI and CoCM in the CY 2026 PFS, and linking them with new APCM behavioral‑health add‑on codes.[6][7]<br>
-        - BHI and CoCM remain designated care‑management–type services and are exempt from the 2026 “efficiency adjustment” that reduces work RVUs for many non‑time‑based E/M services, helping preserve BH integration revenue.[7][8]<br>
-        - CMS and professional groups highlight BHI (99484/G0323) as a lower‑intensity integration model and CoCM (99492–99494/G2214) as a higher‑intensity option, encouraging practices to match the model to patient acuity and team capacity.[1][2][6]
+        - <strong>BHI and CoCM payments maintained and modestly updated</strong> in 2026; new APCM BH add-on codes link behavioral health to advanced primary care models.<br>
+        - <strong>Both exempt from the 2026 efficiency adjustment</strong>—BH integration revenue protected.<br>
+        - CMS reinforces the BHI vs CoCM distinction: BHI for lower-intensity needs, CoCM for moderate-severe cases. Match the model to patient acuity and team capacity.
       </div>
     </div>
 
     <div class="accordion-header lucidact-workflow active">LucidAct Workflow</div>
     <div class="accordion-content workflow-content active">
       <p><strong>Platform Integration &amp; Roadmap</strong></p>
-      <p>Use this module as the behavioral‑health layer that can sit on top of CCM, PCM, APCM, or stand‑alone primary care panels.</p>
       <ul>
-        <li>Build BHI and CoCM eligibility flags driven by active behavioral‑health diagnoses, validated scale completion (e.g., PHQ‑9), and documented care plan status.</li>
-        <li>Implement time‑tracking that clearly separates BHI/CoCM minutes from CCM and APCM time for clean billing and analytics.</li>
-        <li>Provide registry functionality for CoCM: panel views, symptom trends, risk flags, and case‑review queues for the psychiatric consultant.</li>
-        <li>Configure role and team requirements so CoCM is only billable when a BH care manager and psychiatric consultant are assigned and active for the practice.</li>
-        <li>Align continuation/step‑down rules (e.g., your “traffic‑light” framework) with program logic so patients migrate between BHI, CoCM, and standard primary care based on severity and response.</li>
+        <li>BHI and CoCM eligibility flags driven by active BH diagnoses, validated scale completion (PHQ-9), and care plan status.</li>
+        <li>Time tracking that separates BHI/CoCM minutes from CCM and APCM—clean billing and analytics.</li>
+        <li>CoCM registry functionality: panel views, symptom trends, risk flags, and case-review queues for the psychiatric consultant.</li>
+        <li>CoCM only billable when a BH care manager and psychiatric consultant are assigned and active for the practice.</li>
+        <li>Traffic-light continuation/step-down logic so patients migrate between BHI, CoCM, and standard primary care based on severity and response.</li>
       </ul>
     </div>
 
@@ -1500,29 +1407,25 @@
 
     <div class="accordion-header active">What is SDOH Screening &amp; Intervention?</div>
     <div class="accordion-content active">
-      Social Drivers of Health (SDOH) services in Medicare focus on systematically identifying and addressing social‑risk factors—such as food insecurity, housing instability, transportation barriers, and utility insecurity—that affect health outcomes and care access.
-      CMS now pays separately for standardized SDOH risk assessment using HCPCS G0136 when performed with certain visits, and has created additional G‑codes in 2026 for community health integration and navigation that can be used to deliver and document SDOH‑focused interventions.[1][2]
-      These services are meant to be integrated with AWV, primary‑care visits, behavioral health, and care‑management programs rather than offered in isolation.
-      See:
+      SDOH services pay for identifying and addressing social-risk factors—food insecurity, housing instability, transportation barriers, utility insecurity—that drive health outcomes and care access. G0136 pays for standardized screening; 2026 G-codes (CHI, PIN) pay for ongoing navigation and community health worker interventions. All integrate with AWV, primary care, BH, and care management—not standalone. See:
       <a href="https://www.cms.gov/files/document/se24006.pdf" target="_blank" rel="noopener noreferrer">CMS SE24006 – SDOH Risk Assessment G0136</a>,
       <a href="https://hallrender.com/2025/11/21/key-highlights-from-the-2026-medicare-physician-fee-schedule-final-rule/" target="_blank" rel="noopener noreferrer">Hall Render 2026 PFS highlights</a>.
     </div>
 
     <div class="accordion-header active">Patient Eligibility</div>
     <div class="accordion-content active">
-      - Medicare beneficiaries receiving eligible E/M, behavioral health, or preventive services (including AWV) where a standardized SDOH risk assessment is appropriate.[1]<br>
-      - Patients for whom the clinician believes SDOH screening will meaningfully inform the care plan or referrals, especially those with chronic disease, frequent utilization, or known social‑risk indicators.[1][3]<br>
-      - For ongoing SDOH‑focused care management and navigation services (e.g., community health integration, principal illness navigation), patients typically have documented social‑risk needs and clinical complexity benefiting from longitudinal follow‑up.[2][3]<br>
-      - Frequency limits and documentation requirements must be followed (for example, G0136 no more than once every 6 months, unless policy is updated).[1]
+      - Medicare patient receiving an eligible E/M, BH, or preventive service where SDOH screening will meaningfully inform the care plan—particularly patients with chronic disease, high utilization, or known social-risk indicators.<br>
+      - For CHI and PIN navigation codes: documented social-risk needs and clinical complexity requiring longitudinal follow-up.<br>
+      - G0136 frequency limit: no more than once every 6 months.
       See:
       <a href="https://www.cms.gov/files/document/se24006.pdf" target="_blank" rel="noopener noreferrer">CMS SE24006</a>.
     </div>
 
     <div class="accordion-header active">Who May Bill?</div>
     <div class="accordion-content active">
-      SDOH risk assessment (G0136) can be billed by physicians, NPs, PAs, clinical nurse specialists, and other practitioners who can bill E/M or covered preventive/behavioral health services when they furnish or supervise the assessment as part of an eligible encounter.[1]
-      Community health integration (CHI) and principal illness navigation (PIN) G‑codes (e.g., G0019, G0022, G0023, G0024) can be billed by the supervising practitioner while services are delivered by trained community health workers or navigators under general supervision.[2][3]
-      In FQHCs and RHCs, many SDOH‑related services are billed through general care‑management G‑codes (such as G0511), with the SDOH elements documented in the medical record and supporting APCM or ACO arrangements.[2][4]
+      G0136: physicians, NPs, PAs, CNS, and other practitioners billing eligible E/M or preventive services.
+CHI/PIN G-codes (G0019, G0022, G0023, G0024): billed by the supervising practitioner; services delivered by trained CHWs or navigators under general supervision.
+FQHCs/RHCs: SDOH services typically bill under G0511 with SDOH documentation supporting APCM or ACO arrangements.
       References:
       <a href="https://codingintel.com/rhc-and-fqhc-update/" target="_blank" rel="noopener noreferrer">CodingIntel RHC/FQHC update</a>,
       <a href="https://www.cms.gov/medicare/payment/fee-schedules/physician" target="_blank" rel="noopener noreferrer">CMS PFS page</a>.
@@ -1530,18 +1433,17 @@
 
     <div class="accordion-header active">Billing Structure</div>
     <div class="accordion-content active">
-      SDOH‑related services in 2026 fall into two main categories:[1][2][3]
+      Two categories of SDOH billing in 2026:
       <ul>
-        <li><strong>SDOH Risk Assessment (G0136)</strong><br>
-          - 5–15 minutes using a standardized, evidence‑based instrument to identify social‑risk factors.<br>
-          - Can be billed with AWV (G0438/G0439), many E/M visits, and behavioral health services when requirements are met, typically no more than once every 6 months.<br>
-          - When furnished as a preventive service with modifier‑33, beneficiary cost‑sharing is generally waived.</li>
-        <li><strong>SDOH‑Focused Care Management &amp; Navigation</strong><br>
-          - <strong>G0019</strong> – Community health integration, initial 60 minutes per month, addressing SDOH‑related barriers via assessment, coaching, and linkage to resources.<br>
-          - <strong>G0022</strong> – Each additional 30 minutes of community health integration time per month.<br>
-          - <strong>G0023</strong> – Principal illness navigation, initial 60 minutes per month for patients with serious conditions needing intensive navigation and support.<br>
-          - <strong>G0024</strong> – Each additional 30 minutes of principal illness navigation time per month.<br>
-          - These codes are often used in FQHC/RHC and APCM/ACO settings and may roll up to G0511 for payment while supporting richer documentation of SDOH work.</li>
+        <li><strong>SDOH Risk Assessment (G0136)</strong>: 5–15 min standardized screening for social-risk factors. Billable with AWV, most E/M, and BH services; no more than once every 6 months. Cost sharing waived with modifier-33 as preventive.</li>
+        <li><strong>SDOH Care Management &amp; Navigation</strong>:
+          <ul>
+            <li><strong>G0019</strong> – Community health integration: 60 min/mo CHW assessment, coaching, and resource linkage.</li>
+            <li><strong>G0022</strong> – CHI add-on: each additional 30 min.</li>
+            <li><strong>G0023</strong> – Principal illness navigation: 60 min/mo for serious-condition patients needing intensive navigation.</li>
+            <li><strong>G0024</strong> – PIN add-on: each additional 30 min.</li>
+          </ul>
+          In FQHC/RHC and APCM/ACO settings, these codes typically roll up to G0511 while supporting richer SDOH documentation.</li>
       </ul>
       Code‑level details:
       <a href="https://hallrender.com/2025/11/21/key-highlights-from-the-2026-medicare-physician-fee-schedule-final-rule/" target="_blank" rel="noopener noreferrer">Hall Render 2026 PFS summary</a>,
@@ -1555,28 +1457,28 @@
           <div class="step-number">1</div>
           <div class="step-title">Screen &amp; Identify</div>
           <div class="step-desc">
-            Use a standardized SDOH tool during AWV, primary‑care, or behavioral health encounters to screen for food, housing, transportation, utilities, interpersonal safety, and other key domains; document results and bill G0136 when criteria are met.
+            <ul><li>Apply standardized SDOH screening during AWV, primary care, or BH encounters</li><li>Cover: food, housing, transportation, utilities, interpersonal safety</li><li>Document results and bill G0136 when criteria are met</li></ul>
           </div>
         </div>
         <div class="step-box">
           <div class="step-number">2</div>
           <div class="step-title">Stratify &amp; Refer</div>
           <div class="step-desc">
-            Stratify patients by SDOH risk level; create referrals to social‑service agencies, community‑based organizations, and internal CHW/navigator teams for those with high or multiple needs.
+            <ul><li>Stratify patients by SDOH risk level</li><li>Refer high-need patients to social-service agencies and community-based organizations</li><li>Assign internal CHW/navigator teams for ongoing support</li></ul>
           </div>
         </div>
         <div class="step-box">
           <div class="step-number">3</div>
           <div class="step-title">Ongoing CHW/Navigator Support</div>
           <div class="step-desc">
-            Community health workers or navigators provide follow‑up calls, resource navigation, appointment support, and benefit applications, tracking time toward G0019/G0022 and G0023/G0024 as appropriate.
+            <ul><li>CHWs and navigators provide follow-up calls and resource navigation</li><li>Support appointment scheduling and benefit applications</li><li>Track time toward G0019/G0022 and G0023/G0024</li></ul>
           </div>
         </div>
         <div class="step-box">
           <div class="step-number">4</div>
           <div class="step-title">Integration with Care Mgmt</div>
           <div class="step-desc">
-            Close the loop by feeding SDOH findings and interventions into CCM, RPM/RTM, APCM, and BHI/CoCM workflows so that medical and social‑risk work is coordinated and visible to the whole team.
+            <ul><li>Feed SDOH findings and interventions into CCM, RPM/RTM, APCM, and BHI/CoCM workflows</li><li>Ensure medical and social-risk work is coordinated and visible to the whole team</li></ul>
           </div>
         </div>
       </div>
@@ -1623,8 +1525,7 @@
         </tr>
       </table>
       <span style="font-size:0.96em;color:#74642a;">
-        <b>Note:</b> Values shown are approximate national averages for CY 2026 where available and will vary by locality and final rulemaking.
-        FQHC/RHC rates and bundling into G0511 should be confirmed using current CMS and MAC guidance:
+        <b>Note:</b> Approximate CY 2026 national averages; vary by locality. Confirm FQHC/RHC bundling into G0511 with current CMS and MAC guidance:
         <a href="https://codingintel.com/rhc-and-fqhc-update/" target="_blank" rel="noopener noreferrer">CodingIntel RHC/FQHC update</a>,
         <a href="https://www.cms.gov/medicare/payment/fee-schedules/physician" target="_blank" rel="noopener noreferrer">CMS PFS look‑up</a>.
       </span>
@@ -1633,21 +1534,20 @@
     <div class="accordion-header active">2026 Rule Notes</div>
     <div class="accordion-content active">
       <div class="alert-box">
-        - CMS solidifies separate payment for standardized SDOH screening (G0136) and emphasizes its use alongside AWVs, E/M, and behavioral health services to systematically identify social‑risk factors.[1][3]<br>
-        - The 2026 PFS expands and clarifies CHI and PIN G‑codes (G0019, G0022, G0023, G0024), supporting team‑based SDOH interventions and navigation, especially in FQHC/RHC and APCM/ACO settings.[2][3]<br>
-        - SDOH‑related codes are treated as care‑management–type services and, in many cases, are exempt from the 2026 efficiency adjustment, aligning them with broader care‑management protections in the PFS.[2][5]
+        - <strong>G0136 payment solidified</strong>—CMS reinforces SDOH screening alongside AWV, E/M, and BH services as a systematic tool for identifying social risk.<br>
+        - <strong>CHI and PIN G-codes expanded and clarified</strong> for 2026—better tools for team-based SDOH work in FQHC/RHC and APCM/ACO settings.<br>
+        - <strong>SDOH codes exempt from the 2026 efficiency adjustment</strong>—aligned with broader care management protections.
       </div>
     </div>
 
     <div class="accordion-header lucidact-workflow active">LucidAct Workflow</div>
     <div class="accordion-content workflow-content active">
       <p><strong>Platform Integration &amp; Roadmap</strong></p>
-      <p>Use this module to institutionalize SDOH screening, tracking, and intervention workflows that plug into all other care‑management programs.</p>
       <ul>
-        <li>Embed a standardized SDOH questionnaire for G0136 into AWV, new‑patient, and high‑risk chronic‑care visits, with responses stored in structured fields.</li>
-        <li>Auto‑generate CHW/navigator tasks and referrals when key SDOH domains screen positive, with time tracking mapped to G0019/G0022 and G0023/G0024 where applicable.</li>
-        <li>Surface SDOH risk flags and intervention status in CCM, PCM, RPM/RTM, BHI/CoCM, and APCM dashboards so medical and social work are visible together.</li>
-        <li>Build reporting views linking SDOH interventions to utilization and outcome metrics (e.g., ED visits, readmissions) to support value‑based contracts and grants.</li>
+        <li>Embed a standardized G0136 questionnaire into AWV, new-patient, and high-risk chronic care visits with responses in structured fields.</li>
+        <li>Auto-generate CHW/navigator tasks and referrals on positive screens; time tracking mapped to G0019/G0022 and G0023/G0024.</li>
+        <li>Surface SDOH risk flags and intervention status in CCM, PCM, RPM/RTM, BHI/CoCM, and APCM dashboards—medical and social work visible together.</li>
+        <li>Reporting views linking SDOH interventions to utilization and outcome metrics (ED visits, readmissions) to support value-based contracts and grants.</li>
       </ul>
     </div>
 
@@ -1660,20 +1560,17 @@
 
     <div class="accordion-header active">What is GDMT Optimization?</div>
     <div class="accordion-content active">
-      Guideline‑Directed Medical Therapy (GDMT) refers to the evidence‑based drug and device regimens recommended by specialty societies (e.g., ACC/AHA/HFSA, GOLD, ADA) for conditions such as heart failure, ischemic heart disease, COPD/asthma, and diabetes.[1][2]
-      In Medicare, there is no single “GDMT code,” but care‑management, remote monitoring, and behavioral‑health codes (CCM, PCM, RPM/RTM, BHI/CoCM, APCM) can be used to support systematic GDMT initiation, titration, and adherence across a population.[3][4]
-      This module focuses on how to operationalize GDMT within those existing payment structures rather than introducing new CPT/HCPCS codes.
-      Key references:
+      GDMT is the evidence-based drug and device regimen standard for conditions like heart failure, ASCVD, COPD/asthma, and diabetes (per ACC/AHA/HFSA, GOLD, ADA guidelines). There is no single GDMT billing code—GDMT work is funded through CCM, PCM, RPM/RTM, BHI/CoCM, and APCM. This module shows how to operationalize GDMT within those existing payment structures. See:
       <a href="https://www.acc.org/Latest-in-Cardiology/ten-points-to-remember/2022/03/20/19/31/2022-acc-aha-hfsa-heart-failure-guideline" target="_blank" rel="noopener noreferrer">2022 ACC/AHA/HFSA Heart Failure Guideline</a>,
       <a href="https://www.adafigure1.org/standards-of-care" target="_blank" rel="noopener noreferrer">ADA Standards of Care</a>.
     </div>
 
     <div class="accordion-header active">Patient Eligibility</div>
     <div class="accordion-content active">
-      - Medicare patients with chronic conditions for which strong guideline‑directed regimens exist (e.g., HFrEF, ASCVD, T2DM, CKD, COPD/asthma, secondary prevention post‑MI).[1][2]<br>
-      - Suboptimal GDMT relative to guidelines (e.g., missing classes, under‑titrated doses, contraindications not documented, poor adherence) identified via registry or chart review.[1][3]<br>
-      - Willingness to engage in medication adjustments, monitoring, and follow‑up; often already enrolled or eligible for CCM, PCM, RPM/RTM, APCM, or BHI/CoCM.[3][4]<br>
-      - For heart‑failure‑focused GDMT programs, patients with HFrEF (LVEF ≤40%) and recent hospitalization, ED visit, or persistent symptoms are prime candidates.[1][5]
+      - Medicare patient with a condition where GDMT evidence is strong: HFrEF, ASCVD, T2DM, CKD, COPD/asthma, or post-MI secondary prevention.<br>
+      - Suboptimal GDMT identified: missing drug classes, under-titrated doses, undocumented contraindications, or poor adherence.<br>
+      - Engaged and willing to participate in medication adjustments, monitoring, and follow-up; often already in CCM, PCM, RPM/RTM, or APCM.<br>
+      - HF-focused programs: prioritize HFrEF (LVEF ≤40%) with recent hospitalization, ED visit, or persistent symptoms.
       See:
       <a href="https://www.acc.org/Latest-in-Cardiology/ten-points-to-remember/2022/03/20/19/31/2022-acc-aha-hfsa-heart-failure-guideline" target="_blank" rel="noopener noreferrer">ACC/AHA/HFSA HF guideline</a>,
       <a href="https://www.kff.org/medicare/issue-brief/how-medicares-payment-policies-for-physicians-impact-access-to-care/" target="_blank" rel="noopener noreferrer">KFF Medicare & chronic disease</a>.
@@ -1681,10 +1578,7 @@
 
     <div class="accordion-header active">Who May Bill?</div>
     <div class="accordion-content active">
-      GDMT optimization is billed through existing codes rather than a unique GDMT code.
-      Primary care clinicians, cardiologists, endocrinologists, pulmonologists, and other specialists can use CCM, PCM, RPM/RTM, BHI/CoCM, APCM, and TCM codes when they meet each program’s requirements.[3][4]
-      Clinical pharmacists, nurses, and care‑management staff can furnish much of the GDMT work (medication titration under protocol, education, adherence support) under general supervision, with time counted toward the relevant care‑management codes.[3][4]
-      Team‑based GDMT programs should explicitly assign billing responsibility (e.g., CCM + RPM under PCP, PCM under cardiology) to avoid duplicate billing and align with attribution in ACO/APCM models.[3]
+      Billed through existing codes. Primary care clinicians, cardiologists, endocrinologists, pulmonologists, and other specialists use CCM, PCM, RPM/RTM, BHI/CoCM, APCM, and TCM codes per each program's requirements. Clinical pharmacists, nurses, and care staff perform titration, education, and adherence support under general supervision with time counted toward applicable codes. Assign billing responsibility explicitly (e.g., CCM + RPM under PCP, PCM under cardiology) to prevent duplicate billing and align with ACO/APCM attribution.
       For payment policy context:
       <a href="https://www.ama-assn.org/system/files/2026-mpfs-final-rule-summary-analysis.pdf" target="_blank" rel="noopener noreferrer">AMA 2026 MPFS Summary</a>,
       <a href="https://www.cms.gov/newsroom/fact-sheets/calendar-year-cy-2026-medicare-physician-fee-schedule-final-rule-cms-1832-f" target="_blank" rel="noopener noreferrer">CMS CY 2026 PFS Fact Sheet</a>.
@@ -1692,15 +1586,15 @@
 
     <div class="accordion-header active">Billing Structure (Using Existing Codes)</div>
     <div class="accordion-content active">
-      GDMT work can be wrapped into existing programs as follows:[3][4][5]
+      Map GDMT work to the right program:
       <ul>
-        <li><strong>CCM / Complex CCM</strong> – multi‑morbid patients with multiple GDMT‑eligible conditions (HF, diabetes, CKD, COPD) where monthly non–face‑to‑face management supports multi‑drug titration and adherence.</li>
-        <li><strong>PCM</strong> – single dominant condition (e.g., HFrEF or brittle T2DM) where one clinician is chiefly responsible for intensifying and monitoring GDMT.</li>
-        <li><strong>RPM / RTM</strong> – physiologic (e.g., BP, weight, O2 sat) or therapeutic response monitoring during GDMT initiation and titration (e.g., HF or hypertension RPM, inhaler‑use RTM for COPD/asthma).</li>
-        <li><strong>BHI / CoCM</strong> – when behavioral health conditions or adherence barriers complicate GDMT; BH integration supports depression/anxiety management, motivational interviewing, and substance‑use treatment.</li>
-        <li><strong>APCM &amp; SDOH G‑codes</strong> – community health workers, navigators, and peers can help with cost barriers, transportation, and social‑needs factors that undermine GDMT adherence (G0019, G0022, G0023, G0024, G0140).</li>
+        <li><strong>CCM / Complex CCM</strong> – Multi-morbid patients (HF + diabetes + CKD + COPD) requiring multi-drug titration and monthly non-face-to-face management.</li>
+        <li><strong>PCM</strong> – Single dominant condition (HFrEF, brittle T2DM) where one clinician owns GDMT intensification.</li>
+        <li><strong>RPM / RTM</strong> – Vitals monitoring (BP, weight, O2 sat) or therapeutic response tracking during titration (HF/HTN via RPM, inhaler use via RTM).</li>
+        <li><strong>BHI / CoCM</strong> – When depression, anxiety, SUD, or adherence barriers complicate GDMT uptake.</li>
+        <li><strong>APCM &amp; SDOH</strong> – CHWs, navigators, and peers address cost barriers, transportation, and social needs undermining adherence (G0019, G0022, G0023, G0024, G0140).</li>
       </ul>
-      Each GDMT encounter (med titration call, lab follow‑up, remote monitoring review) is documented and the time is allocated to the appropriate care‑management or monitoring codes according to program rules rather than billed as “GDMT” directly.
+      Each GDMT encounter—titration call, lab follow-up, remote monitoring review—is documented with time allocated to the applicable care-management code. GDMT itself is not billed directly.
       Overviews of how chronic disease management codes support guideline‑based care:
       <a href="https://www.chartspan.com/blog/medicare-physician-fee-schedule-final-rule-2026-significant-changes-are-here/" target="_blank" rel="noopener noreferrer">ChartSpan 2026 PFS summary</a>,
       <a href="https://blog.prevounce.com/faqs-from-the-2026-medicare-physician-fee-schedule-final-rule" target="_blank" rel="noopener noreferrer">Prevounce 2026 PFS FAQs</a>.
@@ -1713,21 +1607,21 @@
           <div class="step-number">1</div>
           <div class="step-title">Identify Gaps</div>
           <div class="step-desc">
-            Build condition‑specific registries (e.g., HFrEF, T2DM, ASCVD) and compare current meds, doses, and labs against guideline recommendations to flag missing classes, under‑dosing, or lack of documented contraindications.
+            <ul><li>Build condition-specific registries: HFrEF, T2DM, ASCVD</li><li>Compare current meds, doses, and labs against guideline targets</li><li>Flag missing drug classes, under-dosing, and undocumented contraindications</li></ul>
           </div>
         </div>
         <div class="step-box">
           <div class="step-number">2</div>
           <div class="step-title">Plan &amp; Enroll</div>
           <div class="step-desc">
-            For each flagged patient, determine the right program (CCM vs PCM vs APCM), obtain consent where required, and create a GDMT‑focused care plan with target meds, titration steps, monitoring labs, and symptom triggers.
+            <ul><li>Determine the right program for each flagged patient: CCM, PCM, or APCM</li><li>Obtain consent</li><li>Create a GDMT care plan: target medications, titration steps, monitoring labs, and symptom triggers</li></ul>
           </div>
         </div>
         <div class="step-box">
           <div class="step-number">3</div>
           <div class="step-title">Titrate &amp; Monitor</div>
           <div class="step-desc">
-            Use CCM/PCM and RPM/RTM encounters to adjust doses at guideline‑recommended intervals, check vitals and labs, review side effects, and reinforce adherence; document time toward the appropriate codes each month.
+            <ul><li>Adjust doses at guideline intervals during CCM/PCM encounters</li><li>Use RPM/RTM to check vitals and labs between visits</li><li>Review side effects and reinforce adherence</li><li>Document time toward applicable codes monthly</li></ul>
           </div>
         </div>
         <div class="step-box">
@@ -1785,31 +1679,27 @@
         </tr>
       </table>
       <span style="font-size:0.96em;color:#74642a;">
-        <b>Note:</b> GDMT itself is not a separately billable code; instead, these codes provide the infrastructure to support safe titration, adherence, and barrier resolution at scale.
-        Payment levels and stacking rules should be confirmed in the
-        <a href="https://www.cms.gov/medicare/payment/fee-schedules/physician" target="_blank" rel="noopener noreferrer">CY 2026 Physician Fee Schedule</a>
-        and payer policies.[3][4]
+        <b>Note:</b> GDMT is not a billable code—these programs provide the infrastructure to support safe titration, adherence, and barrier resolution at scale. Confirm payment levels and stacking rules in the <a href="https://www.cms.gov/medicare/payment/fee-schedules/physician" target="_blank" rel="noopener noreferrer">CY 2026 Physician Fee Schedule</a>.
       </span>
     </div>
 
     <div class="accordion-header active">2026 Rule Notes</div>
     <div class="accordion-content active">
       <div class="alert-box">
-        - The CY 2026 PFS final rule increases payment for several care‑management and remote monitoring codes (CCM, RPM/RTM, behavioral‑health integration) and exempts them from the new efficiency adjustment applied to many non‑time‑based services, strengthening the business case for GDMT‑oriented care‑management programs.[3][4][6]<br>
-        - CMS expands SDOH‑ and navigation‑related G‑codes (community health integration, principal illness navigation, peer support), which can be directly integrated into GDMT workflows to address cost, access, and adherence barriers.[4][5]<br>
-        - Specialty guidelines continue to emphasize early initiation and maximally tolerated dosing of GDMT (especially in HFrEF, ASCVD, and T2DM), and 2026 payment policy gives practices more tools to finance the longitudinal work required to reach those targets.[1][2][5]
+        - <strong>CCM, RPM/RTM, and BHI rates increase in 2026</strong> and are exempt from the efficiency adjustment—stronger economics for GDMT-oriented programs.<br>
+        - <strong>Expanded SDOH/navigation G-codes</strong> integrate directly into GDMT workflows to address cost, access, and adherence barriers.<br>
+        - Specialty guidelines (HFrEF, ASCVD, T2DM) continue to push early initiation and maximal tolerated dosing—the 2026 payment environment gives practices more tools to finance that work.
       </div>
     </div>
 
     <div class="accordion-header lucidact-workflow active">LucidAct Workflow</div>
     <div class="accordion-content workflow-content active">
       <p><strong>Platform Integration &amp; Roadmap</strong></p>
-      <p>Use GDMT workflows as the clinical “engine” underneath CCM, PCM, RPM/RTM, BHI/CoCM, and APCM for high‑value chronic conditions.</p>
       <ul>
-        <li>Build disease‑specific GDMT registries (HF, ASCVD, diabetes, COPD/asthma, CKD) with gap‑in‑care rules that flag missing classes and under‑titration directly in LucidAct.</li>
-        <li>Link each registry to a care‑management program (CCM vs PCM vs APCM) and remote‑monitoring protocols, with automatically generated titration tasks and follow‑up intervals.</li>
-        <li>Embed guideline‑based order sets, lab protocols, and guardrails (e.g., BP, creatinine, potassium) so care teams can titrate quickly but safely.</li>
-        <li>Integrate SDOH, CHW, and behavioral‑health modules so that non‑clinical barriers to GDMT are surfaced alongside clinical risk and closed with trackable interventions.</li>
+        <li>Disease-specific GDMT registries (HF, ASCVD, diabetes, COPD/asthma, CKD) with gap-in-care rules flagging missing drug classes and under-titration directly in LucidAct.</li>
+        <li>Each registry linked to the right care-management program (CCM, PCM, or APCM) with auto-generated titration tasks and follow-up intervals.</li>
+        <li>Guideline-based order sets, lab protocols, and guardrails (BP, creatinine, potassium) so teams titrate quickly and safely.</li>
+        <li>SDOH, CHW, and BH modules integrated so non-clinical barriers to GDMT are surfaced alongside clinical risk and resolved with trackable interventions.</li>
       </ul>
     </div>
 
@@ -1823,9 +1713,7 @@
         <div class="accordion-header active">Operational Overview</div>
         <div class="accordion-content active">
           <p>
-            This section pulls together stacking rules, revenue models, staffing patterns, and behavioral
-            health service levels so you can move from individual codes (RPM, RTM, CCM, PCM, TCM, APCM, AWV/SDOH, IBH)
-            to a unified, scalable care management service line.
+            Stacking rules, revenue models, staffing patterns, and behavioral health service levels—everything needed to move from individual codes to a unified, scalable care management service line.
           </p>
 
           <p><strong>Quick jump:</strong></p>
@@ -1846,8 +1734,7 @@
         <div class="accordion-header active" id="ops-ibh">Integrated Behavioral Health: Payment &amp; Models</div>
         <div class="accordion-content active">
           <p>
-            High-level reference for General BHI (99484), CoCM (99492–99494), HCPCS G0323, and APCM BH add-on codes (G0568–G0570):
-            what they pay, who can bill, and which validated tools and assessments are required.
+            Rates, billing eligibility, and required validated tools for General BHI (99484), CoCM (99492–99494), G0323, and APCM BH add-on codes (G0568–G0570).
           </p>
           <img src="Generated Image February 17, 2026 - 10_18AM.jpeg"
                alt="2026 integrated behavioral health payment and service models" 
@@ -1857,9 +1744,7 @@
         <div class="accordion-header active" id="ops-stacking">Program Stacking &amp; Overlap Rules</div>
         <div class="accordion-content active">
           <p>
-            Device programs (RPM/RTM), longitudinal care programs (CCM/PCM/APCM), transitional care (TCM),
-            and behavioral health (BHI/CoCM) can often be billed together in the same month, but only when
-            each program’s requirements are met independently, time is not double-counted, and CMS stacking
+            RPM/RTM, CCM/PCM/APCM, TCM, and BHI/CoCM can bill together in the same month—provided each program’s requirements are met independently, time is not double-counted, and CMS stacking exclusions are observed.e-counted, and CMS stacking
             exclusions are enforced.
           </p>
           <img src="Generated Image February 17, 2026 - 5_24PM.jpeg"
@@ -1870,8 +1755,7 @@
         <div class="accordion-header active" id="ops-revenue">Revenue Stacking Examples</div>
         <div class="accordion-content active">
           <p>
-            These waterfalls translate compliant stacks into approximate annual per-patient revenue for three core
-            scenarios: complex primary care patient, multi-morbid patient, and single high-risk condition patient.
+            Annual per-patient revenue for three compliant program stacks: complex primary care patient, multi-morbid patient, and single high-risk condition patient.
           </p>
           <img src="Generated Image February 17, 2026 - 5_29PM.jpeg"
                alt="Revenue stacking waterfalls for three patient scenarios"
@@ -1881,10 +1765,7 @@
         <div class="accordion-header active" id="ops-decision">Program Selection Decision Guide</div>
         <div class="accordion-content active">
           <p>
-            Start by asking whether the clinic is participating in APCM. If yes, APCM becomes the base longitudinal
-            program and you layer RPM/RTM, BHI/CoCM, and TCM as add-ons. If not, route into CCM (for 2+ chronic
-            conditions) or PCM (for one serious condition), then add remote monitoring and behavioral health based
-            on clinical need and team capacity.
+            APCM participating? Yes → APCM is the base; layer RPM/RTM, BHI/CoCM, and TCM. No → route to CCM (2+ chronic conditions) or PCM (one serious condition), then add remote monitoring and behavioral health by clinical need and team capacity.
           </p>
           <img src="Generated Image February 17, 2026 - 5_30PM.jpeg"
                alt="Decision tree for selecting care management programs" 
@@ -1894,10 +1775,7 @@
         <div class="accordion-header active" id="ops-bhi-levels">Choosing Between BHI and CoCM</div>
         <div class="accordion-content active">
           <p>
-            General BHI is a lower-intensity integration model (≥20 minutes/month) that can stand alone and fits
-            mild–moderate behavioral health needs. CoCM is a higher-intensity model (60–70+ minutes/month) that
-            requires a three-person team and registry-based case management, reserved for moderate–severe or complex
-            behavioral health conditions.
+            BHI (≥20 min/mo): lower intensity, standalone, fits mild–moderate BH needs. CoCM (60–70+ min/mo): higher intensity, requires the full three-person team and registry-based case management, reserved for moderate–severe or complex BH conditions.
           </p>
           <img src="Generated Image February 17, 2026 - 5_33PM.jpeg"
                alt="Side-by-side comparison of BHI and CoCM" 
@@ -1907,10 +1785,7 @@
         <div class="accordion-header active" id="ops-continuation">Continuation Standards: BHI &amp; CoCM</div>
         <div class="accordion-content active">
           <p>
-            Apply continuation standards monthly so that programs match real clinical need: BHI continues while there
-            is an active BH condition, validated scales in use, a living care plan, and ≥20 minutes of documented work;
-            CoCM continues only while the full team and registry are active and 60–70+ minutes of care manager time
-            remain necessary.
+            Review continuation monthly. BHI continues while an active BH condition is present, validated scales are in use, a living care plan exists, and 20+ min of documented work is logged. CoCM continues only while the full team and registry are active and 60–70+ min of care manager time remain clinically necessary.
           </p>
           <img src="Generated Image February 17, 2026 - 5_37PM.jpeg"
                alt="Traffic light continuation standards for BHI and CoCM" 
@@ -1920,9 +1795,7 @@
         <div class="accordion-header active" id="ops-archetypes">Patient Archetypes &amp; Optimal Program Mix</div>
         <div class="accordion-content active">
           <p>
-            Use these archetypes to design playbooks and pro formas: complex primary care patient (APCM + RPM + CoCM),
-            multi-morbid patient (complex CCM + RPM + BHI), single high-risk condition (PCM + RTM + BHI), mild BH
-            needs (CCM regular + RPM + BHI), and severe BH needs (complex CCM + RPM + CoCM).
+            Five archetypes for playbook and pro forma design: complex primary care (APCM + RPM + CoCM), multi-morbid (complex CCM + RPM + BHI), single high-risk condition (PCM + RTM + BHI), mild BH needs (CCM + RPM + BHI), severe BH needs (complex CCM + RPM + CoCM).
           </p>
           <img src="Generated Image February 17, 2026 - 5_40PM.jpeg"
                alt="Patient archetype grid with optimal program combinations and revenue breakdowns"
@@ -1932,11 +1805,7 @@
         <div class="accordion-header active" id="ops-team">Team Requirements by Program</div>
         <div class="accordion-content active">
           <p>
-            Supports staffing decisions by clarifying required vs optional roles across programs:
-            RPM (billing provider + clinical staff + device specialist), RTM (billing provider/therapist + therapy staff),
-            CCM/PCM (billing provider + clinical staff), APCM (multidisciplinary primary care team), TCM (billing provider +
-            clinical staff + case manager), BHI (billing provider + clinical staff), and CoCM (required triad of provider,
-            BH care manager, psychiatric consultant).
+            Required vs optional roles by program: RPM (billing provider + clinical staff + device specialist), RTM (billing provider/therapist + therapy staff), CCM/PCM (billing provider + clinical staff), APCM (multidisciplinary primary care team), TCM (billing provider + clinical staff + case manager), BHI (billing provider + clinical staff), CoCM (required triad: provider + BH care manager + psychiatric consultant).
           </p>
           <img src="Generated Image February 17, 2026 - 5_32PM.jpeg"
                alt="Team requirements for each care management program"
@@ -1946,10 +1815,7 @@
         <div class="accordion-header active" id="ops-ccm">CCM Service Levels: Regular vs Complex</div>
         <div class="accordion-content active">
           <p>
-            Regular CCM fits patients with 2+ chronic conditions, 20–40 minutes of monthly non-face-to-face work, and
-            low–moderate medical decision making. Complex CCM is appropriate when you consistently spend ≥60 minutes
-            and decision-making is moderate–high with multiple specialists, frequent exacerbations, and high coordination
-            needs.
+            Regular CCM: 2+ chronic conditions, 20–40 min/mo, low-moderate MDM. Complex CCM: 60+ min/mo consistently, moderate-high MDM, multiple specialists, frequent exacerbations, and high coordination demands.
           </p>
           <img src="Generated Image February 17, 2026 - 5_35PM.jpeg"
                alt="Regular versus Complex CCM comparison" 
@@ -1958,13 +1824,12 @@
 
         <div class="accordion-header lucidact-workflow active" id="ops-summary">LucidAct Workflow &amp; Playbook Summary</div>
         <div class="accordion-content workflow-content active">
-          <p><strong>Platform Integration &amp; Roadmap</strong></p>
           <ul>
-            <li>Use APCM as the base where available; do not stack CCM/PCM/TCM on top of APCM months.</li>
-            <li>Layer RPM or RTM (choose one) whenever remote monitoring adds clinical value.</li>
-            <li>Choose between regular and complex CCM based on documented time and decision complexity.</li>
-            <li>Start with BHI for broad BH integration; reserve CoCM for higher-acuity patients and only when the full team and registry are in place.</li>
-            <li>Encode continuation standards, stacking rules, and team requirements directly into LucidAct eligibility and billing logic to reduce manual errors.</li>
+            <li>APCM as the base where available—do not stack CCM/PCM/TCM on top of APCM months.</li>
+            <li>Add RPM or RTM (choose one) whenever remote monitoring adds clinical value.</li>
+            <li>Regular vs complex CCM: select based on documented time and MDM complexity.</li>
+            <li>Start with BHI; elevate to CoCM only when the full team and registry are operational.</li>
+            <li>Encode continuation standards, stacking rules, and team requirements in LucidAct eligibility and billing logic—remove manual decision points.</li>
           </ul>
         </div>
 
@@ -1978,7 +1843,7 @@
   <img id="lightbox-img" src="" alt="">
 </div>
 
-<script>
+ <script>
   // Keep chat history in the browser
   let chatHistory = [];
 
@@ -2050,13 +1915,13 @@
         addMessage(
           'bot',
           "Hi, I'm your LucidAct Care Management Assistant.\n" +
-          "Ask me about care management programs, codes, workflows, or how to keep designs compliant."
+          "Johnny trained me on the CMS documentation for CY2026 -Ask me about care management programs, codes, workflows, or how to keep designs compliant."
         );
       }
     });
 
     // Render messages with simple formatting for bot
-    function addMessage(role, text, options = {}) {
+        function addMessage(role, text, options = {}) {
       const div = document.createElement('div');
       div.className = 'chat-msg ' + role;
       if (options.id) div.dataset.id = options.id;
@@ -2098,7 +1963,7 @@
       return div;
     }
 
-    // Handle send with conversation history + typing indicator
+    // Handle send with conversation history
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const text = input.value.trim();
@@ -2109,7 +1974,7 @@
 
       chatHistory.push({ role: 'user', content: text });
 
-      // Typing indicator
+      // Add typing indicator
       const typingDiv = addMessage('bot', '', { raw: true });
       typingDiv.classList.add('typing');
 
@@ -2133,6 +1998,7 @@
         const data = await res.json();
         const reply = data.reply || 'Sorry, I could not generate a response.';
 
+        // Replace typing indicator with real message
         typingDiv.remove();
         addMessage('bot', reply);
         chatHistory.push({ role: 'assistant', content: reply });
@@ -2145,6 +2011,7 @@
   });
 </script>
 
+
 <!-- Chatbot UI -->
 <div id="chatbot-toggle">Chat</div>
 <div id="chatbot-panel">
@@ -2154,18 +2021,11 @@
   <div id="chatbot-messages"></div>
   <form id="chatbot-form">
     <textarea id="chatbot-input"
-              rows="2"
-              placeholder="Hi Grace, Johnny trained me on all of the latest CMS documentation, as well as other reputable sources so you can ask me anything about programs, codes, workflows..."></textarea>
+          rows="2"
+          placeholder="Hi Grace, Johnny trained me on all of the latest CMS documentation, as well as other reputable sources so you can ask me anything about programs, codes, workflows..."></textarea>
     <button type="submit">Send</button>
   </form>
 </div>
 
 </body>
 </html>
-
-
-
-
-
-
-
