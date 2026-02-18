@@ -136,84 +136,94 @@
     </div>
 
     <!-- === 2026 SNAPSHOT MODULE (DEFAULT) === -->
-    <div class="module active" id="snapshot">
-      <div class="accordion">
-        <div class="accordion-header active">CY 2026 Care Management Overview</div>
-        <div class="accordion-content active">
-          <p>
-            Beginning January 1, 2026, Medicare finalized a broad set of updates to care management under the
-            Physician Fee Schedule. Time‑based services such as RPM, RTM, CCM, behavioral health integration,
-            and other care management codes are exempt from the new efficiency adjustment that reduces work
-            RVUs for many non‑time‑based services, helping protect longitudinal care revenues even as other
-            services face downward pressure.[web:29][web:147][web:157]
-          </p>
-          <p>
-            CMS also clarified that services designated as care management will be treated as care coordination
-            services for FQHCs and RHCs, aligning payment policy across settings and tying many of these services
-            into the general care management code G0511.[web:29][web:149] In parallel, virtual direct supervision
-            and expanded telehealth flexibilities—including removal of certain visit‑frequency limits—were made
-            permanent, supporting remote care teams and digital‑first workflows.[web:147][web:150]
-          </p>
-          <p>
-            For remote care, 2026 introduces new short‑duration RPM and RTM codes for partial‑month engagement,
-            higher rates for core management codes, and clearer stacking rules with CCM and other longitudinal
-            programs, signaling CMS’s shift toward a more integrated, tech‑enabled care management ecosystem.[web:148][web:150][web:159]
-          </p>
-        </div>
-
-        <div class="accordion-header active">CY 2026 Care Management Code Table</div>
-        <div class="accordion-content active">
-          <p>
-            Designated care management services assigned general supervision under the CY 2026 Physician Fee Schedule:
-          </p>
-          <table>
-            <thead>
-              <tr>
-                <th>Code</th>
-                <th>Short Descriptor</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>99457</td><td>Rem physiol mntr 1st 20 min</td></tr>
-              <tr><td>99458</td><td>Rem physiol mntr each addl 20 min</td></tr>
-              <tr><td>99470</td><td>Rem physiol mntr 1st 10 min</td></tr>
-              <tr><td>99426</td><td>PCM clinical staff minimum 30 min (previously G2065)</td></tr>
-              <tr><td>99427</td><td>PCM add to 99426 clinical staff addl 30 min</td></tr>
-              <tr><td>99439</td><td>CCM add to 99490 clinical staff addl 20 min</td></tr>
-              <tr><td>99484</td><td>CM BHI clinical staff minimum 20 min</td></tr>
-              <tr><td>99487</td><td>Cmplx CCM clinical staff minimum 60 min</td></tr>
-              <tr><td>99489</td><td>Cmplx CCM add to 99487 clinical staff addl 30 min</td></tr>
-              <tr><td>99490</td><td>CCM clinical staff minimum 20 min</td></tr>
-              <tr><td>99492</td><td>1st Psychiatric collab care mgmt 1st 70 mins</td></tr>
-              <tr><td>99493</td><td>Sbsq Psychiatric collab care mgmt 1st 60 mins</td></tr>
-              <tr><td>99494</td><td>1st/Sbsq Psych collab care mgmt ea addl 30 mins</td></tr>
-              <tr><td>99495&#8224;</td><td>TCM moderate complexity F2F w/in 14-day disch</td></tr>
-              <tr><td>99496&#8224;</td><td>TCM high complexity F2F w/in 7-day disch</td></tr>
-              <tr><td>G0019</td><td>Comm hlth intg svs sdoh 60mn</td></tr>
-              <tr><td>G0022</td><td>Comm hlth intg svs add 30 m</td></tr>
-              <tr><td>G0023</td><td>Pin service 60m per month</td></tr>
-              <tr><td>G0024</td><td>Pin srv add 30 min pr m</td></tr>
-              <tr><td>G0140</td><td>Nav srv peer sup 60 min pr m</td></tr>
-              <tr><td>G0146</td><td>Nav srv peer sup add 30 pr m</td></tr>
-              <tr><td>G0323</td><td>Care man svs 20 m per mon</td></tr>
-              <tr><td>G2086</td><td>Office-based opioid tx CM min 70 min cal month</td></tr>
-              <tr><td>G2087</td><td>Office-based opioid tx CM addl 60 min subsequent cal month</td></tr>
-              <tr><td>G2088</td><td>Office-based opioid tx CM month addl 30 beyond first 120 min</td></tr>
-              <tr><td>G2214</td><td>Init/sub psych collaborative care first 30 min cal month</td></tr>
-              <tr><td>G0556</td><td>Adv prim care mgmt lvl 1</td></tr>
-              <tr><td>G0557</td><td>Adv prim care mgmt lvl 2</td></tr>
-              <tr><td>G0558</td><td>Adv prim care mgmt lvl 3</td></tr>
-              <tr><td>G0568</td><td>Int psych care mng, 1 cal mo</td></tr>
-              <tr><td>G0569</td><td>Subs psych care mng, subs mo</td></tr>
-              <tr><td>G0570</td><td>Care manage serv, pr cal mo</td></tr>
-            </tbody>
-          </table>
-          <p style="font-size:0.9rem;color:#555;">
-            &#8224; The face-to-face visit included in the service is not assigned general supervision.
-          </p>
-        </div>
-      </div>
+<div class="module active" id="snapshot">
+  <div class="accordion">
+    <div class="accordion-header active">CY 2026 Care Management Overview</div>
+    <div class="accordion-content active">
+      <p>
+        Beginning January 1, 2026, Medicare finalized a broad set of updates to care‑management and remote‑care services under the Physician Fee Schedule (PFS).
+        Time‑based care‑management codes—including RPM, RTM, CCM, behavioral health integration (BHI/CoCM), and related G‑codes—are protected as <em>designated care‑management</em> services and are exempt from the new “efficiency adjustment” that reduces work RVUs for many non‑time‑based E/M services.
+        This helps preserve longitudinal care‑management revenue even as some E/M payments face downward pressure.
+        See the
+        <a href="https://www.cms.gov/newsroom/fact-sheets/calendar-year-cy-2026-medicare-physician-fee-schedule-final-rule-cms-1832-f" target="_blank" rel="noopener noreferrer">CMS CY 2026 PFS Fact Sheet</a>
+        and the
+        <a href="https://www.ama-assn.org/practice-management/medicare-medicaid/what-expect-2026-medicare-physician-fee-schedule" target="_blank" rel="noopener noreferrer">AMA 2026 PFS overview</a>.
+      </p>
+      <p>
+        CMS also clarified that many of these services, when furnished in FQHCs and RHCs, are treated as care‑management or care‑coordination services and are typically reported under the general care‑management code G0511 rather than individual CPT codes.
+        This aligns FQHC/RHC payment policy with the broader care‑management framework and allows clinics to bundle CCM, BHI, RPM/RTM‑like work, and certain new social‑needs services into a single monthly payment.
+        For details, see the
+        <a href="https://codingintel.com/rhc-and-fqhc-update/" target="_blank" rel="noopener noreferrer">CodingIntel RHC/FQHC update</a>
+        and the
+        <a href="https://www.cms.gov/medicare/payment/fee-schedules/physician" target="_blank" rel="noopener noreferrer">CMS Physician Fee Schedule page</a>.
+      </p>
+      <p>
+        For remote care and behavioral‑health integration, 2026 introduces shorter‑duration RPM and RTM codes for partial‑month engagement, modestly higher rates for core management codes, and clearer guidance on stacking with CCM, PCM, APCM, and SDOH/navigation G‑codes.
+        Together, these changes signal CMS’s shift toward a more integrated, tech‑enabled care‑management ecosystem where longitudinal medical, behavioral, and social‑needs work is explicitly recognized and reimbursed.
+        Helpful summaries:
+        <a href="https://www.medsien.com/articles/cms-2026-physician-fee-schedule-whats-changing-in-remote-care-management" target="_blank" rel="noopener noreferrer">Medsien – 2026 Remote Care Changes</a>,
+        <a href="https://blog.prevounce.com/faqs-from-the-2026-medicare-physician-fee-schedule-final-rule" target="_blank" rel="noopener noreferrer">Prevounce – 2026 PFS FAQs</a>,
+        <a href="https://www.chartspan.com/blog/medicare-physician-fee-schedule-final-rule-2026-significant-changes-are-here/" target="_blank" rel="noopener noreferrer">ChartSpan – 2026 PFS Care‑Management Highlights</a>.
+      </p>
     </div>
+
+    <div class="accordion-header active">CY 2026 Care Management Code Table</div>
+    <div class="accordion-content active">
+      <p>
+        Designated care‑management services assigned general supervision under the CY 2026 Physician Fee Schedule, used throughout this selector:
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Code</th>
+            <th>Short Descriptor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>99457</td><td>Rem physiol mntr 1st 20 min</td></tr>
+          <tr><td>99458</td><td>Rem physiol mntr each addl 20 min</td></tr>
+          <tr><td>99470</td><td>Rem physiol mntr 1st 10 min</td></tr>
+          <tr><td>99426</td><td>PCM clinical staff minimum 30 min (previously G2065)</td></tr>
+          <tr><td>99427</td><td>PCM add to 99426 clinical staff addl 30 min</td></tr>
+          <tr><td>99439</td><td>CCM add to 99490 clinical staff addl 20 min</td></tr>
+          <tr><td>99484</td><td>CM BHI clinical staff minimum 20 min</td></tr>
+          <tr><td>99487</td><td>Cmplx CCM clinical staff minimum 60 min</td></tr>
+          <tr><td>99489</td><td>Cmplx CCM add to 99487 clinical staff addl 30 min</td></tr>
+          <tr><td>99490</td><td>CCM clinical staff minimum 20 min</td></tr>
+          <tr><td>99492</td><td>1st Psychiatric collab care mgmt 1st 70 mins</td></tr>
+          <tr><td>99493</td><td>Sbsq Psychiatric collab care mgmt 1st 60 mins</td></tr>
+          <tr><td>99494</td><td>1st/Sbsq Psych collab care mgmt ea addl 30 mins</td></tr>
+          <tr><td>99495&#8224;</td><td>TCM moderate complexity F2F w/in 14-day disch</td></tr>
+          <tr><td>99496&#8224;</td><td>TCM high complexity F2F w/in 7-day disch</td></tr>
+          <tr><td>G0019</td><td>Comm hlth intg svs sdoh 60mn</td></tr>
+          <tr><td>G0022</td><td>Comm hlth intg svs add 30 m</td></tr>
+          <tr><td>G0023</td><td>Pin service 60m per month</td></tr>
+          <tr><td>G0024</td><td>Pin srv add 30 min pr m</td></tr>
+          <tr><td>G0140</td><td>Nav srv peer sup 60 min pr m</td></tr>
+          <tr><td>G0146</td><td>Nav srv peer sup add 30 pr m</td></tr>
+          <tr><td>G0323</td><td>Care man svs 20 m per mon</td></tr>
+          <tr><td>G2086</td><td>Office-based opioid tx CM min 70 min cal month</td></tr>
+          <tr><td>G2087</td><td>Office-based opioid tx CM addl 60 min subsequent cal month</td></tr>
+          <tr><td>G2088</td><td>Office-based opioid tx CM month addl 30 beyond first 120 min</td></tr>
+          <tr><td>G2214</td><td>Init/sub psych collaborative care first 30 min cal month</td></tr>
+          <tr><td>G0556</td><td>Adv prim care mgmt lvl 1</td></tr>
+          <tr><td>G0557</td><td>Adv prim care mgmt lvl 2</td></tr>
+          <tr><td>G0558</td><td>Adv prim care mgmt lvl 3</td></tr>
+          <tr><td>G0568</td><td>Int psych care mng, 1 cal mo</td></tr>
+          <tr><td>G0569</td><td>Subs psych care mng, subs mo</td></tr>
+          <tr><td>G0570</td><td>Care manage serv, pr cal mo</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:0.9rem;color:#555;">
+        &#8224; The face‑to‑face visit included in the service is not assigned general supervision.
+        See the CY 2026 PFS and designated care‑management list for full definitions and payment details:
+        <a href="https://www.cms.gov/medicare/payment/fee-schedules/physician" target="_blank" rel="noopener noreferrer">CMS Physician Fee Schedule search</a>.
+      </p>
+    </div>
+  </div>
+</div>
+
 
     <!-- === RPM MODULE === -->
 <div class="module" id="rpm">
@@ -1798,5 +1808,6 @@
   </script>
 </body>
 </html>
+
 
 
