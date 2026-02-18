@@ -1953,6 +1953,9 @@
 </div>
 
   <script>
+  // Run all wiring after DOM is ready
+  window.addEventListener('DOMContentLoaded', () => {
+    // Tabs
     const tabs = document.querySelectorAll('.tab');
     const modules = document.querySelectorAll('.module');
 
@@ -1966,33 +1969,36 @@
         if (target) target.classList.add('active');
       });
     });
-      // Lightbox for zoomable images
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  const lightboxClose = document.querySelector('.lightbox-overlay-close');
 
-  document.addEventListener('click', (e) => {
-    const img = e.target.closest('img.zoomable');
-    if (img) {
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt || '';
-      lightbox.classList.add('active');
+    // Lightbox for zoomable images
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.querySelector('.lightbox-overlay-close');
+
+    if (lightbox && lightboxImg && lightboxClose) {
+      document.addEventListener('click', (e) => {
+        const img = e.target.closest('img.zoomable');
+        if (img) {
+          lightboxImg.src = img.src;
+          lightboxImg.alt = img.alt || '';
+          lightbox.classList.add('active');
+        }
+      });
+
+      lightboxClose.addEventListener('click', () => {
+        lightbox.classList.remove('active');
+        lightboxImg.src = '';
+      });
+
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+          lightbox.classList.remove('active');
+          lightboxImg.src = '';
+        }
+      });
     }
-  });
 
-  lightboxClose.addEventListener('click', () => {
-    lightbox.classList.remove('active');
-    lightboxImg.src = '';
-  });
-
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
-      lightbox.classList.remove('active');
-      lightboxImg.src = '';
-    }
-  });
- // Chatbot UI toggle wiring
- window.addEventListener('DOMContentLoaded', () => {
+    // Chatbot wiring
     const toggle = document.getElementById('chatbot-toggle');
     const panel = document.getElementById('chatbot-panel');
     const form = document.getElementById('chatbot-form');
@@ -2034,16 +2040,24 @@
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ message: text })
         });
+
+        if (!res.ok) {
+          console.error('Server error status:', res.status);
+          addMessage('bot', 'Server error contacting assistant.');
+          return;
+        }
+
         const data = await res.json();
         addMessage('bot', data.reply || 'Sorry, I could not generate a response.');
       } catch (err) {
-        console.error(err);
+        console.error('Fetch error:', err);
         addMessage('bot', 'Error contacting assistant.');
       }
     });
-  });;
-  </script>
-  <!-- Chatbot UI -->
+  });
+</script>
+
+<!-- Chatbot UI -->
 <div id="chatbot-toggle">Chat</div>
 <div id="chatbot-panel">
   <div id="chatbot-header">
@@ -2052,13 +2066,15 @@
   <div id="chatbot-messages"></div>
   <form id="chatbot-form">
     <input id="chatbot-input" type="text"
-           placeholder="Ask about programs, codes, workflows..." autocomplete="off">
+           placeholder="Hi Grace, Johnny trained me on all of the latest CMS documentation, as well as other reputable sources so you can ask me anything about programs, codes, workflows..." autocomplete="off">
     <button type="submit">Send</button>
   </form>
 </div>
 
 </body>
 </html>
+
+
 
 
 
