@@ -183,8 +183,8 @@
   position: fixed;
   right: 22px;
   bottom: 70px;
-  width: 360px;
-  max-height: 520px;
+  width: 420px;
+  max-height: 640px;
   background: #ffffff;
   border-radius: 14px;
   box-shadow: 0 6px 24px rgba(0,0,0,0.22);
@@ -203,6 +203,8 @@
 }
 
 #chatbot-messages {
+  max-height: 520px; /* ensure scrolling area is larger */
+  line-height: 1.35;
   padding: 10px 12px;
   flex: 1;
   overflow-y: auto;
@@ -223,7 +225,10 @@
   padding: 6px 9px;
   border-radius: 10px 10px 2px 10px;
 }
-.chat-msg.bot span {
+.chat-msg.bot span,
+  .chat-msg.user span {
+  max-width: 100%;
+  white-space: normal;
   display: inline-block;
   background: #e6eef8;
   color: #234174;
@@ -2012,19 +2017,63 @@
 
     panel.style.display = 'none';
 
-    toggle.addEventListener('click', () => {
-      panel.style.display = panel.style.display === 'flex' ? 'none' : 'flex';
+        toggle.addEventListener('click', () => {
+      const isOpen = panel.style.display === 'flex';
+      panel.style.display = isOpen ? 'none' : 'flex';
+
+      // If opening and no messages yet, show welcome
+      if (!isOpen && !msgs.hasChildNodes()) {
+        addMessage(
+          'bot',
+          "Hi, I'm your LucidAct Care Management Assistant. " +
+          "Ask me about care management programs, codes, workflows, or how to keep designs compliant."
+        );
+      }
     });
 
-    function addMessage(role, text) {
+
+        function addMessage(role, text) {
       const div = document.createElement('div');
       div.className = 'chat-msg ' + role;
       const span = document.createElement('span');
-      span.textContent = text;
+
+      if (role === 'bot') {
+        // Simple formatting: convert newlines to <br> and "- " lines to bullets
+        const lines = text.split('\n').map(l => l.trim());
+        const ul = document.createElement('ul');
+        let hasBullets = false;
+
+        lines.forEach(line => {
+          if (line.startsWith('- ')) {
+            hasBullets = true;
+            const li = document.createElement('li');
+            li.textContent = line.slice(2);
+            ul.appendChild(li);
+          }
+        });
+
+        if (hasBullets) {
+          // Paragraph for intro text before first bullet
+          const firstNonBullet = lines.find(l => l && !l.startsWith('- '));
+          if (firstNonBullet) {
+            const p = document.createElement('p');
+            p.textContent = firstNonBullet;
+            span.appendChild(p);
+          }
+          span.appendChild(ul);
+        } else {
+          // Just respect line breaks
+          span.innerHTML = lines.join('<br>');
+        }
+      } else {
+        span.textContent = text;
+      }
+
       div.appendChild(span);
       msgs.appendChild(div);
       msgs.scrollTop = msgs.scrollHeight;
     }
+
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -2073,6 +2122,7 @@
 
 </body>
 </html>
+
 
 
 
