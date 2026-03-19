@@ -2388,8 +2388,24 @@
         tab.classList.add('active');
         const target = document.getElementById(tab.getAttribute('data-tab'));
         if (target) target.classList.add('active');
+
+        // Update the URL hash so the link is always shareable
+        history.replaceState(null, '', '#' + tab.getAttribute('data-tab'));
       });
     });
+
+    // On page load, activate the tab matching the URL hash (enables direct deep links)
+    const hash = window.location.hash.replace('#', '');
+    if (hash) {
+      const targetTab = document.querySelector(`.tab[data-tab="${hash}"]`);
+      const targetModule = document.getElementById(hash);
+      if (targetTab && targetModule) {
+        tabs.forEach(t => t.classList.remove('active'));
+        modules.forEach(m => m.classList.remove('active'));
+        targetTab.classList.add('active');
+        targetModule.classList.add('active');
+      }
+    }
 
     // Lightbox for zoomable images
     const lightbox = document.getElementById('lightbox');
